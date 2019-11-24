@@ -1,0 +1,147 @@
+--- 
+Subject:
+  name: Data Structures and Algorithms
+  subtopics:
+    - Introduction
+    - Basic Math
+    - Greedy Algorithms
+    - Divide & Conquer
+    - Dynamic Programming
+    - Data Sturcutes
+        - Arrays
+        - Linked List
+    - Strings
+    - Graphs
+    - Advanced Algorithms
+
+
+Introduction:
+
+  - Practice_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+  - Premium/Quiz_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+Greedy Algorithms:
+
+  - Practice_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+  - Quiz_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4

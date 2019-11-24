@@ -1,0 +1,145 @@
+---
+Subject:
+  name: Operating Systems
+  subtopics:
+    - Introduction
+    - Process & Threads
+    - Scheduling
+    - Memory & Address Space
+    - Virtual memory & paging
+    - Concurrency
+    - Synchronization
+    - Persistence
+
+
+Introduction:
+
+  - Practice_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+  - Premium/Quiz_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+Process & Threads:
+
+  - Practice_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+  - Premium/Quiz_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - 1
+          - 2
+          - 3
+          - 4
