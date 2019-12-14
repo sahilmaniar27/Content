@@ -10,6 +10,7 @@ Subject:
     - Concurrency
     - Synchronization
     - Persistence
+    - Miscellaneous
 
 
 Introduction:
@@ -26,10 +27,8 @@ Introduction:
           - 4
         Correct_answer: 3
         Answers:
-          - 1
-          - 2
-          - 3
-          - 4
+          - Hint:
+          - Answer:
 
       - Question: What is something?
         Company_tags: abc
@@ -41,10 +40,8 @@ Introduction:
           - 4
         Correct_answer: 3
         Answers:
-          - 1
-          - 2
-          - 3
-          - 4
+          - Hint:
+          - Answer:
 
   - Premium/Quiz_questions:
 
@@ -58,10 +55,8 @@ Introduction:
           - 4
         Correct_answer: 3
         Answers:
-          - 1
-          - 2
-          - 3
-          - 4
+          - Hint:
+          - Answer:
 
       - Question: What is something?
         Company_tags: abc
@@ -73,10 +68,8 @@ Introduction:
           - 4
         Correct_answer: 3
         Answers:
-          - 1
-          - 2
-          - 3
-          - 4
+          - Hint:
+          - Answer:
 
 Process & Threads:
 
@@ -114,24 +107,40 @@ Process & Threads:
 
   - Premium/Quiz_questions:
 
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
+      - Question: >
+          Consider a process with multiple threads.
+          What would happen if one of the threads crashes due to fault?
+        Company_tags:
+        Level:
+        Reference:
+          - https://stackoverflow.com/questions/36423511/what-happen-if-thread-crashes-which-is-better-thread-or-process
+        Comment:
         Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
+          - Only, Thread with the fault crashes
+          - Entire process crashes
+          - Undefined behavior
+          - Cannot be predicted, either of the options can happen
+        Correct_answer: 2
         Answers:
-          - 1
-          - 2
-          - 3
-          - 4
+          - Hint: Threads share their address space.
+          - Answer: >
+              If one thread crashes due to a segmentation fault or any other error,
+              all other threads and the entire process are killed.
+              This is because the threads are part of the same process space,
+              so it doesn't generally make any sense to keep going if a thread has caused a fault signal.
+              A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
+              the behavior of the process and anything could have happened to its memory.
+              There is a negative side of entire process being killed due to a fault in one of the threads.
+              This situation can lead to data and system corruption if the other threads were
+              in the middle of some important task. Due to this reason, important & independent tasks
+              are generally performed as a separate process, such that crashing of one does not bring down
+              the entire fucntionality.
 
       - Question: What is something?
         Company_tags: abc
         Level: xyz
+        Reference:
+        Comment:
         Options:
           - 1
           - 2
@@ -139,7 +148,71 @@ Process & Threads:
           - 4
         Correct_answer: 3
         Answers:
+          - Hint:
+          - Answer:
+
+Miscellaneous:
+
+  - Practice_questions:
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Reference:
+        Comment:
+        Options:
           - 1
           - 2
           - 3
           - 4
+        Correct_answer: 3
+        Answers:
+          - Hint:
+          - Answer:
+
+  - Premium/Quiz_questions:
+
+      - Question: >
+          A user space process crash can be handled gracefully by exception handling. Is it possible to
+          gracefully handle a crash in kernel driver for a monolithic kernel like LINUX?
+        Company_tags:
+        Level:
+        Reference:
+          - https://stackoverflow.com/questions/32644692/why-kernel-cant-handle-crash-gracefully
+          - Chapter 8, Topic - Kernel Basics, Mac OS X and iOS Internals, Jonathan Levin
+        Comment:
+        Options:
+          - No, a crash in kernel driver would simply crash the whole kernel leading to kernel panic
+          - Yes, we can continue running the kernel. Simply crashing the faulty kernel driver is enough
+          - Yes, we can continue running the kernel. We need to crash faulty driver and all its associcated entities
+          - None of these
+        Correct_answer: 1
+        Answers:
+          - Hint: For monolithic kernels like LINUX, the kernel module and the kernel itself share the same address space.
+          - Answer: >
+              LINUX uses a monolithic kernel architecture. A monolithic kernel is an operating system architecture where all
+              the operating system components(including the device drivers, file system, and the application IPC) are working
+              in a single kernel address space. Due to such type of design, there is no protection boundary between modules. If a
+              kernel module starts misbehaving, it can overwrite memory from another subsystem. So, when a driver crashes,
+              it may or may not stay local to that driver. It is not possible to know if it has poisoned the kernel memory.
+              Security is the major reason behind the design of crashing the entire kernel on occurence of a kernel driver crash.
+              This is not the case with userspace processes. This is because the address space for each process is separate
+              and so it is possible to catch erroneous memory access(or any other fault) and terminate the process.
+              Microkernels(in which services have separate address space) can overcome this situation. Whereas,
+              Hybrid kernels(Windows and MacOS) also face this issue due to their adoption/essence of monolithic kernel design.
+
+
+      - Question: What is something?
+        Company_tags: abc
+        Level: xyz
+        Reference:
+        Comment:
+        Options:
+          - 1
+          - 2
+          - 3
+          - 4
+        Correct_answer: 3
+        Answers:
+          - Hint:
+          - Answer:
