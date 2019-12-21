@@ -30,33 +30,8 @@ Introduction:
           - Hint:
           - Answer:
 
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - Hint:
-          - Answer:
 
   - Premium/Quiz_questions:
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - Hint:
-          - Answer:
 
       - Question: What is something?
         Company_tags: abc
@@ -72,84 +47,216 @@ Introduction:
           - Answer:
 
 Process & Threads:
+  - Process:
+    
+    - Concept of Process and Process Attributes:
+      
+      - References:  
+        - Gate Lectures by Ravindrababu Ravula: 
+          - https://youtu.be/ucVm_arB-fw
+        - Neso Academy:
+          - https://youtu.be/OrM7nZcxXZU
+        - Operating System Concepts by Abraham Silberschatz, Peter B. Galvin and Greg Gagne:
+          - Chapter 3, section 3.1
+      
+      - Practice_questions:
+          - Question: >
+              Which of the following combination of statements is correct?
+              S1: A process is an active entity whereas a program is a passive entity.
+              S2: A process can be multiple states at a time.
+              S3: An executable form of a code is an active entity.
+              S4: All the information about a process is stored in a "Process Control Block".
+            Company_tags: None
+            Level: None
+            Options:
+              - 1: 1,2,3
+              - 2: 1,2
+              - 3: 1,4
+              - 4: 1,3,4
+            Correct_answer: 3
+            Answers:
+              - Hint: A process can only exist in 1 state at a time.
+              - Solution: S1 is a fact. A process can only be in one state at a time. As in, it can be in ready state or blocked state or swapped state, etc.
+                          An executable form of a code is a passive entity because is not executing at the moment. 
+                          PCB stores all the information about a process such as process control information, processor state information, process identification.
+          - Question: >
+              Which of the following is not a part of PCB (Process Control Block)?
+              a) registers
+              b) list of open files
+              c) program counter
+              d) Accounting information (like amount of CPU used, process numbers, etc).
+            Options:
+            - (b)
+            - (c)  
+            - (d)
+            - none of these
+            Answers:
+              - Hint: All are correct
+              - Solution: Options (a),(b),(c) are obvious answers. Option (d) is also correct. For more clarity, refer the textbook mentioned in References.
+          - Question: >
+              Which of the following is not correct?
+            Options: 
+              - 1: User Stack cointains local variables and pointers.
+              - 2: Stack Pointer points to the top of user stack.
+              - 3: kernel Stack contains the stack frame of kernel procedures as te process executes in kernel mode.
+              - 4: Code section contains the code part of the process.
+            Company_tags:
+            Level:
+            Options:
+            Correct_answer: 2
+            Answers:
+              - Hint: Option 2 is wrong
+              - Solution: Option 2 is wrong because the stack pointer points to the top of the kernel stack
+                           or the user stack based on when the process is running in user mode or kernel mode.
+          - Question: >
+              A file is opened by the user. What will be the changes in Local Descriptor Table(LDT) and Global Descriptor Table(GDT)?
+              Moreover, if 2 different processes have opened one instance each of a file and one of the process closes it,
+              what will be the changes in the LDT and GDT?
+            Answer:
+              Hint: GDT has an entry even if one instance is there.
+              Solution: >
+                  LDT is also called a per-process descriptor table and GDT is called a system wide descriptor table.When you initially open a file, both LDT and 
+                  GDT make new entries of the file. But, if it is already opened by even one process, 
+                  the GDT only increases the counter. If an instance of a file opened by other process nut a new process opens it, a new instance is made in LDT.
+                  So, when a file is closed by one of the processes, given that only a single instance is opened by each process, only the counter in GDT is decreased
+                  in the GDT, but in LDT the entry is deleted (as only one instance was opened and that to was closed). There is an entry in the GDT for a file as
+                  long as there is at least one instance of the file opened by a process.
+          - Question: >
+              Which of the following is correct about Memory Table?
+              S1: It keeps track of main memory associated with the process.
+              S2: It keeps track of secondary memory to processes.
+              S3: It keeps the information needed to manage Physical Memory.
+              S4: It keeps track of protection attributes of main and secondary memory.
+            Options:
+              - 1: S1
+              - 2: S2
+              - 3: S3
+              - 4: S4
+            Correct_answer: S3
+            Answer:
+              - Hint: The OS only generates Logical Address.
+              - Solution: >
+                  S3 is wrong because OS only generates Logical Address so Memory Table, also known as page table, keeps track of virtual memory of the process.
+                  This is because most of the process (alomst 80%) resides in virtual Memory and not in physical memory.
 
-  - Practice_questions:
+          - Question: Which of the following will not be private to a process?
+            Options:
+            - 1: user stack
+            - 2: process control information
+            - 3: trap bit
+            - 4: shared address space
+            Correct_answer: 3
+            Answer:
+              - Hint: Monitor mode is system wide
+              - Solution: Trap Bit status is not private to a process. It is a system wide flag. Rest all attributes mentioneed as options are private to a process.
+    
+    - Fork and Exec system calls:
+      - References:
+        - Neso Academy (YouTube): https://www.youtube.com/watch?v=IFEFVXvjiHY
+        - Techtud (YouTube): https://www.youtube.com/watch?v=PwxTbksJ2fo
+        - Operating System Concepts by Abraham Silberschatz, Peter B. Galvin and Greg Gagne: Chapter 3, Section 3.3
+        - GeeksForGeeks: https://www.geeksforgeeks.org/difference-fork-exec/ 
+      - Practice_questions:
+        
+        - Question: How is PID assigned to a process?
+          Options:
+            - 1: Randomly
+            - 2: It is the next vacant PID
+            - 3: It is the next vacant PID from the start
+            - 4: It is the least vacant PID
+          Correct_answer: 2
+          Answer:  
+            - Hint: Go through how PID is assigned
+            - Solution: >
+                PID is always assigned as next vacant PID. For ex. if the current PID is x, the next PID will be the next vacant PID slot after x. It maybe x+1, x+2 or even 3, 4, etc.
+                It is determined by circular search.
+          
+        - Question: >
+            Read the following piece of code carefully.
+            
+            int main(){
+              printf("Hello, I am in main process");
+              char* args = "Hello World\0";
+              execv("./prog1",args);
+              printf("Execv exected. Exiting main process");
+            }
+            
+            Will the second print statement be executed?
+          Answer:
+            - Hint: Exec repalces the process that calls it. 
+            - Solution: >
+                No. the second print statement will not be printed. It is because the exec() system call replaces the process that calls it.
+                So, when exec() will be executed, it will execute the code that it's .c file contains and then it will end. The main process gets 
+                replaced so it does not exist from the moment the exec() system call starts executing.
+                Also remember, as the process created by exec() is assigned the PID of the calling process, it also repalces the address space
+                of the calling process. This is why the existance of the calling process is finished after the exec system call.
 
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
+        - Question: >
+            If a proces has PID as 'x'. Suppose it executes exec() at some pint of time. 
+            What will be the PID of the process (created due to the exec() call)?
+          Options:
+            - 1: x 
+            - 2: anything greater than x
+            - 3: anything less than x
+            - 4: Can't say
+          Correct_answer: 1
+          Answer:
+            - Hint: exec() replaces the calling process.
+            - Solution: >
+                The PID of the new process created due to exec() will be 'x' itself. The explanation is simple that the exec() process replaces 
+                the original calling process. So, if you execute a print statement that will print the PID of the process, both will print 'x'.
+        
+        - Question: >
+            If process P1 creates 2 processes P2 and P3. Who will be the previous sibling of P2 and 
+            who will be the next sibling of P1, respectively?
+          Options: 
+            - 1: P1 and P2 respectively
+            - 2: P1 and P2 respectively
+            - 3: P3 and P3 respectively
+            - 4: P2 and P1 respectively
+          Correct_answer: 2
+          Answer:
+            - Hint:
+            - Solution: The next sibling of the parent is the last last child it creates and the previous sibling of the 1st child is parent itself.
+        
+        - Question: What is the return value of fork()?
+          Answer:
+            - Hint: There are two.
+            - Solution: >
+                It returns the PID of the child to the parent process (i.e, if the fork() is successful), else it returns '-1'.
+                As for the second return value, it returns '0' to the child that is created. 
 
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
 
-  - Premium/Quiz_questions:
+      - Premium/Quiz_questions:
 
-      - Question: >
-          Consider a process with multiple threads.
-          What would happen if one of the threads crashes due to fault?
-        Company_tags:
-        Level:
-        Reference:
-          - https://stackoverflow.com/questions/36423511/what-happen-if-thread-crashes-which-is-better-thread-or-process
-        Comment:
-        Options:
-          - Only, Thread with the fault crashes
-          - Entire process crashes
-          - Undefined behavior
-          - Cannot be predicted, either of the options can happen
-        Correct_answer: 2
-        Answers:
-          - Hint: Threads share their address space.
-          - Answer: >
-              If one thread crashes due to a segmentation fault or any other error,
-              all other threads and the entire process are killed.
-              This is because the threads are part of the same process space,
-              so it doesn't generally make any sense to keep going if a thread has caused a fault signal.
-              A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
-              the behavior of the process and anything could have happened to its memory.
-              There is a negative side of entire process being killed due to a fault in one of the threads.
-              This situation can lead to data and system corruption if the other threads were
-              in the middle of some important task. Due to this reason, important & independent tasks
-              are generally performed as a separate process, such that crashing of one does not bring down
-              the entire fucntionality.
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Reference:
-        Comment:
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - Hint:
-          - Answer:
+          - Question: >
+              Consider a process with multiple threads.
+              What would happen if one of the threads crashes due to fault?
+            Company_tags:
+            Level:
+            Reference:
+              - https://stackoverflow.com/questions/36423511/what-happen-if-thread-crashes-which-is-better-thread-or-process
+            Comment:
+            Options:
+              - Only, Thread with the fault crashes
+              - Entire process crashes
+              - Undefined behavior
+              - Cannot be predicted, either of the options can happen
+            Correct_answer: 2
+            Answers:
+              - Hint: Threads share their address space.
+              - Answer: >
+                  If one thread crashes due to a segmentation fault or any other error,
+                  all other threads and the entire process are killed.
+                  This is because the threads are part of the same process space,
+                  so it doesn't generally make any sense to keep going if a thread has caused a fault signal.
+                  A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
+                  the behavior of the process and anything could have happened to its memory.
+                  There is a negative side of entire process being killed due to a fault in one of the threads.
+                  This situation can lead to data and system corruption if the other threads were
+                  in the middle of some important task. Due to this reason, important & independent tasks
+                  are generally performed as a separate process, such that crashing of one does not bring down
+                  the entire fucntionality.
 
 Miscellaneous:
 
