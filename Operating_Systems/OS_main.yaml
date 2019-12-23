@@ -11,42 +11,41 @@ Subject:
     - Synchronization
     - Persistence
     - Miscellaneous
-
 Process & Threads:
   - Process:
-    - Concept of Process and Process Attributes:
-      - References:
+    Concept of Process and Process Attributes:
+      References:
         - Gate Lectures by Ravindrababu Ravula: https://youtu.be/ucVm_arB-fw
         - Neso Academy: https://youtu.be/OrM7nZcxXZU
         - Operating System Concepts by Abraham Silberschatz, Peter B. Galvin and Greg Gagne: Chapter 3, section 3.1
-      - Practice_questions:
+      Practice_questions:
         - Question_1: |
             State true or false.
-            A process can be multiple states at a time.
+            A process can be in multiple states at a time.
           Company_tags: None
           Level: None
           Correct_answer: "False"
           Answers:
             - Hint: A process can only exist in 1 state at a time.
-            - Solution: A process can only be in one state at a time. As in, it can be in ready state or blocked state or swapped state, etc.
+            - Solution: A process can only be in one state at a time. As in, it can be in a ready state or blocked state or swapped state, etc.
         - Question_2: |
-            A file is opened by the user. What will be the changes in Local Descriptor Table(LDT) and Global Descriptor Table(GDT)?
-            Moreover, if 2 different processes have opened one instance each of a file and one of the process closes it,
+            A user opens a file. What will be the changes in the Local Descriptor Table(LDT) and Global Descriptor Table(GDT)?
+            Moreover, if two different processes have opened one instance each of a file and one of the processes close it,
             what will be the changes in the LDT and GDT?
           Company_tags: None
           Level: None
           Answer:
-            Hint: GDT has an entry even if one instance is there.
+            Hint: GDT has an entry, even if one instance is there.
             Solution: |
-                LDT is also called a per-process descriptor table and GDT is called a system wide descriptor table.When you initially open a
-                file, both LDT and GDT make new entries of the file. But, if it is already opened by even one process, the GDT only increases
-                the counter. If an instance of a file opened by other process nut a new process opens it, a new instance is made in LDT.
-                So, when a file is closed by one of the processes, given that only a single instance is opened by each process, only the
-                counter in GDT is decreased in the GDT, but in LDT the entry is deleted (as only one instance was opened and that to was
+                LDT is also called a per-process descriptor table, and GDT is called a system-wide descriptor table.When you initially open a
+                file, both LDT and GDT make new entries of the file. However, if it is already opened by even one process, the GDT only
+                increases the counter. If an instance of a file opened by another process and a new process opens it, a new instance is made in LDT.
+                So, when a file is closed by one of the processes, given that each process opens only a single instance, only the counter in
+                GDT is decreased in the GDT. However, in LDT, the entry is deleted (as only one instance was opened, and that was
                 closed). There is an entry in the GDT for a file as long as there is at least one instance of the file opened by a process.
         - Question_3: |
             Which of the following is correct about Page Table?
-            S1: It keeps track of main memory associated with the process.
+            S1: It keeps track of the main memory associated with the process.
             S2: It keeps track of secondary memory to processes.
             S3: It keeps the information needed to manage Physical Memory.
             S4: It keeps track of protection attributes of main and secondary memory.
@@ -62,50 +61,49 @@ Process & Threads:
             - Reference: https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/8_MainMemory.html (It's section 8.1.3)
             - Hint: The OS only generates Logical Address.
             - Solution: |
-                S3 is wrong because OS only generates Logical Address so Memory Table, also known as page table, keeps track of virtual
+                S3 is wrong because OS only generates Logical Address, so Memory Table, also known as a page table, keeps track of virtual
                 memory of the process. Note that user programs never see physical addresses. User programs work entirely in logical
                 address space, and any memory references or manipulations are done using purely logical addresses. Only when the address
                 gets sent to the physical memory chips is the physical memory address generated.
+        - Question_4: Which of the following attributes of a thread are private to itself?
+          Company_tags: None
+          Level: None
+          Options:
+            -1: Heap Space
+            -2: Stack Space
+            -3: File Descriptors
+            -4: Signal Handler
+          Correct_answer: 2
+          Answer:
+            - Hint:
+            - Solution: |
+                A thread shares with its peer threads its Code section Global data section, Operating-system resources, Process instructions,
+                Open files (descriptors), signal and signal handlers, Current working directory, and User and group id. But, Stack space,
+                Signal Masks and Register Set is private for a thread. It also has a separate return value for itself (errno).
 
-      - Question_4: Which of the following attributes of a thread are private to itself?
-        Company_tags: None
-        Level: None
-        Options:
-          -1: Heap Space
-          -2: Stack Space
-          -3: File Descriptors
-          -4: Signal Handler
-        Correct_answer: 2
-        Answer:
-          - Hint:
-          - Solution: |
-              A thread shares with its peer threads its Code section Global data section, Operating-system resources, Process instructions,
-              Open files (descriptors), Signal and signal handlers, Current working directory and User and group id. But, Stack space,
-              Signal Masks and Register Set is private for a thread. It also has a separate return value for itself (errno).
-
-      - Question_5: Which of the following is an indirect way of communication between processes (IPC)?
-        Company_tags: None
-        Level: None
-        Options:
-          -1: Shared Memory
-          -2: Signals
-          -3: Mailbox
-          -4: Passing Pointers
-        Correct_answer: 3
-        Answer:
-          - Hint:
-          - Solution: |
-              The correct option is c. This is because we pass signals explicitly to the processes we need to communicate to and shared memory
-              is with the processes we want to share it with (processes need to join themselves to the shared memory block). Similar is the
-              case with passing pointers. Mailbox is called a port. It consists of queue of messages. Sender keeps the message in mailbox and
-              receiver picks them up.
-    - Fork and Exec system calls:
-      - References:
+        - Question_5: Which of the following is an indirect way of communication between processes (IPC)?
+          Company_tags: None
+          Level: None
+          Options:
+            -1: Shared Memory
+            -2: Signals
+            -3: Mailbox
+            -4: Passing Pointers
+          Correct_answer: 3
+          Answer:
+            - Hint:
+            - Solution: |
+                The reason is that we pass signals explicitly to the processes we need to communicate to and shared memory
+                is shared with the processes we want to share it with (processes need to join themselves to the shared memory block). Similar is the
+                case with passing pointers. Mailbox is called a port. It consists of a queue of messages. The sender keeps the message in mailbox and
+                the receiver picks them up.
+    Fork and Exec system calls:
+      References:
         - Neso Academy (YouTube): https://www.youtube.com/watch?v=IFEFVXvjiHY
         - Techtud (YouTube): https://www.youtube.com/watch?v=PwxTbksJ2fo
-        - Operating System Concepts by Abraham Silberschatz, Peter B. Galvin and Greg Gagne: Chapter 3, Section 3.3
+        - Operating System Concepts by Abraham Silberschatz, Peter B. Galvin, and Greg Gagne: Chapter 3, Section 3.3
         - GeeksForGeeks: https://www.geeksforgeeks.org/difference-fork-exec/
-      - Practice_questions:
+      Practice_questions:
         - Question: How is PID assigned to a process?
           Company_tags: None
           Level: None
@@ -118,8 +116,8 @@ Process & Threads:
           Answer:
             - Hint: Go through how PID is assigned
             - Solution: |
-                PID is always assigned as next vacant PID. For ex. if the current PID is x, the next PID will be the next vacant PID slot after x.
-                It maybe x+1, x+2 or even 3, 4, etc. It is determined by circular search.
+                PID is always assigned as the next vacant PID. For example, if the current PID is x, the next PID will be the next vacant PID slot after x.
+                It may be x+1, x+2 or even 3, 4, etc. It is determined by using a circular search.
         - Question: |
             Read the following piece of code carefully.
             int main(){
@@ -132,15 +130,15 @@ Process & Threads:
           Company_tags: None
           Level: None
           Answer:
-            - Hint: Exec repalces the process that calls it.
+            - Hint: Exec replaces the process that calls it.
             - Solution: |
                 No. the second print statement will not be printed. It is because the exec() system call replaces the process that calls it.
-                So, when exec() will be executed, it will execute the code that it's .c file contains and then it will end. The main process gets
-                replaced so it does not exist from the moment the exec() system call starts executing.
-                Also remember, as the process created by exec() is assigned the PID of the calling process, it also repalces the address space
-                of the calling process. This is why the existance of the calling process is finished after the exec system call.
+                So, when exec() will be executed, it will execute the code that it's .c file contains, and then it will end. The main process gets
+                replaced, so it does not exist from the moment the exec() system call starts executing.
+                Also remember, as the process created by exec() is assigned the PID of the calling process, it also replaces the address space
+                of the calling process. This is why the existence of the calling process is finished after the exec system call.
         - Question: |
-            If a proces has PID as 'x'. Suppose it executes exec() at some pint of time.
+            Assume that a process has PID as x. Suppose it executes exec() at some pint of time.
             What will be the PID of the process (created due to the exec() call)?
           Company_tags: None
           Level: None
@@ -153,10 +151,10 @@ Process & Threads:
           Answer:
             - Hint: exec() replaces the calling process.
             - Solution: |
-                The PID of the new process created due to exec() will be 'x' itself. The explanation is simple that the exec() process replaces
+                The PID of the new process created due to exec() will be 'x' itself. The explanation is simply that the exec() process replaces
                 the original calling process. So, if you execute a print statement that will print the PID of the process, both will print 'x'.
         - Question: |
-            If process P1 creates 2 processes P2 and P3. Who will be the previous sibling of P2 and
+            If process P1 creates two processes P2 and P3. Who will be the previous sibling of P2 and
             who will be the next sibling of P1, respectively?
           Company_tags: None
           Level: None
@@ -168,17 +166,17 @@ Process & Threads:
           Correct_answer: 2
           Answer:
             - Hint:
-            - Solution: The next sibling of the parent is the last last child it creates and the previous sibling of the 1st child is parent itself.
+            - Solution: The next sibling of the parent is the last child it creates, and the previous sibling of the 1st child is the parent itself.
         - Question: What is the return value of fork()?
           Company_tags: None
           Level: None
           Answer:
             - Hint: There are two.
             - Solution: >
-                It returns the PID of the child to the parent process (i.e, if the fork() is successful), else it returns '-1'.
+                It returns the PID of the child to the parent process (i.e., if the fork() is successful), else it returns '-1'.
                 As for the second return value, it returns '0' to the child that is created.
         - Question: |
-            Let there be two concurrent processes P1 and P2.
+            Let there be two concurrent processes, P1 and P2.
               P1 -> {
                 //some code
                 x++;
@@ -202,47 +200,47 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                This has to do with the possibility of context switch at any time during the execution of x++ or x--.
-                “x--” essentially means,
+                The solution lies in the possibility of context switch at any time during the execution of x++ or x--.
+                "x--" essentially means,
                 load 'x' in a reg; ---(1)
                 Reduce the 'reg' by '1'; ---(2)
                 store 'x' in the 'reg';  ---(3)
-                Similar is the case with “x++". Now if there is a context switch after (1),
-                then if “x++” executes and then (2) and (3) executes, the value in “reg” will be zero before context switch and
-                after executing “x++” also, “reg” will contain zero. And hence after stage 2 and 3, final value of x will be “-1”.
+                Similar is the case with "x++." Now, if there is a context switch after (1),
+                then if "x++" executes and then (2) and (3) executes, the value in "reg" will be zero before context switch.
+                After executing "x++" also, "reg" will contain zero. Hence, after stage 2 and 3, the final value of x will be "-1".
                 Similarly, the max value of x can be 1.
-      - Premium/Quiz_questions:
-          - Question_11: >
-              Consider a process with multiple threads.
-              What would happen if one of the threads crashes due to fault?
-            Company_tags:
-            Level:
-            Reference:
-              - https://stackoverflow.com/questions/36423511/what-happen-if-thread-crashes-which-is-better-thread-or-process
-            Comment:
-            Options:
-              - 1: Only, Thread with the fault crashes
-              - 2: Entire process crashes
-              - 3: Undefined behavior
-              - 4: Cannot be predicted, either of the options can happen
-            Correct_answer: 2
-            Answers:
-              - Hint: Threads share their address space.
-              - Answer: |
-                  If one thread crashes due to a segmentation fault or any other error, all other threads and the entire process are killed.
-                  This is because the threads are part of the same process space, so it doesn't generally make any sense to keep going if a
-                  thread has caused a fault signal. A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
-                  the behavior of the process and anything could have happened to its memory. There is a negative side of entire process being
-                  killed due to a fault in one of the threads. This situation can lead to data and system corruption if the other threads were
-                  in the middle of some important task. Due to this reason, important & independent tasks are generally performed as a separate
-                  process, such that crashing of one does not bring down the entire fucntionality.
+      Premium/Quiz_questions:
+        - Question_11: >
+            Consider a process with multiple threads.
+            What would happen if one of the threads crashes due to fault?
+          Company_tags:
+          Level:
+          Reference:
+            - https://stackoverflow.com/questions/36423511/what-happen-if-thread-crashes-which-is-better-thread-or-process
+          Comment:
+          Options:
+            - 1: Only, Thread with the fault crashes
+            - 2: Entire process crashes
+            - 3: Undefined behavior
+            - 4: Cannot be predicted, either of the options can happen
+          Correct_answer: 2
+          Answers:
+            - Hint: Threads share their address space.
+            - Answer: |
+                If one thread crashes due to a segmentation fault or any other error, all other threads and the entire process are killed.
+                This is because the threads are part of the same process space, so it doesn't generally make any sense to keep going if a
+                thread has caused a fault signal. A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
+                the behavior of the process, and anything could have happened to its memory. There is a negative side of the entire process being
+                killed due to a fault in one of the threads. This situation could lead to data and system corruption if the other threads were
+                in the middle of some important task. Due to this reason, important & independent tasks are generally performed as a separate
+                process, such that the crashing of one does not bring down the entire functionality.
 
 
 Miscellaneous:
 
   - Practice_questions:
       - Question: |
-            S1: If an entry is not found in the page table, the page table is not invalid. Rather, it is fetched because loading a page
+            S1: If an entry is not found in the page table, the page table is not invalid. Instead, it is fetched because loading a page
                 table is a dynamic job.
             S2: The frame size in a frame table can the 4KB or 4MB in a 32-bit system.
         Options:
@@ -268,21 +266,21 @@ Miscellaneous:
           -4: 160ns
         Correct_answer:
         Answer:
-          -Hint:
+          - Hint:
           - Solution: |
               The correct answer is option b. Hit percentage means out of 100, how many memory accesses were present in TLB. For example,
-              if hit percentage is 80%, 60% of the time, we find what we need to access and the other 20% of the time, we do not and hence
-              there is an exception and the CPU takes over, loads that memory page location into the TLB and again execute the instruction.
+              if the hit percentage is 80%, 60% of the time, we find what we need to access and the other 20% of the time, we do not and hence
+              ssthere is an exception, and the CPU takes over, loads that memory page location into the TLB, and again executes the instruction.
               Therefore, 80% hit means 80% successful accesses but, out of 80%, the first 60 are successful the first time and the remaining
-              20 the second time, after the CPU loads them into the TLB. No that we are clear with hit percentage, the question is pretty simple.
+              20 the second time, after the CPU loads them into the TLB. No, that we are clear with hit percentage, the question is pretty simple.
               Effective access time = ((hit%*(TLB access time + Memory access time))  + ((1-hit%)*(Memory access time + TLB access time)))/hit%
               = (0.8*(100+20) + (100+20))/0.8 = 150ns
               Now we have multiplied (1-hit%) with 120 because, once it will search the TLB for the page location, then when it will not find it,
               it will access the memory and load it into TLB.
       - Question: >
-          S1: System Library (libc.so) is linked at compile time and Shared Library (libm.so) is linked dynamically.
-          S2: If a process is swapped, it can return to any address at swapping back to main memory.
-          Please select the correct option, where “TRUE/TRUE” indicates that S1 is TRUE and S2 is TRUE.
+          S1: System Library (libc.so) is linked at compile-time, and Shared Library (libm.so) is linked dynamically.
+          S2: If a process is swapped, it can return to any address at swapping back to the main memory.
+          Please select the correct option, where "TRUE/TRUE" indicates that S1 is TRUE, and S2 is TRUE.
         Company_tags:
         Level:
         Options:
@@ -294,7 +292,7 @@ Miscellaneous:
           Answer:
             - Hint:
             - Solution: |
-                The statement S1 is true and is a fact. The second statement is not always true. Swapped out process must return to the same
+                The statement S1 is true and is a fact. The second statement is not always true. The swapped out process must return to the same
                 address if they had binding that was done compile time or load time. This is the reason why we share a driver file and not
                 the compiled file.
       - Question: Which of the following will guarantee a deadlock in a single instance resource?
@@ -310,10 +308,10 @@ Miscellaneous:
           - Hint: Single instance resource and circular wait are related.
           - Solution: |
               The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
-              process is requesting for the resource the first is holding there is a definite deadlock. The others do not guarantee that.
+              process is requesting for the resource the first is holding, there is a definite deadlock. The others do not guarantee that.
   - Premium/Quiz_questions:
       - Question_12: >
-          A user space process crash can be handled gracefully by exception handling. Is it possible to
+          A user-space process crash can be handled gracefully by exception handling. Is it possible to
           gracefully handle a crash in kernel driver for a monolithic kernel like LINUX?
         Company_tags:
         Level:
@@ -324,7 +322,7 @@ Miscellaneous:
         Options:
           - No, a crash in kernel driver would simply crash the whole kernel leading to kernel panic
           - Yes, we can continue running the kernel. Simply crashing the faulty kernel driver is enough
-          - Yes, we can continue running the kernel. We need to crash faulty driver and all its associcated entities
+          - Yes, we can continue running the kernel. We need to crash faulty driver and all its associated entities
           - None of these
         Correct_answer: 1
         Answers:
@@ -335,8 +333,8 @@ Miscellaneous:
               in a single kernel address space. Due to such type of design, there is no protection boundary between modules. If a
               kernel module starts misbehaving, it can overwrite memory from another subsystem. So, when a driver crashes,
               it may or may not stay local to that driver. It is not possible to know if it has poisoned the kernel memory.
-              Security is the major reason behind the design of crashing the entire kernel on occurence of a kernel driver crash.
-              This is not the case with userspace processes. This is because the address space for each process is separate
-              and so it is possible to catch erroneous memory access(or any other fault) and terminate the process.
+              Security is the primary reason behind the design of crashing the entire kernel on the occurrence of a kernel driver crash.
+              This is not the case with user-space processes. This is because the address space for each process is separate.
+              Thus, it is possible to catch erroneous memory access(or any other fault) and terminate the process.
               Microkernels(in which services have separate address space) can overcome this situation. Whereas,
-              Hybrid kernels(Windows and MacOS) also face this issue due to their adoption/essence of monolithic kernel design.
+              Hybrid kernels(Windows and macOS) also face this issue due to their adoption/essence of monolithic kernel design.
