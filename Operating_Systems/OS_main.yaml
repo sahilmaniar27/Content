@@ -427,8 +427,203 @@ Process & Threads:
                 killed due to a fault in one of the threads. This situation can lead to data and system corruption if the other threads were
                 in the middle of some important task. Due to this reason, important & independent tasks are generally performed as a separate
                 process, such that crashing of one does not bring down the entire fucntionality.
-Miscellaneous:
+  - Thread:
+    Resouces:
+      - GeeksForGeeks: https://www.geeksforgeeks.org/thread-in-operating-system/
+      - Tutorials Point: https://www.tutorialspoint.com/operating_system/os_multi_threading.htm
+      - Neso Academy: https://www.youtube.com/watch?v=LOfGJcVnvAk
+    Practice_questions:
+      - Question_1: What is the difference between User threads, kernel threads and kernel-level-threads?
+        Company_tags: None
+        Level: None
+        Reference:
+          - https://stackoverflow.com/questions/15983872/difference-between-user-level-and-kernel-supported-threads
+        Correct_answer: None
+        Answers:
+          - Hint: None
+          - Solution: |
+              #Will write soon.
+      - Question_2: >
+          Consider a process with multiple threads.
+          What would happen if one of the threads crashes due to fault?
+        Company_tags:
+        Level:
+        Reference:
+          - https://stackoverflow.com/questions/36423511/what-happen-if-thread-crashes-which-is-better-thread-or-process
+        Comment:
+        Options:
+          - 1: Only, Thread with the fault crashes
+          - 2: Entire process crashes
+          - 3: Undefined behavior
+          - 4: Cannot be predicted, either of the options can happen
+        Correct_answer: 2
+        Answers:
+          - Hint: Threads share their address space.
+          - Solution: |
+              If one thread crashes due to a segmentation fault or any other error, all other threads and the entire process are killed.
+              This is because the threads are part of the same process space, so it doesn't generally make any sense to keep going if a
+              thread has caused a fault signal. A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
+              the behavior of the process and anything could have happened to its memory. There is a negative side of entire process being
+              killed due to a fault in one of the threads. This situation can lead to data and system corruption if the other threads were
+              in the middle of some important task. Due to this reason, important & independent tasks are generally performed as a separate
+              process, such that crashing of one does not bring down the entire fucntionality.
+      - Question_3: What are the benefits of using a thread, instead of using a process?
+        Company_tags:
+        Level:
+        Reference:
+          - https://www.tutorialspoint.com/operating_system/os_multi_threading.htm
+        Answers:
+          - Hint: Lightweight, easy to manage, etc.
+          - Solution: |
+              - Threads Share memory & other resources of the process it belongs to.
+              - Therads are more economical to context switch.
+              - Threads can run in parallel and hence multiple tasks can be done parallely.
+              - Threads are also easy to create, switch between and terminate.
+      - Question_4: What is the difference between Data and Task Parallelism?
+        Company_tags:
+        Level:
+        Reference:
+          - https://en.wikipedia.org/wiki/Task_parallelism
+        Answer:
+          - Hint:
+          - Solution: |
+              Data Parallelism is distributing data to and running them through the same task (thread/process). Task Parallelism is running
+              different tasks on different cores on the same data.
+              Both these Parallelism can be visualised as follows:
+              - Data Parallelism------------>
+                                                    -------------------DATA-----------------
+                                                  /                                          \
+                                                  --------------------------------------------
+                                                 |    D0    |    D1    |    D2    |    D4     |
+                                                  --------------------------------------------
+                                                    |             |          |          |
+                                                  Core-1        Core-2     Core-3     Core-4
 
+              - Task Parallelism------------>
+                                                    -------------------DATA-----------------
+                                                  /                                          \
+                                                  --------------------------------------------
+                                                 |                                            |
+                                                  --------------------------------------------
+                                                    /             /             \             \
+                                                  Core-1        Core-2         Core-3       Core-4
+
+      - Question_5: Why does the return value of a thread function be of the type "(void *)" only?
+        Company_tags:
+        Level:
+        Reference:
+          - https://en.wikipedia.org/wiki/Task_parallelism
+        Answer:
+          - Hint:
+          - Solution: |
+              #Will write soon
+      - Question_6: |
+          What does "getpid()" function return when executed in a thread? Does it give an error? If not, what is the return value?
+        Company_tags:
+        Level:
+        Reference:
+          - https://stackoverflow.com/questions/9305992/if-threads-share-the-same-pid-how-can-they-be-identified
+        Answer:
+          - Hint: Not an error.
+          - Solution: |
+              No, It will not give an error. If you call the function "getpid()" inside a thread, you will get the PID of the thread that created
+              it. If you execute that function in a newly created thread (by a process), you will get the PID of the process that created it. So,
+              executing "getpid()" function in a thread will give you the PID of the process that created it.
+              Note: You can think of a thread as a process that shares it's address space with it's parent process.
+      - Question_7: >
+          Like a process has a PID, does a thread have something similar to PID that the LINUX system uses to identify it(that thread)?
+        Company_tags:
+        Level:
+        Reference:
+          - https://stackoverflow.com/questions/21091000/how-to-get-thread-id-of-a-pthread-in-linux-c-program
+        Answer:
+          - Hint: Using a System Call.
+          - Solution: |
+              Yes, there is a TID of a thread. We can get it by executing the system call "syscall(__NR_gettid)" in the thread (whose TID we
+              want to know).
+      - Question_8: If I create a thread and the return value as '0', does it mean that the creation has failed? Explain.
+        Company_tags:
+        Level:
+        Reference:
+          - https://stackoverflow.com/questions/21091000/how-to-get-thread-id-of-a-pthread-in-linux-c-program
+        Answer:
+          - Hint: Not failed.
+          - Solution: |
+              No, getting '0' as a return value does not mean that the thread creation has failed. When you create a thread using the
+              "pthread_create()" function, the kernel stores the identifier of th enewly created thread in the location pointed by the argument
+              in the function. And if the creation is successful, a '0' is returned.
+      - Question_9: What is the "detachable state" of a thread?
+        Company_tags:
+        Level:
+        Reference: None
+        Answer:
+          - Hint: Release of the holding resources.
+          - Solution: |
+              Detachable thread means that when it terminates, it will release all the resources that it is was allocated. A thread is in
+              "Joinable State" by default. If you want to make the thread detachable, you need to make it explicitly using the "pthread_detach()"
+              function and passing the thread as the argument.
+      - Question_10: What happens if a thread executes the fork() call?
+        Company_tags:
+        Level:
+        Reference:
+          - https://stackoverflow.com/questions/39890363/what-happens-when-a-thread-forks
+          - http://gauss.ececs.uc.edu/Courses/c694/lectures/ForksThreads/forks.html
+        Answer:
+          - Hint:
+          - Solution: |
+              #Will write later
+      - Question_11: What is the difference between fork() and clone() system call?
+        Company_tags:
+        Level:
+        Reference:
+          - https://unix.stackexchange.com/questions/199686/fork-vs-clone-on-2-6-kernel-linux
+          - http://man7.org/linux/man-pages/man2/clone.2.html
+        Answer:
+          - Hint: Seperate address space or not.
+          - Solution: |
+              #Will write later
+      - Question_12: What are signals? What are they used for? How are they used?
+        Company_tags:
+        Level:
+        Reference:
+          - https://en.wikipedia.org/wiki/Signal_(IPC)
+          - https://www.usna.edu/Users/cs/aviv/classes/ic221/s16/lec/19/lec.html
+        Answer:
+          - Hint: A form of Inter Process Communication (IPC).
+          - Solution: |
+              Signal are software interrupts that are used by processes and threads to communicate between each other. They can be used to tell
+              that a particular task is completed, kill a process/thread, if an exception occurs, build user-defined procedures, communicate
+              between processes, etc. Basically, signals are used for IPC.
+              How they are used:
+              - Same signal to all the threads.
+              - Same signals to some of the thread, and some other signal to others.
+              - A signal only for one specific thread.
+              - All signals to a specific thread.
+      - Question_13: What is Thread Pool and how can it be used at PC startup? #Or some question on thread pool
+        Company_tags:
+        Level:
+        Reference:
+          - https://softwareengineering.stackexchange.com/questions/173575/what-is-a-thread-pool
+        Answer:
+          - Hint:
+          - Solution: #Will write soon
+      - Question_14: #Thread Specific Data
+        Company_tags:
+        Level:
+        Reference:
+          - http://poincare.matf.bg.ac.rs/~ivana/courses/ps/sistemi_knjige/pomocno/apue/APUE/0201433079/ch12lev1sec6.html
+        Answer:
+          - Hint:
+          - Solution: #Will Write Soon
+      - Question_15: #Thread Cancellation
+        Company_tags:
+        Level:
+        Reference:
+          - https://www.tutorialspoint.com/what-is-thread-cancellation
+        Answer:
+          - Hint:
+          - Solution: #Will Write Soon
+Miscellaneous:
   - Practice_questions:
       - Question_1: |
             S1: If an entry is not found in the page table, the page table is not invalid. Rather, it is fetched because loading a page
@@ -506,6 +701,16 @@ Miscellaneous:
           - Solution: |
               The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
               process is requesting for the resource the first is holding there is a definite deadlock. The others do not guarantee that.
+      - Question_5: Trap Bit question.
+        Company_tags: abc
+        Level: xyz
+        Reference:
+          - https://stackoverflow.com/questions/13185300/where-is-the-mode-bit
+          - https://stackoverflow.com/questions/28815848/does-each-core-has-its-own-private-set-of-registers
+          - http://www.cs.cornell.edu/courses/cs3410/2012sp/lecture/22-traps-i-g.pdf
+        Answer:
+          - Hint:
+          - Solution: #Will write soon
   - Premium/Quiz_questions:
       - Question_1: >
           A user space process crash can be handled gracefully by exception handling. Is it possible to
