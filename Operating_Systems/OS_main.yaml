@@ -623,6 +623,80 @@ Process & Threads:
         Answer:
           - Hint:
           - Solution: #Will Write Soon
+Scheduling:
+  - Process Scheduling:
+    Resouces:
+      - https://www.tutorialspoint.com/operating_system/os_process_scheduling.htm
+      - https://www.studytonight.com/operating-system/process-scheduling
+    Practice_questions:
+      - Question_1: Of the three types of schedulers present in an OS, which executes most frequently?
+        Options:
+          - 1: Short Term Scheduler
+          - 2: Mid Term Scheduler
+          - 3: Long Term Scheduler
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 1
+        Answer:
+          - Hint:
+          - Solution: |
+              Short Term Scheduler is executed most frequently because it is responsible for selecting the next process to be executed. It is
+              also known as dispatcher.
+      - Question_2: Long Term Scheduler controls the degree of multiprogramming. True or False?
+        Company_tags:
+        Level:
+        Correct_answer: "True"
+        Reference:
+        Answer:
+          - Hint:
+          - Solution: |
+              It is true because long term scheduler is responsibe for selecting a process to be brought into the ready queue. Now, if
+              the long term scheduler is not called frequently enough, the ready queue may become empty and thus there may not be multi-
+              programming.
+      - Question_3: What are the conditions under which a non-preemtive process leaves the CPU (i.e., a voluntary preemption occurs)?
+        Company_tags:
+        Level:
+        Reference:
+          - https://www.geeksforgeeks.org/preemptive-and-non-preemptive-scheduling/
+        Answer:
+          - Hint:
+          - Solution: |
+              - When the process reaches termination.
+              - When the process voluntarily goes into waiting state.
+              Note: Except these conditions, rest all conditions lead to non-voluntary preemption.
+      - Question_4: What is the difference between a scheduler and a dispatcher?
+        Company_tags:
+        Level:
+        Reference:
+          - https://www.geeksforgeeks.org/difference-between-dispatcher-and-scheduler/
+        Answer:
+          - Hint:
+          - Solution: |
+              A dispatcher comes into action after short-term scheduler selects a process that will get a chance to execute in the CPU. Thus,
+              the dispatcher is a module that gives a process control over the CPU. This involves the following steps:
+              - Switching context
+              - Switching to user mode
+              - Jumping to proper location in the user program to restart that program.
+      - Question_5: What are the Scheduling Criteria that we need to keep in mind while designing a scheduling algorithm?
+        Company_tags:
+        Level:
+        Reference:
+          - https://www.youtube.com/watch?v=bWHFY8-rL5I
+        Answer:
+          - Hint:
+          - Solution: |
+              - CPU Utilization: Making sure that maximum of the CPU is utilized most of the time and that utilization is productive. As we
+                                 will see in deadlocks, the CPU maybe executing a wait function indefinitely and then though it will be busy,
+                                 it will not be productive.
+              - Throughput: We need to be sure that the throughput of the system is maximum.
+              - Turnaround Time: If a process is submitted then the time till it's completion should be minimum.
+              - Deadlines: Maximum number of processes must meet their deadlines (real time processes).
+              - Response Time: If a process requests something, then it must be granted that as soon as possible.
+  - CPU Scheduling Algorithms:
+    Resources:
+      - https://www.guru99.com/cpu-scheduling-algorithms.html
+      - https://www.studytonight.com/operating-system/cpu-scheduling-algorithms
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
