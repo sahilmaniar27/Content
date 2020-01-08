@@ -11,7 +11,6 @@ Subject:
     - Synchronization
     - Persistence
     - Miscellaneous
-
 Process & Threads:
   - Process:
     Concept of Process and Process Attributes:
@@ -28,25 +27,25 @@ Process & Threads:
           Correct_answer: "False"
           Answers:
             - Hint: A process can only exist in 1 state at a time.
-            - Solution: A process can only be in one state at a time. As in, it can be in ready state or blocked state or swapped state, etc.
+            - Solution: A process can only be in one state at a time. As in, it can be in a ready state or a blocked state or swapped state, etc.
         - Question_2: |
             A file is opened by the user. What will be the changes in Local Descriptor Table(LDT) and Global Descriptor Table(GDT)?
-            Moreover, if 2 different processes have opened one instance each of a file and one of the process closes it,
+            Moreover, if two different processes have opened one instance each of a file and one of the processes close it,
             what will be the changes in the LDT and GDT?
           Company_tags: None
           Level: None
           Answer:
-            Hint: GDT has an entry even if one instance is there.
+            Hint: GDT has an entry, even if one instance is there.
             Solution: |
-                LDT is also called a per-process descriptor table and GDT is called a system wide descriptor table.When you initially open a
-                file, both LDT and GDT make new entries of the file. But, if it is already opened by even one process, the GDT only increases
-                the counter. If an instance of a file opened by other process nut a new process opens it, a new instance is made in LDT.
-                So, when a file is closed by one of the processes, given that only a single instance is opened by each process, only the
-                counter in GDT is decreased in the GDT, but in LDT the entry is deleted (as only one instance was opened and that to was
+                LDT is also called a per-process descriptor table, and GDT is called a system-wide descriptor table.When you initially open a
+                file, both LDT and GDT make new entries of the file. However, if it is already opened by even one process, the GDT only increases
+                the counter. If an instance of a file opened by another process and a new process opens it, a new instance is made in LDT.
+                When a file is closed by one of the processes, given that only a single instance is opened by each process, only the
+                counter in GDT is decreased. However, in LDT, the entry is deleted (as only one instance was opened, and that too was
                 closed). There is an entry in the GDT for a file as long as there is at least one instance of the file opened by a process.
         - Question_3: |
             Which of the following is correct about Page Table?
-            S1: It keeps track of main memory associated with the process.
+            S1: It keeps track of the main memory associated with the process.
             S2: It keeps track of secondary memory to processes.
             S3: It keeps the information needed to manage Physical Memory.
             S4: It keeps track of protection attributes of main and secondary memory.
@@ -62,7 +61,7 @@ Process & Threads:
             - Reference: https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/8_MainMemory.html (It's section 8.1.3)
             - Hint: The OS only generates Logical Address.
             - Solution: |
-                S3 is wrong because OS only generates Logical Address so Memory Table, also known as page table, keeps track of virtual
+                S3 is wrong because OS only generates Logical Address, so Memory Table, also known as a page table, keeps track of virtual
                 memory of the process. Note that user programs never see physical addresses. User programs work entirely in logical
                 address space, and any memory references or manipulations are done using purely logical addresses. Only when the address
                 gets sent to the physical memory chips is the physical memory address generated.
@@ -80,7 +79,7 @@ Process & Threads:
             - Hint:
             - Solution: |
                 A thread shares with its peer threads its Code section Global data section, Operating-system resources, Process instructions,
-                Open files (descriptors), Signal and signal handlers, Current working directory and User and group id. But, Stack space,
+                Open files (descriptors), Signal and signal handlers, Current working directory, and User and group id. But, Stack space,
                 Signal Masks and Register Set is private for a thread. It also has a separate return value for itself (errno).
 
         - Question_5: Which of the following is an indirect way of communication between processes (IPC)?
@@ -95,15 +94,16 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                The correct option is c. This is because we pass signals explicitly to the processes we need to communicate to and shared memory
-                is with the processes we want to share it with (processes need to join themselves to the shared memory block). Similar is the
-                case with passing pointers. Mailbox is called a port. It consists of queue of messages. Sender keeps the message in mailbox and
-                receiver picks them up.
+                The correct option is c. We pass signals explicitly to the processes we need to communicate to, and shared memory is with the
+                passing pointers. Mailbox is called a port. It consists of a queue of messages. The sender keeps the message in the processes
+                we want to share it with (processes need to join themselves to the shared memory block). Similar is the passing pointers.
+                Mailbox is called a port. It consists of a queue of messages. The sender keeps the message in the
+                mailbox, and the receiver picks them up.
     Fork and Exec system calls:
       References:
         - Neso Academy (YouTube): https://www.youtube.com/watch?v=IFEFVXvjiHY
         - Techtud (YouTube): https://www.youtube.com/watch?v=PwxTbksJ2fo
-        - Operating System Concepts by Abraham Silberschatz, Peter B. Galvin and Greg Gagne: Chapter 3, Section 3.3
+        - Operating System Concepts by Abraham Silberschatz, Peter B. Galvin, and Greg Gagne: Chapter 3, Section 3.3
         - GeeksForGeeks: https://www.geeksforgeeks.org/difference-fork-exec/
       Practice_questions:
         - Question_1: How is PID assigned to a process?
@@ -118,8 +118,8 @@ Process & Threads:
           Answer:
             - Hint: Go through how PID is assigned
             - Solution: |
-                PID is always assigned as next vacant PID. For ex. if the current PID is x, the next PID will be the next vacant PID slot after x.
-                It maybe x+1, x+2 or even 3, 4, etc. It is determined by circular search.
+                PID is always assigned as the next vacant PID. For ex. if the current PID is x, the next PID will be the next vacant PID slot after x.
+                It may be x+1, x+2 or even 3, 4, etc. It is determined by a circular search.
         - Question_2: |
             Read the following piece of code carefully.
             int main(){
@@ -139,10 +139,10 @@ Process & Threads:
                 No. the second print statement will not be printed. It is because the exec() system call replaces the process that calls it.
                 So, when exec() will be executed, it will execute the code that it's .c file contains. The main process gets replaced so it
                 does not exist from the moment the exec() system call starts executing.
-                Also remember, as the process created by exec() is assigned the PID of the calling process, it also repalces the address space
-                of the calling process. This is why we say that the original process does not exist after the exec system call.
+                Also remember, as the process created by exec() is assigned the PID of the calling process, it also replaces the address space
+                of the calling process. It is the reason why we say that the original process does not exist after the exec system call.
         - Question_3: |
-            If a proces has PID as 'x'. Suppose it executes exec() at some pint of time.
+            If a process has PID as 'x', suppose it executes exec() at some pint of time.
             What will be the PID of the process (created due to the exec() call)?
           Company_tags: None
           Level: None
@@ -155,10 +155,10 @@ Process & Threads:
           Answer:
             - Hint: exec() replaces the calling process.
             - Solution: |
-                The PID of the new process created due to exec() will be 'x' itself. The explanation is simple that the exec() process replaces
+                The PID of the new process created due to exec() will be 'x' itself. The explanation is simply that the exec() process replaces
                 the original calling process. So, if you execute a print statement that will print the PID of the process, both will print 'x'.
         - Question_4: |
-            If process P1 creates 2 processes P2 and P3. Who will be the previous sibling of P2 and
+            If process P1 creates two processes P2 and P3. Who will be the previous sibling of P2 and
             who will be the next sibling of P1, respectively?
           Company_tags: None
           Level: None
@@ -170,17 +170,17 @@ Process & Threads:
           Correct_answer: 2
           Answer:
             - Hint:
-            - Solution: The next sibling of the parent is the last last child it creates and the previous sibling of the 1st child is parent itself.
+            - Solution: The next sibling of the parent is the last child it creates, and the previous sibling of the 1st child is the parent itself.
         - Question_5: What is the return value of fork()?
           Company_tags: None
           Level: None
           Answer:
             - Hint: There are two.
             - Solution: >
-                It returns the PID of the child to the parent process (i.e, if the fork() is successful), else it returns '-1'.
+                It returns the PID of the child to the parent process (i.e., if the fork() is successful), else it returns '-1'.
                 As for the second return value, it returns '0' to the child that is created.
         - Question_6: |
-            Let there be two concurrent processes P1 and P2.
+            Let there be two concurrent processes, P1 and P2.
               P1 -> {
                 //some code
                 x++;
@@ -204,17 +204,16 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                This has to do with the possibility of context switch at any time during the execution of x++ or x--.
+                The possibility of context switch at any time during the execution of x++ or x-- is the reason that makes this possible.
                 “x--” essentially means,
                 load 'x' in a reg; ---(1)
                 Reduce the 'reg' by '1'; ---(2)
                 store 'x' in the 'reg';  ---(3)
                 Similar is the case with “x++". Now if there is a context switch after (1), then if “x++” executes and then (2) and (3)
-                executes, the value in “reg” will be zero before context switch and after executing “x++” also, “reg” will contain zero.
-                And hence after stage 2 and 3, final value of x will be “-1”. Similarly, the max value of x can be 1.
+                executes, the value in “reg” will be zero before context switch, and after executing “x++” also, “reg” will contain zero.
+                And hence after stages 2 and 3, the final value of x will be “-1”. Similarly, the max value of x can be 1.
         - Question_7: |
-            Find the total number of new processes created. What will the process tree
-            look like?
+            Find the total number of new processes created. Draw a process tree.
             Assume that the necessary libraries are included and that the fork() call produces child processes and does not give '-1'
             (which is return when fork does not happen successfully).
             int main()
@@ -238,18 +237,18 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                Please go through the reference material for this question if you are stuck.
-                Now, for the solution part, remember that the return value for fork is 'zero' for the child and 'the PID of the child' to the
+                Please go through the reference material for this question first before reading the solution.
+                Now, for the solution part, remember that the return value for the fork is 'zero' for the child and 'the PID of the child' to the
                 parent.
-                So, when the parent process executes the fork() call, it will create a new process and the PID of the process will be the
-                return value in the 'if condition' of the parent process, so it will go to the 'inner if condition'. But, as for the 1st child
-                process, the value will be 'zero' in it's 'if condition', this is because the return value of fork is 'zero for the child.
-                Then, the child begins the exectution at the same point where the fork() calls returns execution to the main program. But
+                When the parent process executes the fork() call, it will create a new process. The PID of the process will be the
+                return value in the 'if condition' of the parent process, so it will go to the 'inner if condition'. However, as for the 1st child
+                process, the value will be 'zero' in its 'if condition', this is because the return value of fork is 'zero for the child.
+                Then, the child begins the execution at the same point where the fork() call returns execution to the main program. However,
                 because it does not satisfy the 1st 'if condition', it goes on to print and exit. Then, the parent forks one more process.
-                The child that is created will move ahead in the 'if condition' tree as '!0' evalutes 'true' for the inner 'if condition'.
+                The child that is created will move ahead in the 'if condition' tree as '!0' evaluates 'true' for the inner 'if condition'.
                 So, it goes inside that and executes one more fork(). As for the parent, it does not go ahead in the 'if condition' as '!PID'
-                evalutes as false. Note that PID zero is permanantly assigned to the 'swapper process' or 'sched process'. So, '!PID' will
-                always always be 'false'. So, it will wait for the two children to finish exectution (two because of two wait() calls). In
+                evaluates as false. Note that PID zero is permanently assigned to the 'swapper process' or 'sched process'. So, '!PID' will
+                always always be 'false'. So, it will wait for the two children to finish execution (two because of two wait() calls). In
                 this way, there will be three new processes created.
                 As for the process tree, it will be like this:
                                         P1 -----> Parent Process
@@ -285,16 +284,16 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                The parent process forks a child process and will go inside the if condition. It will increase 'x' by 5 and then by '15' and
-                then wait till all of it's children to die (because of the while loop). The 1st child will not go inside the 'if condition'
+                The parent process forks a child process and will go inside the if condition. It will first increase 'x' by '5' and then by '15' and
+                then wait till all of its children to die (because of the while loop). The 1st child will not go inside the 'if condition'
                 and will go to the 'else if' statement. But, it will not go inside the else if statement because of '!fork()' condition in
-                the 'else if' statement. At the same time, due to a successful fork, the 1st child will create a child of it's own and
-                that child will enter in the 'else if' statement. Concurrently, the 1st child of the parent will keep on going forward. So,
+                the 'else if' statement. At the same time, due to a successful fork, the 1st child will create a child of its own, and
+                that child will enter the 'else if' statement. Concurrently, the 1st child of the parent will keep on going forward. So,
                 it will execute the else condition and decrease the value of 'x' by '2' and then increase it by '15'. This child did not have
-                the value of 'x' to be '5' initially because when it was created, the value of 'x' was 'zero'.This is because of the simple
-                reason that the child contains a copy of all the variables that the parent had at the time of forking (except for the shared
-                variables, which are same for both for parent and child). Then, the 1st child of the parent process will also wait for it's
-                child to exit. The child of the 1st child, will execute the statements inside of the 'else if' statement and exit with status
+                the value of 'x' to be '5' initially because when it was created, the value of 'x' was 'zero'.The reason
+                being, the child, contains a copy of all variables the parent had at the time of forking (except for shared
+                variables, which are the same for both parent and child). Then, the 1st child of the parent process will also wait for its
+                child to exit. The child of the 1st child will execute the statements inside of the 'else if' statement and exit with status
                 '0'. The value of 'x' in this process (child of the child of the parent process) will thus be '0+10',i.e., '10'.
                 So, the value of 'x' in parent process will be '0+5+15'='20' and that in 1st child will be '0-2+15'='13'. Here is the process
                 tree:
@@ -312,11 +311,11 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                A process can have a PID between 0 and 32767. The upper range can be found in your system's '/proc/sys/kernel/pid_max' file.
-                It is generally '32767'. But, the process that you create using fork cannot be assigned a PID '0' or '1'. This is because
-                the PID '0' is given to first process that the OS creates and this process is generally the 'swapper process' or 'sched
-                process'. This process is responsible for the paging in your system. This process dies or exits when the OS shuts down. So,
-                this PID is never vacant. Then, PID '1' is the 'init process'. When this process dies, all the process are killed with the
+                A process can have a PID between 0 and 32767. The upper range can be found in a system's '/proc/sys/kernel/pid_max' file.
+                It is generally '32767'. But, the process that is created using fork cannot be assigned a PID '0' or '1'. It is because
+                the PID '0' is given to the first process that the OS creates, and this process is generally the 'swapper process' or 'sched
+                process'. This process is responsible for the paging in the system. This process dies or exits when the OS shuts down. So,
+                this PID is never vacant. Then, PID '1' is the 'init process'. When this process dies, all the processes are killed with the
                 kill() signal. So, this is why a forked process cannot have a PID '0' or '1'.
         - Question_10: Explain in brief what happens during the fork() system call.
           Company_tags: None
@@ -328,16 +327,16 @@ Process & Threads:
                 The following steps take place when a fork() executes:
                 - A slot is allocated in the process table for the new process.
                 - A unique process id is assigned to the new process.
-                - A copy of the process image of the parent is made, with the exception of shared memory.
+                - A copy of the process image of the parent is made, except for shared memory.
                 - fork() also increases counters for any files owned by the parent, to reflect that an additional process now also owns
                   these files.
-                - The kernel (during the fork() call) also assigns the child process to a ready to run state.
+                - The kernel (during the fork() call) also assigns the child process to a ready state.
                 - A Process ID number (PID) of the child to the parent process and a 0 value to the child process is returned.
-                - After completing these functions, OS will do the following operations as a part of dispatcher routine:
+                - After completing these functions, OS will do the following operations as a part of the dispatcher routine:
                   • Control returns to the user mode at the point of the fork call of the parent
                   • Transfer control to the child process. The child process begins executing at the same point in the code as the parent,
-                  namely at the return from the fork call, i.e, the instruction next in line after fork().
-                  • Transfer control to another process. Both child and parent are left in the ready to run state.
+                  namely at the return from the fork call, i.e., the instruction next in line after fork().
+                  • Transfer control to another process. Both child and parent are left in the ready state.
         - Question_11: What is the difference between fork() and vfork()?
           Company_tags: None
           Level: None
@@ -346,12 +345,12 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                • vfork() is a variant of fork() and it behaves exactly like fork() except that it does not make a copy of the address
+                • vfork() is a variant of fork(), and it behaves exactly like fork() except that it does not make a copy of the address
                   space and page table of the parent process.
-                • Memory including stack space is shared by the parent and the child process.
+                • Memory, including stack space, is shared by the parent and the child process.
                 • vfork() suspends the parent process until the child releases its memory address space, i.e., until the child makes a call
                   to exec() or _exit().
-        - Question_12: Explain Copy-On-Write (COW) mechanism.
+        - Question_12: Explain Copy-On-Write (CoW) mechanism.
           Company_tags: None
           Level: None
           Reference:
@@ -360,14 +359,14 @@ Process & Threads:
           Answer:
             - Hint: Lazy approach.
             - Solution: |
-                Today's systems run with hundreds and thousands of processes. If, the system will go according to the rules and copy the memory
-                in use by the parent process after every for(), it will be very time consuming as it will involve context switche. So, to avoid
-                this, the OS waits until any one of the parent or child modifies the memory. When any one of them does, it then makes the two
-                copies of memory it was supposed to do at the begining of the fork().
-                Additionally, as processes recide in virtual memory, whenever the child want to read something, it reads from the parent,
-                provided, it has not written since it was created. But, as soon as it writes for the first time, before that write, the
-                required copy of the parent memory is made (as it should have been in the start of the fork() call) and the child's memory
-                space is updated to the new copy that is made and then the child process writes to the newly created memory space. This is COW.
+                Today's systems run with hundreds and thousands of processes. If the OS goes according to the rules and copies the memory
+                in use by the parent process after every fork(), it will be very time-consuming because of the context switching involved. So,
+                to avoid this, the OS waits until any one of the parent or child modifies the memory. When any one of them does, it then makes
+                the two copies of memory it was supposed to do at the beginning of the fork().
+                Additionally, as processes reside in virtual memory, whenever the child wants to read something, it reads from the parent
+                provided; it has not written since it was created. But, as soon as it writes for the first time, the
+                required copy of the parent memory is made (as it should have been at the start of the fork() call), and the child's memory
+                space is updated. Then the child process writes to the newly created memory space. This is CoW.
         - Question_13: Explain the difference between wait() and waipid(). What are the different parameters of the two functions?
           Company_tags: None
           Level: None
@@ -377,19 +376,19 @@ Process & Threads:
           Answer:
             - Hint:
             - Solution: |
-                wait() waits for a child to terminate. It will be temporarily blocled till then. Whereas, waitpid can be either blocking or
+                wait() waits for a child to terminate. It will be temporarily blocked till then. Whereas, waitpid can be either blocking or
                 non-blocking:
-                - If options is 0, then it is blocking.
-                - If options is WNOHANG, then is it non-blocking.
+                - If the "options" parameter is 0, then it is blocking.
+                - If the "options" parameter is WNOHANG, then is it non-blocking.
                 WNOHANG is one of the options of the 'options' parameter of the waitpid function.
-                If more than one child is running then, wait() returns when the first time one of the child exits. Whereas, waitpid() is more
-                versatile. It's 'pid' parameter provides that versatility. If:
+                If more than one child is running, then wait() returns when the first time one of the child exits. Whereas, waitpid() is more
+                versatile. Its 'pid' parameter provides that versatility. If:
                 - pid < -1 means that it has to wait for any child process whose process group ID is equal to the absolute value of pid to
                   exit.
                 - pid = -1 means that it has to wait for any child process to exit. At this point, it is equivalent to wait().
                 - pid = 0 means that it has to wait for any child process whose process group ID is equal to that of the calling process.
                 - pid > 0 means that it has to wait for the child whose process ID is equal to the value of pid.
-                In this way, it is different than the wait() function.
+                In this way, it is different from the wait() function.
         - Question_14: What is the difference between the 'exec' functions suffixed with 'p' and 'e'?
           Company_tags: None
           Level: None
@@ -397,10 +396,10 @@ Process & Threads:
           Answer:
             - Hint: Need of specifying path variable.
             - Solution: |
-                The 'exec' functions which end with the suffx 'p' will search the current PATH variable to find the executable file. Whereas,
-                the 'exec' functions suffixed with 'e' have to be given the PATH variable as an input parameter and then it will find the
+                The 'exec' functions, which end with the suffix 'p' will search the current PATH variable to find the executable file. Whereas,
+                the 'exec' functions suffixed with 'e' have to be given the PATH variable as an input parameter, and then it will find the
                 file to be executed in that PATH variable.
-                Note: PATH variable is address of the file in terms of directories. For example: a file can have it's PATH variable as
+                Note: PATH variable is the address of the file in terms of directories. For example, a file can have its PATH variable as
                       "/home/mypc/Downloads/myfolder"
       Premium/Quiz_questions:
         - Question_1: >
@@ -421,28 +420,34 @@ Process & Threads:
             - Hint: Threads share their address space.
             - Answer: |
                 If one thread crashes due to a segmentation fault or any other error, all other threads and the entire process are killed.
-                This is because the threads are part of the same process space, so it doesn't generally make any sense to keep going if a
+                This is because the threads are part of the same process space, so it does not generally make any sense to keep going if a
                 thread has caused a fault signal. A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
-                the behavior of the process and anything could have happened to its memory. There is a negative side of entire process being
-                killed due to a fault in one of the threads. This situation can lead to data and system corruption if the other threads were
+                the behavior of the process, and anything could have happened to its memory. There is a negative side of the entire process being
+                killed due to a fault in one of the threads. This situation could lead to data and system corruption if the other threads were
                 in the middle of some important task. Due to this reason, important & independent tasks are generally performed as a separate
-                process, such that crashing of one does not bring down the entire fucntionality.
+                process, such that the crashing of one does not bring down the entire functionality.
   - Thread:
-    Resouces:
+    Resources:
       - GeeksForGeeks: https://www.geeksforgeeks.org/thread-in-operating-system/
       - Tutorials Point: https://www.tutorialspoint.com/operating_system/os_multi_threading.htm
       - Neso Academy: https://www.youtube.com/watch?v=LOfGJcVnvAk
     Practice_questions:
-      - Question_1: What is the difference between User threads, kernel threads and kernel-level-threads?
+      - Question_1: What is the difference between User-level threads & kernel-level threads?
         Company_tags: None
         Level: None
         Reference:
-          - https://stackoverflow.com/questions/15983872/difference-between-user-level-and-kernel-supported-threads
+          - www.cs.iit.edu/~cs561/cs450/ChilkuriDineshThreads/dinesh's files/User and Kernel Level Threads.html
         Correct_answer: None
         Answers:
           - Hint: None
           - Solution: |
-              #Will write soon.
+              The user-level threads are created by the user. They reside in the user space and are managed by APIs. The APIs manage all
+              the function calls made by these threads without invoking the kernel mode. Additionally, they are also invisible to the OS.
+              Kernel-Level threads, as the name suggests, are created and managed by the kernel. The kernel knows everything about the threads.
+              However, they are slower than the user level threads because the kernel manages and schedules threads as well as processes. Thus, it
+              requires a full thread control block (TCB) for each thread to maintain information about a specific thread. As a result, there is
+              significant overhead and an increase in kernel complexity.
+
       - Question_2: >
           Consider a process with multiple threads.
           What would happen if one of the threads crashes due to fault?
@@ -461,12 +466,12 @@ Process & Threads:
           - Hint: Threads share their address space.
           - Solution: |
               If one thread crashes due to a segmentation fault or any other error, all other threads and the entire process are killed.
-              This is because the threads are part of the same process space, so it doesn't generally make any sense to keep going if a
+              This is because the threads are part of the same process space, so it does not generally make any sense to keep going if a
               thread has caused a fault signal. A crash signal (like SIGSEGV, SIGBUS, SIGABRT) means that you have lost control over
-              the behavior of the process and anything could have happened to its memory. There is a negative side of entire process being
-              killed due to a fault in one of the threads. This situation can lead to data and system corruption if the other threads were
+              the behavior of the process, and anything could have happened to its memory. There is a negative side of the entire process being
+              killed due to a fault in one of the threads. This situation could lead to data and system corruption if the other threads were
               in the middle of some important task. Due to this reason, important & independent tasks are generally performed as a separate
-              process, such that crashing of one does not bring down the entire fucntionality.
+              process, such that the crashing of one does not bring down the entire functionality.
       - Question_3: What are the benefits of using a thread, instead of using a process?
         Company_tags:
         Level:
@@ -475,10 +480,10 @@ Process & Threads:
         Answers:
           - Hint: Lightweight, easy to manage, etc.
           - Solution: |
-              - Threads Share memory & other resources of the process it belongs to.
-              - Therads are more economical to context switch.
-              - Threads can run in parallel and hence multiple tasks can be done parallely.
-              - Threads are also easy to create, switch between and terminate.
+              - Threads share memory & other resources of the parent process.
+              - Threads are more economical to context switch.
+              - Threads can run in parallel, and hence multiple tasks can be done parallelly.
+              - Threads are also easy to create, switch between, and terminate.
       - Question_4: What is the difference between Data and Task Parallelism?
         Company_tags:
         Level:
@@ -489,7 +494,7 @@ Process & Threads:
           - Solution: |
               Data Parallelism is distributing data to and running them through the same task (thread/process). Task Parallelism is running
               different tasks on different cores on the same data.
-              Both these Parallelism can be visualised as follows:
+              Both these parallelisms can be visualized as follows:
               - Data Parallelism------------>
                                                     -------------------DATA-----------------
                                                   /                                          \
@@ -518,7 +523,7 @@ Process & Threads:
           - Solution: |
               #Will write soon
       - Question_6: |
-          What does "getpid()" function return when executed in a thread? Does it give an error? If not, what is the return value?
+          What does the "getpid()" function return when executed in a thread? Does it give an error? If not, what is the return value?
         Company_tags:
         Level:
         Reference:
@@ -526,10 +531,10 @@ Process & Threads:
         Answer:
           - Hint: Not an error.
           - Solution: |
-              No, It will not give an error. If you call the function "getpid()" inside a thread, you will get the PID of the thread that created
-              it. If you execute that function in a newly created thread (by a process), you will get the PID of the process that created it. So,
-              executing "getpid()" function in a thread will give you the PID of the process that created it.
-              Note: You can think of a thread as a process that shares it's address space with it's parent process.
+              No, It will not give an error. By calling the function "getpid()" inside a thread, you will get the PID of the thread that created
+              it. If we execute that function in a newly created thread (by a process), you will get the PID of the process that created it. So,
+              executing the "getpid()" function in a thread will give you the PID of the process that created it.
+              Note: We can think of a thread as a process that shares its address space with its parent process.
       - Question_7: >
           Like a process has a PID, does a thread have something similar to PID that the LINUX system uses to identify it(that thread)?
         Company_tags:
@@ -541,7 +546,7 @@ Process & Threads:
           - Solution: |
               Yes, there is a TID of a thread. We can get it by executing the system call "syscall(__NR_gettid)" in the thread (whose TID we
               want to know).
-      - Question_8: If I create a thread and the return value as '0', does it mean that the creation has failed? Explain.
+      - Question_8: If we create a thread and the return value is '0', does it mean that the creation has failed? Explain.
         Company_tags:
         Level:
         Reference:
@@ -549,9 +554,9 @@ Process & Threads:
         Answer:
           - Hint: Not failed.
           - Solution: |
-              No, getting '0' as a return value does not mean that the thread creation has failed. When you create a thread using the
-              "pthread_create()" function, the kernel stores the identifier of th enewly created thread in the location pointed by the argument
-              in the function. And if the creation is successful, a '0' is returned.
+              No, getting '0' as a return value does not mean that the thread creation has failed. When we create a thread using the
+              "pthread_create()" function, the kernel stores the identifier of the newly created thread in the location pointed by the argument
+              in the function. Furthermore, if the creation is successful, a '0' is returned.
       - Question_9: What is the "detachable state" of a thread?
         Company_tags:
         Level:
@@ -560,7 +565,7 @@ Process & Threads:
           - Hint: Release of the holding resources.
           - Solution: |
               Detachable thread means that when it terminates, it will release all the resources that it is was allocated. A thread is in
-              "Joinable State" by default. If you want to make the thread detachable, you need to make it explicitly using the "pthread_detach()"
+              "Joinable State" by default. If we want to make the thread detachable, we need to make it explicitly using the "pthread_detach()"
               function and passing the thread as the argument.
       - Question_10: What happens if a thread executes the fork() call?
         Company_tags:
@@ -571,18 +576,23 @@ Process & Threads:
         Answer:
           - Hint:
           - Solution: |
-              #Will write later
-      - Question_11: What is the difference between fork() and clone() system call?
+              A new process will be created, and the parent process will the process that created the thread that executed the fork call.
+      - Question_11: Is fork call better than clone? Justify.
         Company_tags:
         Level:
         Reference:
           - https://unix.stackexchange.com/questions/199686/fork-vs-clone-on-2-6-kernel-linux
           - http://man7.org/linux/man-pages/man2/clone.2.html
         Answer:
-          - Hint: Seperate address space or not.
+          - Hint: separate address space or not.
           - Solution: |
-              #Will write later
-      - Question_12: What are signals? What are they used for? How are they used?
+              By using fork(), the calling process creates a copy of itself. The new child process contains a separate copy of the parent's
+              address space. Whereas, the process created by clone() can share some of the data of the parent process. The user has control
+              over what the parent and the child share, like the table of signal handlers, virtual address spaces, and file descriptors.
+              Now, the question remains that which is better. The answer depends on our use. The fork call is portable because the child
+              the process is separate from the parent, whereas the clone call is not.
+              Note: fork uses a clone system call internally, and clone is also used when we use pthread_create() for creating new threads.
+      - Question_12: What are signals? What is their use? How are they used?
         Company_tags:
         Level:
         Reference:
@@ -591,41 +601,31 @@ Process & Threads:
         Answer:
           - Hint: A form of Inter Process Communication (IPC).
           - Solution: |
-              Signal are software interrupts that are used by processes and threads to communicate between each other. They can be used to tell
-              that a particular task is completed, kill a process/thread, if an exception occurs, build user-defined procedures, communicate
-              between processes, etc. Basically, signals are used for IPC.
-              How they are used:
+              Signal are software interrupts that are used by processes and threads to communicate with each other. They can be used in many
+              ways. E.g., to tell if a particular task is completed, kill a process/thread, if an exception occurs, build user-defined
+              procedures, communicate between processes, etc. Signals are used for IPC.
+              Threads can be used to:
               - Same signal to all the threads.
-              - Same signals to some of the thread, and some other signal to others.
+              - Same signals to some of the thread and some other signals to others.
               - A signal only for one specific thread.
               - All signals to a specific thread.
-      - Question_13: What is Thread Pool and how can it be used at PC startup? #Or some question on thread pool
+      - Question_13: Is keeping the parameters for the thread function an advantage? If yes, explain why.
         Company_tags:
         Level:
         Reference:
-          - https://softwareengineering.stackexchange.com/questions/173575/what-is-a-thread-pool
         Answer:
-          - Hint:
-          - Solution: #Will write soon
-      - Question_14: #Thread Specific Data
-        Company_tags:
-        Level:
-        Reference:
-          - http://poincare.matf.bg.ac.rs/~ivana/courses/ps/sistemi_knjige/pomocno/apue/APUE/0201433079/ch12lev1sec6.html
-        Answer:
-          - Hint:
-          - Solution: #Will Write Soon
-      - Question_15: #Thread Cancellation
-        Company_tags:
-        Level:
-        Reference:
-          - https://www.tutorialspoint.com/what-is-thread-cancellation
-        Answer:
-          - Hint:
-          - Solution: #Will Write Soon
+          - Hint: Different types of parameters
+          - Solution: |
+              When we create a thread function, we declare it as "void *function_thread(void *parameters)". The return value and the parameter
+              type are kept as void pointers. It is for the convenience because the thread function can act as a generic function for any data
+              type. For example, if we create a thread for adding two numbers in a process, we can typecast the integer or float or double
+              pointer to a void type and pas it to the thread as a parameter. But, if we would have kept explicit types of the thread function,
+              we will have to build three different functions. This is why the return types and the parameter type of the thread is "void*"
+              type.
+      - Question_14:
 Scheduling:
   - Process Scheduling:
-    Resouces:
+    Resources:
       - https://www.tutorialspoint.com/operating_system/os_process_scheduling.htm
       - https://www.studytonight.com/operating-system/process-scheduling
     Practice_questions:
@@ -651,10 +651,10 @@ Scheduling:
         Answer:
           - Hint:
           - Solution: |
-              It is true because long term scheduler is responsibe for selecting a process to be brought into the ready queue. Now, if
-              the long term scheduler is not called frequently enough, the ready queue may become empty and thus there may not be multi-
+              It is true because the long term scheduler is responsible for selecting a process to be brought into the ready queue. Now, if
+              the long term scheduler is not called frequently enough, the ready queue may become empty, and thus there may not be multi-
               programming.
-      - Question_3: What are the conditions under which a non-preemtive process leaves the CPU (i.e., a voluntary preemption occurs)?
+      - Question_3: What are the conditions under which a non-preemptive process leaves the CPU (i.e., a voluntary preemption occurs)?
         Company_tags:
         Level:
         Reference:
@@ -663,8 +663,8 @@ Scheduling:
           - Hint:
           - Solution: |
               - When the process reaches termination.
-              - When the process voluntarily goes into waiting state.
-              Note: Except these conditions, rest all conditions lead to non-voluntary preemption.
+              - When the process voluntarily goes into the waiting state.
+              Note: Except for these conditions, rest all conditions lead to non-voluntary preemption.
       - Question_4: What is the difference between a scheduler and a dispatcher?
         Company_tags:
         Level:
@@ -673,11 +673,11 @@ Scheduling:
         Answer:
           - Hint:
           - Solution: |
-              A dispatcher comes into action after short-term scheduler selects a process that will get a chance to execute in the CPU. Thus,
-              the dispatcher is a module that gives a process control over the CPU. This involves the following steps:
+              A dispatcher comes into action after a short-term scheduler selects a process that will get a chance to execute in the CPU. Thus,
+              the dispatcher is a module that gives a process control over the CPU. It involves the following steps:
               - Switching context
               - Switching to user mode
-              - Jumping to proper location in the user program to restart that program.
+              - Jumping to the proper location in the user program to restart that program.
       - Question_5: What are the Scheduling Criteria that we need to keep in mind while designing a scheduling algorithm?
         Company_tags:
         Level:
@@ -686,13 +686,40 @@ Scheduling:
         Answer:
           - Hint:
           - Solution: |
-              - CPU Utilization: Making sure that maximum of the CPU is utilized most of the time and that utilization is productive. As we
-                                 will see in deadlocks, the CPU maybe executing a wait function indefinitely and then though it will be busy,
+              - CPU Utilization: Making sure that the maximum of the CPU is utilized most of the time and that utilization is productive. As we
+                                 will see in deadlocks, the CPU may be executing a wait function indefinitely, and then though it will be busy,
                                  it will not be productive.
               - Throughput: We need to be sure that the throughput of the system is maximum.
-              - Turnaround Time: If a process is submitted then the time till it's completion should be minimum.
-              - Deadlines: Maximum number of processes must meet their deadlines (real time processes).
+              - Turnaround Time: If a process is submitted, then the time till it's completion should be minimum.
+              - Deadlines: A maximum number of processes must meet their deadlines (real-time processes).
               - Response Time: If a process requests something, then it must be granted that as soon as possible.
+      - Question_6: |
+          Convoy Effect is when a process with a large CPU burst is executed ahead of processes with short CPU bursts; it causes starvation in
+          for the processes with shorter burst time. Will there be a "Convoy Effect" involved in (First-Come-First-Serve)FCFS scheduling?
+          Assume that all the processes involved in this scheduling are CPU bound only, and there is no quantum time for any process.
+        Company_tags:
+        Level:
+        Reference:
+        Answer:
+          - Hint:
+          - Solution: |
+              Yes. FCFS involves a "Convoy Effect" when the processes are strictly CPU bound. This is because if the process with longer CPU
+              burst arrives first then it will not exit the CPU until it has finished its execution.
+              For e.g., Let there be three processes P1, P2 & P3 with CPU execution time as 500 ns, 50ns & 60ns, respectively, they arrive in
+              order P1, P2, P3, respectively. This will mean that if P1 arrives first, it will execute for 500ns, and then only P2 will
+              execute and then P3. This will cause starvation for P2 and P3. Now, if P2 was admitted to the ready queue first, then P3 and
+              then P1, there would not have been that much starvation. This shows that FCFS shows "Convoy Effect".
+      - Question_7: What is the main disadvantage of the Shortest Job First (SJF) Scheduling Algorithm?
+        Company_tags:
+        Level:
+        Reference:
+        Answer:
+          - Hint:
+          - Solution: |
+              What SJF algorithm does is takes the process with the least next CPU burst as the next process to be executed. But, as we see
+              the main problem here is knowing what will be the next CPU burst of any process. We cannot predict this with 100 percent
+              accuracy.
+      - Question_8:
   - CPU Scheduling Algorithms:
     Resources:
       - https://www.guru99.com/cpu-scheduling-algorithms.html
@@ -700,8 +727,8 @@ Scheduling:
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
-            S1: If an entry is not found in the page table, the page table is not invalid. Rather, it is fetched because loading a page
-                table is a dynamic job.
+            S1: If an entry is not found in the page table, the page table is not invalid. Rather, it is fetched because loading a Page
+                Table is a dynamic job.
             S2: The frame size in a frame table can be 4KB or 4MB in a 32-bit system.
         Options:
           -1: TRUE/TRUE
@@ -735,18 +762,18 @@ Miscellaneous:
           - Hint:
           - Solution: |
               The correct answer is option b. Hit percentage means out of 100, how many memory accesses were present in TLB. For example,
-              if hit percentage is 80%, 60% of the time, we find what we need to access and the other 20% of the time, we do not and hence
-              there is an exception and the CPU takes over, loads that memory page location into the TLB and again execute the instruction.
+              if the hit percentage is 80%, 60% of the time, we find what we need to access and the other 20% of the time, we do not and hence
+              there is an exception, and the CPU takes over, loads that memory page location into the TLB, and again executes the instruction.
               Therefore, 80% hit means 80% successful accesses but, out of 80%, the first 60 are successful the first time and the remaining
-              20 the second time, after the CPU loads them into the TLB. No that we are clear with hit percentage, the question is pretty simple.
+              20 the second time, after the CPU loads them into the TLB. No, that we are clear with hit percentage, the question is pretty simple.
               Effective access time = ((hit%*(TLB access time + Memory access time))  + ((1-hit%)*(Memory access time + TLB access time)))/hit%
-              = (0.8*(100+20) + (100+20))/0.8 = 150ns
+              = (0.8*(100+20) + (100+20))/0.8 = 150ns.
               Now we have multiplied (1-hit%) with 120 because, once it will search the TLB for the page location, then when it will not find it,
               it will access the memory and load it into TLB.
       - Question_3: >
-          S1: System Library (libc.so) is linked at compile time and Shared Library (libm.so) is linked dynamically.
-          S2: If a process is swapped, it can return to any address at swapping back to main memory.
-          Please select the correct option, where “TRUE/TRUE” indicates that S1 is TRUE and S2 is TRUE.
+          S1: System Library (libc.so) is linked at compile-time, and Shared Library (libm.so) is linked dynamically.
+          S2: If a process is swapped, it can return to any address at swapping back to the main memory.
+          Please select the correct option, where “TRUE/TRUE” indicates that S1 is TRUE, and S2 is TRUE.
         Company_tags:
         Level:
         Options:
@@ -758,7 +785,7 @@ Miscellaneous:
           Answer:
             - Hint:
             - Solution: |
-                The statement S1 is true and is a fact. The second statement is not always true. Swapped out process must return to the same
+                The statement S1 is true and is a fact. The second statement is not always true. The swapped out process must return to the same
                 address if they had binding that was done compile time or load time. This is the reason why we share a driver file and not
                 the compiled file.
       - Question_4: Which of the following will guarantee a deadlock in a single instance resource?
@@ -774,7 +801,7 @@ Miscellaneous:
           - Hint: Single instance resource and circular wait are related.
           - Solution: |
               The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
-              process is requesting for the resource the first is holding there is a definite deadlock. The others do not guarantee that.
+              process is requesting for the resource, the first is holding there is a definite deadlock. The others do not guarantee that.
       - Question_5: Trap Bit question.
         Company_tags: abc
         Level: xyz
@@ -787,7 +814,7 @@ Miscellaneous:
           - Solution: #Will write soon
   - Premium/Quiz_questions:
       - Question_1: >
-          A user space process crash can be handled gracefully by exception handling. Is it possible to
+          A user-space process crash can be handled gracefully by exception handling. Is it possible to
           gracefully handle a crash in kernel driver for a monolithic kernel like LINUX?
         Company_tags:
         Level:
@@ -798,7 +825,7 @@ Miscellaneous:
         Options:
           - No, a crash in kernel driver would simply crash the whole kernel leading to kernel panic
           - Yes, we can continue running the kernel. Simply crashing the faulty kernel driver is enough
-          - Yes, we can continue running the kernel. We need to crash faulty driver and all its associcated entities
+          - Yes, we can continue running the kernel. We need to crash faulty driver and all its associated entities
           - None of these
         Correct_answer: 1
         Answers:
@@ -809,8 +836,8 @@ Miscellaneous:
               in a single kernel address space. Due to such type of design, there is no protection boundary between modules. If a
               kernel module starts misbehaving, it can overwrite memory from another subsystem. So, when a driver crashes,
               it may or may not stay local to that driver. It is not possible to know if it has poisoned the kernel memory.
-              Security is the major reason behind the design of crashing the entire kernel on occurence of a kernel driver crash.
+              Security is the primary reason behind the design of crashing the entire kernel on the occurrence of a kernel driver crash.
               This is not the case with userspace processes. This is because the address space for each process is separate
-              and so it is possible to catch erroneous memory access(or any other fault) and terminate the process.
+              Thus, it is possible to catch erroneous memory access(or any other fault) and terminate the process.
               Microkernels(in which services have separate address space) can overcome this situation. Whereas,
-              Hybrid kernels(Windows and MacOS) also face this issue due to their adoption/essence of monolithic kernel design.
+              Hybrid kernels(Windows and macOS) also face this issue due to their adoption/essence of monolithic kernel design.
