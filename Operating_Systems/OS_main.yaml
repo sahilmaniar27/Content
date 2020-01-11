@@ -822,6 +822,12 @@ Scheduling:
                       ------------------------------------------------------
         Note: The first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
         What will be the descision points in this algorithm? What will be the order of completion of the processes?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
     - Question_12: |
         Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
         of these processes are CPU bound. Instead, now use the preemptive version of Priority Scheduling to answer the following questions.
@@ -907,7 +913,10 @@ Scheduling:
       Reference:
       Answer:
         - Hint:
-        - Solution:
+        - Solution: |
+            A process can have one of the three types of scheduling in Linux, namely: Round Robin, FIFO and Other (or Normal). By default,
+            the user created processes have their scheduling policy as other. We can change this by the function sched_setparam().
+            The Real Time process are the ones that are scheduled either according to Round Robin or FIFO.
     - Question_21: |
         When a parent process forks a child process, what is the relation of the priority of the child with that of its parent? Explain.
       Company_tags:
@@ -915,28 +924,41 @@ Scheduling:
       Reference:
       Answer:
         - Hint:
-        - Solution:
+        - Solution: |
+            When such a situation occurs, the remaining time quantum is distributed equally among the parent and the child processes. This
+            means that if the parent process had time quantum of 100ms and it forked at t = 50ms, then bothe the parent and child will have
+            the remaining time quantum as (50ms/2),i.e., 25ms. This is for this execution cycle only. This means that after the finishing of
+            this time quantum, both the processes will have the time quantum according to their priorities.
     - Question_22: Can we change the static priority of a process? If yes, how? If no, why?
       Company_tags:
       Level:
       Reference:
       Answer:
         - Hint:
-        - Solution:
+        - Solution: |
+            Yes. We can change the static priority of a process by changing the nice value of that process. This is because the static
+            priority is calculated directly by the nice value of the process. Static Priority = 120 + Nice Value. So, if we change the nice
+            value using the nice() system call, we change the static priority of the process.
     - Question_23: What is the relation between the nice value of a process and its static priority?
       Company_tags:
       Level:
       Reference:
       Answer:
         - Hint:
-        - Solution:
-    - Question_24: What will be the dynamic priority of a process with a static priority of 120?
+        - Solution: #I think this question is too obvious and will discard this.
+    - Question_24: What will be the dynamic priority of a process with a base time quantum of 420ms and the Bonus value is 5?
       Company_tags:
       Level:
       Reference:
       Answer:
         - Hint:
-        - Solution:
+        - Solution: |
+            Dynamic Priority is calculated as static priority - Bonus + 5. We are given the time quantum as 420ms. The base time quantum is
+            calculated as (140 - static priority)*20 if the static priority is less than 120. Using this, we get the static priority as 119.
+            The base quantum time is calculated as (140 - static priority)*5, but here the static priority is more than equal to 120. But, if
+            use this formula, we get the static priority as negative, which is not possible. Hence, we went with the former formula. Using
+            this, the dynamic priority is calculated as 119.
+
     - Question_25: How is the property "Bonus" of process related to its scheduling?
       Company_tags:
       Level:
