@@ -624,106 +624,375 @@ Process & Threads:
               type.
       - Question_14:
 Scheduling:
-  - Process Scheduling:
-    Resources:
-      - https://www.tutorialspoint.com/operating_system/os_process_scheduling.htm
-      - https://www.studytonight.com/operating-system/process-scheduling
-    Practice_questions:
-      - Question_1: Of the three types of schedulers present in an OS, which executes most frequently?
-        Options:
-          - 1: Short Term Scheduler
-          - 2: Mid Term Scheduler
-          - 3: Long Term Scheduler
-        Company_tags:
-        Level:
-        Reference:
-        Correct_answer: 1
-        Answer:
-          - Hint:
-          - Solution: |
-              Short Term Scheduler is executed most frequently because it is responsible for selecting the next process to be executed. It is
-              also known as dispatcher.
-      - Question_2: Long Term Scheduler controls the degree of multiprogramming. True or False?
-        Company_tags:
-        Level:
-        Correct_answer: "True"
-        Reference:
-        Answer:
-          - Hint:
-          - Solution: |
-              It is true because the long term scheduler is responsible for selecting a process to be brought into the ready queue. Now, if
-              the long term scheduler is not called frequently enough, the ready queue may become empty, and thus there may not be multi-
-              programming.
-      - Question_3: What are the conditions under which a non-preemptive process leaves the CPU (i.e., a voluntary preemption occurs)?
-        Company_tags:
-        Level:
-        Reference:
-          - https://www.geeksforgeeks.org/preemptive-and-non-preemptive-scheduling/
-        Answer:
-          - Hint:
-          - Solution: |
-              - When the process reaches termination.
-              - When the process voluntarily goes into the waiting state.
-              Note: Except for these conditions, rest all conditions lead to non-voluntary preemption.
-      - Question_4: What is the difference between a scheduler and a dispatcher?
-        Company_tags:
-        Level:
-        Reference:
-          - https://www.geeksforgeeks.org/difference-between-dispatcher-and-scheduler/
-        Answer:
-          - Hint:
-          - Solution: |
-              A dispatcher comes into action after a short-term scheduler selects a process that will get a chance to execute in the CPU. Thus,
-              the dispatcher is a module that gives a process control over the CPU. It involves the following steps:
-              - Switching context
-              - Switching to user mode
-              - Jumping to the proper location in the user program to restart that program.
-      - Question_5: What are the Scheduling Criteria that we need to keep in mind while designing a scheduling algorithm?
-        Company_tags:
-        Level:
-        Reference:
-          - https://www.youtube.com/watch?v=bWHFY8-rL5I
-        Answer:
-          - Hint:
-          - Solution: |
-              - CPU Utilization: Making sure that the maximum of the CPU is utilized most of the time and that utilization is productive. As we
-                                 will see in deadlocks, the CPU may be executing a wait function indefinitely, and then though it will be busy,
-                                 it will not be productive.
-              - Throughput: We need to be sure that the throughput of the system is maximum.
-              - Turnaround Time: If a process is submitted, then the time till it's completion should be minimum.
-              - Deadlines: A maximum number of processes must meet their deadlines (real-time processes).
-              - Response Time: If a process requests something, then it must be granted that as soon as possible.
-      - Question_6: |
-          Convoy Effect is when a process with a large CPU burst is executed ahead of processes with short CPU bursts; it causes starvation in
-          for the processes with shorter burst time. Will there be a "Convoy Effect" involved in (First-Come-First-Serve)FCFS scheduling?
-          Assume that all the processes involved in this scheduling are CPU bound only, and there is no quantum time for any process.
-        Company_tags:
-        Level:
-        Reference:
-        Answer:
-          - Hint:
-          - Solution: |
-              Yes. FCFS involves a "Convoy Effect" when the processes are strictly CPU bound. This is because if the process with longer CPU
-              burst arrives first then it will not exit the CPU until it has finished its execution.
-              For e.g., Let there be three processes P1, P2 & P3 with CPU execution time as 500 ns, 50ns & 60ns, respectively, they arrive in
-              order P1, P2, P3, respectively. This will mean that if P1 arrives first, it will execute for 500ns, and then only P2 will
-              execute and then P3. This will cause starvation for P2 and P3. Now, if P2 was admitted to the ready queue first, then P3 and
-              then P1, there would not have been that much starvation. This shows that FCFS shows "Convoy Effect".
-      - Question_7: What is the main disadvantage of the Shortest Job First (SJF) Scheduling Algorithm?
-        Company_tags:
-        Level:
-        Reference:
-        Answer:
-          - Hint:
-          - Solution: |
-              What SJF algorithm does is takes the process with the least next CPU burst as the next process to be executed. But, as we see
-              the main problem here is knowing what will be the next CPU burst of any process. We cannot predict this with 100 percent
-              accuracy.
-      - Question_8:
-  - CPU Scheduling Algorithms:
-    Resources:
-      - https://www.guru99.com/cpu-scheduling-algorithms.html
-      - https://www.studytonight.com/operating-system/cpu-scheduling-algorithms
+  Resources:
+    - https://www.tutorialspoint.com/operating_system/os_process_scheduling.htm
+    - https://www.studytonight.com/operating-system/process-scheduling
+    - https://www.guru99.com/cpu-scheduling-algorithms.html
+    - https://www.studytonight.com/operating-system/cpu-scheduling-algorithms
+  Practice_questions:
+    - Question_1: Of the three types of schedulers present in an OS, which executes most frequently?
+      Options:
+        - 1: Short Term Scheduler
+        - 2: Mid Term Scheduler
+        - 3: Long Term Scheduler
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 1
+      Answer:
+        - Hint:
+        - Solution: |
+            Short Term Scheduler is executed most frequently because it is responsible for selecting the next process to be executed. It is
+            also known as dispatcher.
+    - Question_2: Long Term Scheduler controls the degree of multiprogramming. True or False?
+      Company_tags:
+      Level:
+      Correct_answer: "True"
+      Reference:
+      Answer:
+        - Hint:
+        - Solution: |
+            It is true because the long term scheduler is responsible for selecting a process to be brought into the ready queue. Now, if
+            the long term scheduler is not called frequently enough, the ready queue may become empty, and thus there may not be multi-
+            programming.
+    - Question_3: What are the conditions under which a non-preemptive process leaves the CPU (i.e., a voluntary preemption occurs)?
+      Company_tags:
+      Level:
+      Reference:
+        - https://www.geeksforgeeks.org/preemptive-and-non-preemptive-scheduling/
+      Answer:
+        - Hint:
+        - Solution: |
+            - When the process reaches termination.
+            - When the process voluntarily goes into the waiting state.
+            Note: Except for these conditions, rest all conditions lead to non-voluntary preemption.
+    - Question_4: What is the difference between a scheduler and a dispatcher?
+      Company_tags:
+      Level:
+      Reference:
+        - https://www.geeksforgeeks.org/difference-between-dispatcher-and-scheduler/
+      Answer:
+        - Hint:
+        - Solution: |
+            A dispatcher comes into action after a short-term scheduler selects a process that will get a chance to execute in the CPU. Thus,
+            the dispatcher is a module that gives a process control over the CPU. It involves the following steps:
+            - Switching context
+            - Switching to user mode
+            - Jumping to the proper location in the user program to restart that program.
+    - Question_5: What are the Scheduling Criteria that we need to keep in mind while designing a scheduling algorithm?
+      Company_tags:
+      Level:
+      Reference:
+        - https://www.youtube.com/watch?v=bWHFY8-rL5I
+      Answer:
+        - Hint:
+        - Solution: |
+            - CPU Utilization: Making sure that the maximum of the CPU is utilized most of the time and that utilization is productive. As we
+                               will see in deadlocks, the CPU may be executing a wait function indefinitely, and then though it will be busy,
+                               it will not be productive.
+            - Throughput: We need to be sure that the throughput of the system is maximum.
+            - Turnaround Time: If a process is submitted, then the time till it's completion should be minimum.
+            - Deadlines: A maximum number of processes must meet their deadlines (real-time processes).
+            - Response Time: If a process requests something, then it must be granted that as soon as possible.
+    - Question_6: |
+        Convoy Effect is when a process with a large CPU burst is executed ahead of processes with short CPU bursts; it causes starvation in
+        for the processes with shorter burst time. Will there be a "Convoy Effect" involved in (First-Come-First-Serve)FCFS scheduling?
+        Assume that all the processes involved in this scheduling are CPU bound only, and there is no quantum time for any process.
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution: |
+            Yes. FCFS involves a "Convoy Effect" when the processes are strictly CPU bound. This is because if the process with longer CPU
+            burst arrives first then it will not exit the CPU until it has finished its execution.
+            For e.g., Let there be three processes P1, P2 & P3 with CPU execution time as 500 ns, 50ns & 60ns, respectively, they arrive in
+            order P1, P2, P3, respectively. This will mean that if P1 arrives first, it will execute for 500ns, and then only P2 will
+            execute and then P3. This will cause starvation for P2 and P3. Now, if P2 was admitted to the ready queue first, then P3 and
+            then P1, there would not have been that much starvation. This shows that FCFS shows "Convoy Effect".
+    - Question_7: What is the main disadvantage of the Shortest Job First (SJF) Scheduling Algorithm?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution: |
+            What SJF algorithm does is takes the process with the least next CPU burst as the next process to be executed. But, as we see
+            the main problem here is knowing what will be the next CPU burst of any process. We cannot predict this with 100 percent
+            accuracy.
+    - Question_8: |
+        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        of these processes are CPU bound. Using the scheduling algorithm "Shortest Remaining Time First", answer following the questions.
+                      -------------------------------------------
+                      | Process | Arrival Time | Execution Time |
+                      -------------------------------------------
+                      |    A    |       0      |       3        |
+                      |    B    |       2      |       6        |
+                      |    C    |       4      |       4        |
+                      |    D    |       6      |       5        |
+                      |    E    |       8      |       2        |
+                      -------------------------------------------
+        For example, the first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
+      Company_tags:
+      Level:
+      Reference:
+      Options:
+        - 1: B
+        - 2: C
+        - 3: D
+        - 4: E
+      Correct_answer: 4
+      Answer:
+        - Hint:
+        - Solution: |
+            As only process 'A' is available in the ready queue initially, the CPU will start executing it. At time = 2, process 'B' will
+            enter the ready queue and that time process 'A' will have remaining time as 1 and process 'B' will have it as 6. So, process 'A'
+            will continue executing. It will finish execution at time = 3 units. Only process 'B' exists in the ready queue at that time. So,
+            it will start executing and at time '4' units, process 'C' will enter the ready queue. Now, process 'C' has an execution time of
+            4 units and process B has a remaining time of 5 units. This means that process C has the shortest remaining time. Proecss starts
+            executing and at time = 6, process D enters with time of execution as 5 and process C has a remaining time of 2 units and process
+            B has a remaining time of 5 units. So, process C will continue to execute and finish at time = 8. At that time, we will have 3
+            processes in the ready queue, B, D, and E. The process with the shortest remaining time is process E/ So it will finish its
+            execution and then we have to processes with the same remaining time. It will then depend on the algoritm implementation to
+            decide if process B executes or D. Let us assume that process B will execute as it was admitted before process D. This implies
+            that the sequence of completion of execution is in the order: A,C,E,B,D.
+    - Question_9: |
+        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        of these processes are CPU bound. Using the scheduling algorithm "Shortest Remaining Time First", answer following the questions.
+                      ---------------------------------------------------------------------
+                      | Process | Arrival Time | Execution Time | I/O Time |  Time to I/O |
+                      ---------------------------------------------------------------------
+                      |    A    |       0      |       7        |     5    |       3      |
+                      |    B    |       2      |       9        |     2    |       5      |
+                      |    C    |       4      |       6        |     0    |       6      |
+                      |    D    |       6      |       8        |     1    |       4      |
+                      ---------------------------------------------------------------------
+        For example, the first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
+        I/O time zero means that it is a CPU bound process. Also, if process x has 'a' units of time to I/O, it means that it will execute
+        for 'a' time units first and then go for I/O.
+        What will the decision points here? Which process will finish its execution first? At what time will it do that? What is the main
+        disadvantage of using this algorithm?
+      Company_tags:
+      Level:
+      Answer:
+        - Hint:
+        - Solution: |
+            The decision points here will be the arrival of a process and remaining burst time.
+            As for the mian disadvantage, after solving the problem and drawing a gnatt chart, we can come to a conclusion that the number
+            of decision points are too much. This means context switching will mostly be high in general scenarios. This will reduce the
+            efficiency of the system.
+            Now let's go through the scheduling. As process A will arrive first, it will be the first one to be executed. At time = 2 process
+            B will arrive. Now, process A has 1 second left (of the time quantum) to execute and proess B has 5. So, process A will continue
+            execution till time = 3. Then it will go for I/O and will retuirn at time = 8. At that time only process B will be available in
+            the ready queue and will start executing. At time = 4, process C comes in ready queue. Now, process B has 4 units of time
+            remaining before going to I/O which is less than what process C will execute for. So, process B will continue to execute until
+            time = 6 because that is when process D enters. Now, as B has the least remaining time, i.e., 2 time units, it will execute and
+            go for I/O and return at time = 10. Now comes the crucial point where process A returns and there are processes C and D already
+            in the queue. Based on the remaining execution time, process A will execute till time = 10 as that is when process B return and
+            this makes that instance a decision point. Still process A will continue to execute as it has the least remaining execution time
+            and will go for I/O at time = 11 and return at time = 16. The process with least remaining execution time is B (9-5=4) and D.
+            Let us assume that process D executes instead of B because this will depend on how tie breaker is decided in the algorithm
+            implementation. Now, it will continue to execute till time = 15 and go for I/O and return at time = 16. As no other process is
+            admitted to the ready queue or returns from I/O. Then process B will execute for 1 time unit (it being the process with least
+            remaining time) as process A returns from I/O at time = 16. Process A being the one with the least remaining time (7-6=1) will
+            execute and complete. Here, we need to understand that had process D executed instead of process B, process A would have been the
+            first one to finish its execution completely and exit. instead, process B becomes the one to finish its execution first and exit.
+            Now, process D will execute and go for I/O and come back after 1 time unit and then again execute for 3 time units and complete
+            its execution and exit and then process C which got preempted by the arrival of process D D from I/O will execute for the
+            remaining time as it is a CPU bound process and its total execution time is equal to its time quantum.
+    - Question_10: What will the decision points for a non non-preemptive scheduling algorithm?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution: |
+            The decision points will be time quantum expiry, going for I/O, termination (in which which case it will exit).
+    - Question_11: |
+        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        of these processes are CPU bound. Using the non-preemptive version of Priority Scheduling, answer following the questions.
+                      ------------------------------------------------------
+                      | Process | Arrival Time | Execution Time | Priority |
+                      ------------------------------------------------------
+                      |    A    |       0      |       3        |     5    |
+                      |    B    |       2      |       2        |     3    |
+                      |    C    |       4      |       5        |     2    |
+                      |    D    |       6      |       4        |     4    |
+                      |    E    |       8      |       1        |     1    |
+                      ------------------------------------------------------
+        Note: The first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
+        What will be the descision points in this algorithm? What will be the order of completion of the processes?
+    - Question_12: |
+        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        of these processes are CPU bound. Instead, now use the preemptive version of Priority Scheduling to answer the following questions.
+                      ------------------------------------------------------
+                      | Process | Arrival Time | Execution Time | Priority |
+                      ------------------------------------------------------
+                      |    A    |       0      |       3        |     5    |
+                      |    B    |       2      |       2        |     3    |
+                      |    C    |       4      |       5        |     2    |
+                      |    D    |       6      |       4        |     4    |
+                      |    E    |       8      |       1        |     1    |
+                      ------------------------------------------------------
+        Note: The first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
+        . Will the decision points still be the same? If not, what extra
+        decision points do we have to take care of? Will the order of completion of processes change? Explain.
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_13: Can we, techinically speaking, implement FIFO Scheduling using Round Robin?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_14: |
+        Is there any relation between time quantum and the context switching time? Explain.
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_15: |
+        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        of these processes are CPU bound. Use Virtual Round Robin to answer the following questions.
+                      ---------------------------------------------------------------------
+                      | Process | Arrival Time | Execution Time | I/O Time |  Time to I/O |
+                      ---------------------------------------------------------------------
+                      |    A    |       0      |       7        |     5    |       3      |
+                      |    B    |       2      |       9        |     2    |       5      |
+                      |    C    |       4      |       6        |     0    |       6      |
+                      |    D    |       6      |       8        |     1    |       4      |
+                      ---------------------------------------------------------------------
+        Note: The first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
+        I/O time zero means that it is a CPU bound process. Also, if process x has 'a' units of time to I/O, it means that it will execute
+        for 'a' time units first and then go for I/O.
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_16: |
+        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        of these processes are CPU bound. Use Priority Scheduling with Round Robin to answer the following questions.
+                      ------------------------------------------------------
+                      | Process | Arrival Time | Execution Time | Priority |
+                      ------------------------------------------------------
+                      |    A    |       0      |       4        |     4    |
+                      |    B    |       2      |       5        |     3    |
+                      |    C    |       4      |       8        |     2    |
+                      |    D    |       6      |       7        |     1    |
+                      |    E    |       8      |       3        |     4    |
+                      ------------------------------------------------------
+        Note: The first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
+        The time quantum for Round Robin is 2 time units.
+    - Question_17: |
+        Assume that Round Robin Scheduling is used for scheduling processes. What will happen if a process forks after completion of half of
+        its time quantum? What will be the time quantum for the child and the parent process? Will their remaining time quantum be related?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_20: What are the types of scheduling a process can be assigned to in a linux kernel? Explain
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_21: |
+        When a parent process forks a child process, what is the relation of the priority of the child with that of its parent? Explain.
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_22: Can we change the static priority of a process? If yes, how? If no, why?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_23: What is the relation between the nice value of a process and its static priority?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_24: What will be the dynamic priority of a process with a static priority of 120?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_25: How is the property "Bonus" of process related to its scheduling?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_26: |
+        Is there a relation between base time quantum of a process and its priority? Is yes, what will the base time quantum of a process with
+        static priority 121?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_27: |
+        Will the average sleep time of a process which spend more time in CPU executing increase or decrease? Is there a relation between the
+        term "Bonus" and average sleep time?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_28: Is a process with dynamic priority 130 an interactive process? Explain.
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_29: |
+        Context: Expired Array and Active Array are used by Linux Scheduler to schedule Real Time processes.
+        Are the data structures used for maintaining an expired array and an active array same or different? If yes, what is the advantage
+        of keeping them same?
+      Company_tags:
+      Level:
+      Reference:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_30: |
+        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        of these processes are CPU bound. Use Priority Scheduling with Round Robin to answer the following questions.
+                      ---------------------------------------------------------------------
+                      | Process |  Nice Value  | Execution      | I/O Time |  Time to I/O |
+
+                      ---------------------------------------------------------------------
+                      |    A    |       8      |       7        |     5    |       3      |
+                      |    B    |      -15     |       9        |     2    |       5      |
+                      |    C    |      -5      |       6        |     0    |       6      |
+                      |    D    |       0      |       8        |     1    |       4      |
+                      ---------------------------------------------------------------------
+        Note: The first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
+        The time quantum for Round Robin is 2 time units.
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
