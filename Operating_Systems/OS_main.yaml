@@ -29,7 +29,7 @@ Process & Threads:
             - Hint: A process can only exist in 1 state at a time.
             - Solution: A process can only be in one state at a time. As in, it can be in a ready state or a blocked state or swapped state, etc.
         - Question_2: |
-            A file is opened by the user. What will be the changes in Local Descriptor Table(LDT) and Global Descriptor Table(GDT)?
+            A file is opened by the user. What will be the changes in the Local Descriptor Table(LDT) and Global Descriptor Table(GDT)?
             Moreover, if two different processes have opened one instance each of a file and one of the processes close it,
             what will be the changes in the LDT and GDT?
           Company_tags: None
@@ -37,7 +37,7 @@ Process & Threads:
           Answer:
             Hint: GDT has an entry, even if one instance is there.
             Solution: |
-                LDT is also called a per-process descriptor table, and GDT is called a system-wide descriptor table.When you initially open a
+                LDT is also called a per-process descriptor table, and GDT is called a system-wide descriptor table. When you initially open a
                 file, both LDT and GDT make new entries of the file. However, if it is already opened by even one process, the GDT only increases
                 the counter. If an instance of a file opened by another process and a new process opens it, a new instance is made in LDT.
                 When a file is closed by one of the processes, given that only a single instance is opened by each process, only the
@@ -728,7 +728,7 @@ Scheduling:
             the main problem here is knowing what will be the next CPU burst of any process. We cannot predict this with 100 percent
             accuracy.
     - Question_8: |
-        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        The given table describes the arrival time of a process and the amount of time that the process takes to execute completely. Assume that all
         of these processes are CPU bound. Using the scheduling algorithm "Shortest Remaining Time First", answer following the questions.
                       -------------------------------------------
                       | Process | Arrival Time | Execution Time |
@@ -752,19 +752,19 @@ Scheduling:
       Answer:
         - Hint:
         - Solution: |
-            As only process 'A' is available in the ready queue initially, the CPU will start executing it. At time = 2, process 'B' will
-            enter the ready queue and that time process 'A' will have remaining time as 1 and process 'B' will have it as 6. So, process 'A'
+            Only process 'A' is available in the ready queue initially, the CPU will start executing it. At time = 2, process 'B' will
+            enter the ready queue, and that time process 'A' will have remaining time as 1 and process 'B' will have it as 6. So, process 'A'
             will continue executing. It will finish execution at time = 3 units. Only process 'B' exists in the ready queue at that time. So,
-            it will start executing and at time '4' units, process 'C' will enter the ready queue. Now, process 'C' has an execution time of
+            it will start executing, and at time '4' units, process 'C' will enter the ready queue. Now, process 'C' has an execution time of
             4 units and process B has a remaining time of 5 units. This means that process C has the shortest remaining time. Proecss starts
-            executing and at time = 6, process D enters with time of execution as 5 and process C has a remaining time of 2 units and process
+            executing and at time = 6, process D enters with the time of execution as 5 and process C has a remaining time of 2 units and process
             B has a remaining time of 5 units. So, process C will continue to execute and finish at time = 8. At that time, we will have 3
             processes in the ready queue, B, D, and E. The process with the shortest remaining time is process E/ So it will finish its
-            execution and then we have to processes with the same remaining time. It will then depend on the algoritm implementation to
+            execution and then we have to processes with the same remaining time. It will then depend on the algorithm implementation to
             decide if process B executes or D. Let us assume that process B will execute as it was admitted before process D. This implies
-            that the sequence of completion of execution is in the order: A,C,E,B,D.
+            that the sequence of completion of execution is in the order: A, C, E, B, D.
     - Question_9: |
-        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        Given table describes the arrival time of a process and the amount of time that the process takes to execute completely. Assume that all
         of these processes are CPU bound. Using the scheduling algorithm "Shortest Remaining Time First", answer following the questions.
                       ---------------------------------------------------------------------
                       | Process | Arrival Time | Execution Time | I/O Time |  Time to I/O |
@@ -785,25 +785,25 @@ Scheduling:
         - Hint:
         - Solution: |
             The decision points here will be the arrival of a process and remaining burst time.
-            As for the mian disadvantage, after solving the problem and drawing a gnatt chart, we can come to a conclusion that the number
-            of decision points are too much. This means context switching will mostly be high in general scenarios. This will reduce the
+            As for the main disadvantage, after solving the problem and drawing a Gnatt chart, we can come to the conclusion that the number
+            of decision points is too much. This means context switching will mostly be high in general scenarios. This will reduce the
             efficiency of the system.
             Now let's go through the scheduling. As process A will arrive first, it will be the first one to be executed. At time = 2 process
-            B will arrive. Now, process A has 1 second left (of the time quantum) to execute and proess B has 5. So, process A will continue
-            execution till time = 3. Then it will go for I/O and will retuirn at time = 8. At that time only process B will be available in
+            B will arrive. Now, process A has 1 second left (of the time quantum) to execute and process B has 5. So, process A will continue
+            execution until time = 3. Then it will go for I/O and will retuirn at time = 8. At that time, only process B will be available in
             the ready queue and will start executing. At time = 4, process C comes in ready queue. Now, process B has 4 units of time
-            remaining before going to I/O which is less than what process C will execute for. So, process B will continue to execute until
+            remaining before going to I/O, which is less than what process C will execute for. So, process B will continue to execute until
             time = 6 because that is when process D enters. Now, as B has the least remaining time, i.e., 2 time units, it will execute and
-            go for I/O and return at time = 10. Now comes the crucial point where process A returns and there are processes C and D already
+            go for I/O and return at time = 10. Now comes the crucial point where process A returns, and there are processes C and D already
             in the queue. Based on the remaining execution time, process A will execute till time = 10 as that is when process B return and
             this makes that instance a decision point. Still process A will continue to execute as it has the least remaining execution time
             and will go for I/O at time = 11 and return at time = 16. The process with least remaining execution time is B (9-5=4) and D.
-            Let us assume that process D executes instead of B because this will depend on how tie breaker is decided in the algorithm
+            Let us assume that process D executes instead of B because this will depend on how tiebreaker is decided in the algorithm
             implementation. Now, it will continue to execute till time = 15 and go for I/O and return at time = 16. As no other process is
             admitted to the ready queue or returns from I/O. Then process B will execute for 1 time unit (it being the process with least
             remaining time) as process A returns from I/O at time = 16. Process A being the one with the least remaining time (7-6=1) will
-            execute and complete. Here, we need to understand that had process D executed instead of process B, process A would have been the
-            first one to finish its execution completely and exit. instead, process B becomes the one to finish its execution first and exit.
+            execute and complete. Here, we need to understand that had process D executed instead of process B; process A would have been the
+            first one to finish its execution completely and exit. Instead, process B becomes the one to finish its execution first and exit.
             Now, process D will execute and go for I/O and come back after 1 time unit and then again execute for 3 time units and complete
             its execution and exit and then process C which got preempted by the arrival of process D D from I/O will execute for the
             remaining time as it is a CPU bound process and its total execution time is equal to its time quantum.
@@ -816,7 +816,7 @@ Scheduling:
         - Solution: |
             The decision points will be time quantum expiry, going for I/O, termination (in which which case it will exit).
     - Question_11: |
-        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        The given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
         of these processes are CPU bound. Using the non-preemptive version of Priority Scheduling, answer following the questions.
                       ------------------------------------------------------
                       | Process | Arrival Time | Execution Time | Priority |
@@ -828,7 +828,7 @@ Scheduling:
                       |    E    |       8      |       1        |     1    |
                       ------------------------------------------------------
         Note: The first row says that process A arrives at t=0 in the ready queue and will take 3 time units to execute completely.
-              The priority used are just symbolic, in real systems, they may be different.
+              The priority used are just symbolic; in real systems, they may be different.
         What will be the order of completion of the processes?
       Company_tags:
       Level:
@@ -851,7 +851,7 @@ Scheduling:
             D and hence process E will finish at t=11 and then process D finishes at t=15.
             So the order of completion is A,B,C,E,D.
     - Question_12: |
-        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        The given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
         of these processes are CPU bound. Instead, now use the preemptive version of Priority Scheduling to answer the following questions.
                       ------------------------------------------------------
                       | Process | Arrival Time | Execution Time | Priority |
@@ -895,13 +895,13 @@ Scheduling:
       Answer:
         - Hint:
         - Solution: |
-            Yes there is. We cannot keep the quantum time very large because this will mean that processes that take longer time to execute
-            will occupy the CPU for a longer time and cause starvation. On the other hand, if we keep it too chort, the throughput of the
-            CPU will decrease as majority of the time will go in context switching. Roughly speaking, we can say that time quantum must be
+            Yes, there is. We cannot keep the quantum time very large because this will mean that processes that take a longer time to execute
+            will occupy the CPU for a longer time and cause starvation. On the other hand, if we keep it too short, the throughput of the
+            CPU will decrease as the majority of the time will go in context switching. Roughly speaking, we can say that time quantum must be
             kept such that it is sufficiently large than the context switching time but not too large. Time quantum is generally 1000 times
             the context switching time.
     - Question_15: |
-        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        Given table describes the arrival time of a process and the amount of time that the process takes to execute completely. Assume that all
         of these processes are CPU bound. Use Virtual Round Robin to answer the following questions.
                       ---------------------------------------------------------------------
                       | Process | Arrival Time | Execution Time | I/O Time |  Time to I/O |
@@ -921,7 +921,7 @@ Scheduling:
         - Hint:
         - Solution: #later
     - Question_16: |
-        Given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
+        The given table describes the arrival time of a process and the amount of time that process takes to execute completely. Assume that all
         of these processes are CPU bound. Use Preemptive Priority Scheduling with Round Robin to answer the following questions.
                       ------------------------------------------------------
                       | Process | Arrival Time | Execution Time | Priority |
@@ -956,7 +956,7 @@ Scheduling:
             process C, will continue execution till it finishes because no other process will be admitted after that. So, at time t=12 it will
             finish and process B will resume its execution (assuming that the process admitted first executes, in case more than one processes
             have the same priority). At t=15, process B will finish and process D will finish its execution as it is the process with the
-            highest priority that remains. Then process A will execute and then process E. So, the order of completion is C,B,D,A,E
+            highest priority that remains. Then process A will execute and then process E. So, the order of completion is C, B, D, A, E
             respectively.
     - Question_17: |
         Assume that Round Robin Scheduling is used for scheduling processes. What will happen if a process forks after completion of half of
@@ -968,10 +968,10 @@ Scheduling:
         - Hint:
         - Solution: |
             When such a situation occurs, the remaining time quantum is distributed equally among the parent and the child processes. This
-            means that if the parent process had time quantum of 100ms and it forked at t = 50ms, then bothe the parent and child will have
+            means that if the parent process had time quantum of 100ms and it forked at t = 50ms, then both the parent and child will have
             the remaining time quantum as (50ms/2),i.e., 25ms. This is for this execution cycle only. This means that after the finishing of
             this time quantum, both the processes will have the time quantum according to their priorities.
-    - Question_18: What are the types of scheduling a process can be assigned to in a linux kernel? Explain
+    - Question_18: What are the types of scheduling a process can be assigned to in a Linux kernel? Explain
       Company_tags:
       Level:
       Reference:
@@ -979,8 +979,8 @@ Scheduling:
         - Hint:
         - Solution: |
             A process can have one of the three types of scheduling in Linux, namely: Round Robin, FIFO and Other (or Normal). By default,
-            the user created processes have their scheduling policy as other. We can change this by the function sched_setparam().
-            The Real Time process are the ones that are scheduled either according to Round Robin or FIFO.
+            the user-created processes have their scheduling policy as other. We can change this by the function sched_setparam().
+            The Real-Time process are the ones that are scheduled either according to Round Robin or FIFO.
     - Question_19: Can we change the static priority of a process? If yes, how? If no, why?
       Company_tags:
       Level:
@@ -991,7 +991,7 @@ Scheduling:
             Yes. We can change the static priority of a process by changing the nice value of that process. This is because the static
             priority is calculated directly by the nice value of the process. Static Priority = 120 + Nice Value. So, if we change the nice
             value using the nice() system call, we change the static priority of the process.
-    - Question_20: What will be the dynamic priority of a process with a base time quantum of 420ms and the Bonus value is 5?
+    - Question_20: What will be the dynamic priority of a process with a base time quantum of 420ms, and the Bonus value is 5?
       Company_tags:
       Level:
       Reference:
@@ -1015,8 +1015,8 @@ Scheduling:
             scheduling a process. This is why it is an important factor in scheduling.
             Note-1: Let us break the dynamic priority function and understand it. The "max" function ensures that the min dynamic priority is
             100. Also, the "min" function ensures that the max value of dynamic priority is 139. This actually is done so that the range is
-            confined to the priority numbers allowed for fair share scheduling. Only the processes with fare share scheduling have to care
-            about this. Real time processes are time bound and their priority numbers range from 0-99. This is why we need to have such a
+            confined to the priority numbers allowed for fair share scheduling. Only the processes with fair share scheduling have to care
+            about this. Real-time processes are time-bound and their priority numbers range from 0-99. This is why we need to have such a
             formula for dynamic priority.
             Note-2: The attribute "Bonus" of a process is related to the average sleeping time of a process. The more the average sleeping
             time of a process, the larger is its "Bonus" value.
@@ -1035,13 +1035,13 @@ Scheduling:
       Answer:
         - Hint:
         - Solution: |
-            Base time quantum of a process has two formulae depending on its static priority. For a process with priority less than 120, it
+            The base time quantum of a process has two formulae depending on its static priority. For a process with a priority less than 120, it
             is calculated as (140-static priority)*20. And for static priority more than equal to 120, it is calculated as
             (140-static priority)*5.
             Now, if the static priority is 121, the base time quantum of a process will be (140-121)*5 = 95ms.
             Note: The calculated time quantum is always in millisecands(ms).
     - Question_23: |
-        Will the average sleep time of a process which spend more time in CPU executing increase or decrease? Is there a relation between the
+        Will the average sleep time of a process which spends more time in CPU executing increase or decrease? Is there a relationship between the
         term "Bonus" and average sleep time?
       Company_tags:
       Level:
@@ -1052,7 +1052,7 @@ Scheduling:
             The process that will spend more the executing in CPU will see its average sleep time decreased. This is logical as more time it
             spends in CPU, lesser will be the fraction of time it will spend in I/O. And hence, lesser average sleep time.
             The "Bonus" is directly related to the average sleep time. The more the sleep time, the more the "Bonus" value.
-            Note: Since the "Bonus" value will be more will be the dynamic priority will be less and hence it will get more priority to
+            Note: Since the "Bonus" value will be more will be the dynamic priority will be less, and hence it will get more priority to
             execute. In this way, the CPU balances between a CPU bound process and an interactive process.
     - Question_24: Is a process with static priority 130 and a bonus value of 5, an interactive process? Explain.
       Company_tags:
@@ -1066,9 +1066,9 @@ Scheduling:
             condition, it qualifies as an interactive process. The condition is: Dynamic Priority < [3*(Static Priority/4)_28]. This
             expression is simplified and we get (Bonus -5) > Interactive Delta, this is because Dynamic Priority is
             (static-priority - Bonus + 5). Now, if we calculate the interactive delta and it comes out to be less than (bonus - 5), we say
-            that the proecss is interactive.
+            that the process is interactive.
             For a process with static priority 130, Interactive Delta comes out to be 4.5, which is more than (5-5,i.e, Bonus - 5). So, a
-            process with given static priority and bonus value is not an interactive process.
+            process with a given static priority and bonus value is not an interactive process.
     - Question_25: |
         Context: Expired Array and Active Array are used by Linux Scheduler to schedule Real Time processes.
         Are the data structures used for maintaining an expired process array and an active process array same or different? If yes, what is
@@ -1080,8 +1080,8 @@ Scheduling:
         - Hint:
         - Solution: |
             The data structures used for both the queues is the same. This is because it keeps the scheduling a O(1) time complexity job.
-            The reason is because while bringing the processes from the expired proecss queue to the active queue will become a O(n) time
-            and to avoid this, we keep the data structures same and just flip the pointers of the two queues. The accessing is always done
+            The reason is that while bringing the processes from the expired proecss queue to the active queue will become a O(n) time
+            and to avoid this, we keep the data structures the same and just flip the pointers of the two queues. The accessing is always done
             relative to the head of the array, so when you simply change the pointers, you effectively change the queues.
 Miscellaneous:
   - Practice_questions:
