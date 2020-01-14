@@ -629,6 +629,7 @@ Scheduling:
     - https://www.studytonight.com/operating-system/process-scheduling
     - https://www.guru99.com/cpu-scheduling-algorithms.html
     - https://www.studytonight.com/operating-system/cpu-scheduling-algorithms
+    - Operating System Concepts, by Silberschatz, Galvin: Chapter 5
   Practice_questions:
     - Question_1: Of the three types of schedulers present in an OS, which executes most frequently?
       Options:
@@ -1083,6 +1084,97 @@ Scheduling:
             The reason is that while bringing the processes from the expired proecss queue to the active queue will become a O(n) time
             and to avoid this, we keep the data structures the same and just flip the pointers of the two queues. The accessing is always done
             relative to the head of the array, so when you simply change the pointers, you effectively change the queues.
+Synchronization:
+  Reference:
+    - Operating System Concepts, by Silberschatz, Galvin: Chapter 5
+  Practice_questions:
+    - Question_1: |
+        Consider that there are two processes that want to communicate with each other. Let the processes be called P1 and P2 respectively. If
+        P1 sends a message to P2 and moves on without waiting for acknowledgement from P2, which of the following type of communication is it?
+      Options:
+        - 1: Synchronous Communication
+        - 2: Asynchronous Communication
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 2
+      Answer:
+        - Hint:
+        - Solution: |
+            There are two types of communication that can happen in between processes, Synchronous (Blocking) and Asynchronous (Non-Blocking).
+            The first type means that the sender waits for acknowledgement from the receiving process. This will mean that Asynchronous
+            communication will mean that the sender will not wait for the acknowledgement from the receiving process. So, the type of
+            communication between P1 and P2 will be Asynchronous.
+    - Question_2: |
+        Two processes P1 and P2 want to either read or write the same file. Which of the following options will lead to a data inconsistency?
+      Options:
+        - 1: P1 will write and P2 will write
+        - 2: P1 will write and P2 will read
+        - 3: P1 will read and P2 will write
+        - 4: P1 will read and P2 will read
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 4
+      Answer:
+        - Hint:
+        - Solution: |
+            Even if one process writes, there will be data inconsistency. All processes can read the same file at the same time because they
+            will not be modifying the content. This is why they will read the correct values. Whereas, when either one process writes, due to
+            writing section being a critical section, the other process reading/writing the same section will surely lead to an inconsistency.
+    - Question_3: Let there be two processes P1 and P2 running concurrently.
+          P1--->                       P2--->
+          int main(){                  int main(){
+            for(int i=0;i<50;i++)         for(int i=0;i<50;i++)
+              x++;}                           x--;}
+          The variable "x" is a shared variable and its initial value is "0". What will be the minimum value of "x" after both the processes
+          have finished their execution?
+      Options:
+        - 1: "0"
+        - 2: "-50"
+        - 3: "-51"
+        - 4: Can't say
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 2
+      Answer:
+        - Hint: Context Switching possible to nullify the effect of x++
+        - Solution: |
+            “x--” essentially means,
+            load 'x' in a reg; ---(1)
+            Reduce the 'reg' by '1'; ---(2)
+            store 'x' in the 'reg';  ---(3)
+            Now if there is a context switch after (1), then if “x++” executes and then (2) and (3) executes, the value in “reg” will be zero
+            before context switch, and after executing “x++” also, “reg” will contain zero. And hence after stages 2 and 3, the final value
+            of x will be “-1”.
+            Keping this in mind, we can say that the minimum value of "x" will occur when this type of context switch occurs and each of these
+            times, this value is one less. So, after 50 interations, the minimum value will be -50.
+    - Question_4: Let there be two processes P1 and P2 running concurrently.
+          P1--->                       P2--->
+          int main()                    int main()
+          {                             {
+            for(int i=0;i<50;i++)         for(int i=0;i<50;i++)
+              {                             {
+                x++;                          x++;
+                x--;                          x--;
+              }                             }
+          }                             }
+          The variable "x" is a shared variable and its initial value is "0". What will be the maximum value of "x" after both the processes
+          have finished their execution?
+      Options:
+        - 1:
+        - 2:
+        - 3:
+        - 4:
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer:
+      Answer:
+        - Hint:
+        - Solution:
+    - Question_5:
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
