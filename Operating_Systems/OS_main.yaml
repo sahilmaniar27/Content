@@ -622,7 +622,6 @@ Process & Threads:
               pointer to a void type and pas it to the thread as a parameter. But, if we would have kept explicit types of the thread function,
               we will have to build three different functions. This is why the return types and the parameter type of the thread is "void*"
               type.
-      - Question_14:
 Scheduling:
   Resources:
     - https://www.tutorialspoint.com/operating_system/os_process_scheduling.htm
