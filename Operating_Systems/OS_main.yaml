@@ -1150,31 +1150,6 @@ Synchronization:
             of x will be “-1”.
             Keping this in mind, we can say that the minimum value of "x" will occur when this type of context switch occurs and each of these
             times, this value is one less. So, after 50 interations, the minimum value will be -50.
-    - Question_4: Let there be two processes P1 and P2 running concurrently.
-          P1--->                       P2--->
-          int main()                    int main()
-          {                             {
-            for(int i=0;i<50;i++)         for(int i=0;i<50;i++)
-              {                             {
-                x++;                          x++;
-                x--;                          x--;
-              }                             }
-          }                             }
-          The variable "x" is a shared variable and its initial value is "0". What will be the maximum value of "x" after both the processes
-          have finished their execution?
-      Options:
-        - 1:
-        - 2:
-        - 3:
-        - 4:
-      Company_tags:
-      Level:
-      Reference:
-      Correct_answer:
-      Answer:
-        - Hint:
-        - Solution:
-    - Question_5:
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
