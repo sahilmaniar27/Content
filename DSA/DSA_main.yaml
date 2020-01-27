@@ -15,133 +15,23 @@ Subject:
     - Advanced Algorithms
 
 
-Introduction:
+Basic Math:
 
   - Practice_questions:
 
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
-
-  - Premium/Quiz_questions:
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
-
-Greedy Algorithms:
-
-  - Practice_questions:
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
-
-  - Quiz_questions:
-
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
-      - Question: What is something?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          - 1
-          - 2
-          - 3
-          - 4
-        Correct_answer: 3
-        Answers:
-          - 1
-          - 2
-          - 3
-          - 4
+      - Question: https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
+        Company_tags: Google
+        Level: Easy
+        Study References: -
+        Solution: https://www.geeksforgeeks.org/sum-of-bit-differences-among-all-pairs/
+        Common_Mistakes: |
+          We might tend to write a new function fo vonverting the given number into a binary number, but we must remember that a number is
+          stored as a binary number in the system.
+      - Question: https://www.interviewbit.com/problems/greatest-common-divisor/
+        Company_tags: Google, NetApp
+        Level: Easy
+        Study References: -
+        Solution: 
+        Common_Mistakes: |
+          This can be the most commonly used function while solving some questions of future topics. The main take away is that it can be
+          solved in O(log(n)) time and does not need brute force or factorization.
