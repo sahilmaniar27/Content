@@ -1,4 +1,4 @@
---- 
+---
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -18,36 +18,49 @@ Subject:
 
 Basic Math:
 
-  - Practice_questions:
-
-      - Question_1: https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
-        Company_tags: Google
-        Level: Easy
-        Study References: -
-        Solution: https://www.geeksforgeeks.org/sum-of-bit-differences-among-all-pairs/
-        Common_Mistakes: |
-          We might tend to write a new function fo vonverting the given number into a binary number, but we must remember that a number is
-          stored as a binary number in the system.
-      - Question_2: https://www.interviewbit.com/problems/greatest-common-divisor/
-        Company_tags: Google, NetApp
-        Level: Easy
-        Study References: -
-        Solution: 
-        Common_Mistakes: |
-          This can be the most commonly used function while solving some questions of future topics. The main take away is that it can be
-          solved in O(log(n)) time and does not need brute force or factorization.
+  Practice_questions:
+    - Question_1: https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
+      Company_tags: Google
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/sum-of-bit-differences-among-all-pairs/
+      Common_Mistakes: |
+        We might tend to write a new function fo vonverting the given number into a binary number, but we must remember that a number is stored
+        as a binary number in the system.
+    - Question_2: https://www.interviewbit.com/problems/greatest-common-divisor/
+      Company_tags: Google, NetApp
+      Level: Easy
+      Solution:
+      Common_Mistakes: |
+        This can be the most commonly used function while solving some questions of future topics. The main take away is that it can be solved
+        in O(log(n)) time and does not need brute force or factorization.
+Dynamic Programming:
+  Resources:
+    - https://www.geeksforgeeks.org/dynamic-programming/
+  Practice_questions:
+    - Question_1: https://www.interviewbit.com/problems/longest-arithmetic-progression/?ref=similar_problems
+      Company_tags: Microsoft
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/longest-arithmetic-progression-dp-35/
+      Common_Mistakes:
 Data Structure:
+  Resources:
   Array:
+    Practice_questions:
+      - Question_1: https://www.interviewbit.com/problems/max-product-subarray/
+        Company_tags: Amazon, LinkedIn, Microsoft
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/maximum-product-subarray/
+        Common_Mistakes: |
+          We have to keep in mind that the product can become maximum by multiplying negative numbers too (even number of them, obviously).
   Linked-List:
   Map:
-    - Practice_questions:
+    Practice_questions:
       - Question_1: https://www.interviewbit.com/problems/majority-element/
         Company_tags: Google, Microsoft, Amazon, Yahoo
         Level: Easy
-        Study References: -
-        Solution: 
+        Solution:
         Common_Mistakes: |
           This question may seem very simple (in fact, it is)., but, you must remember a couple of things. Use the data-structure "map". This
           makes this problem very easy. This takes care of making key-value pair. Then, we must take care of the return type of the find
-          function. Then, we must also be careful while using the iterator and remember to compare it with the end of the map and not the size of
-          the input vector.
+          function. Then, we must also be careful while using the iterator and remember to compare it with the end of the map and not the size
+          of the input vector.
