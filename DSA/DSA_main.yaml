@@ -15,9 +15,14 @@ Subject:
     - Graphs
     - Advanced Algorithms
 
-
+Greedy Algorithms:
+  Practice_questions:
+    - Question_1: https://www.interviewbit.com/problems/gas-station/
+      Company_tags: Google, D.E. Shaw, Bloomberg, Flipkart, Amazon
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/sum-of-bit-differences-among-all-pairs/
+      Common_Mistakes:
 Basic Math:
-
   Practice_questions:
     - Question_1: https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
       Company_tags: Google
@@ -36,6 +41,10 @@ Basic Math:
 Dynamic Programming:
   Resources:
     - https://www.geeksforgeeks.org/dynamic-programming/
+    - https://www.geeksforgeeks.org/tabulation-vs-memoization/
+    - https://www.geeksforgeeks.org/optimal-substructure-property-in-dynamic-programming-dp-2/
+    - https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
+    - https://www.geeksforgeeks.org/solve-dynamic-programming-problem/
   Practice_questions:
     - Question_1: https://www.interviewbit.com/problems/longest-arithmetic-progression/?ref=similar_problems
       Company_tags: Microsoft
