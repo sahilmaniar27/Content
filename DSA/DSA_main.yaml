@@ -20,8 +20,10 @@ Greedy Algorithms:
     - Question_1: https://www.interviewbit.com/problems/gas-station/
       Company_tags: Google, D.E. Shaw, Bloomberg, Flipkart, Amazon
       Level: Easy-Medium
-      Solution: https://www.geeksforgeeks.org/sum-of-bit-differences-among-all-pairs/
-      Common_Mistakes:
+      Solution: https://www.geeksforgeeks.org/find-a-tour-that-visits-all-stations/
+      Common_Mistakes: |
+        This is not a mistake but a point to remember is that this question can be solved in O(1) space. This can be kept as a contraint by the
+        interviewer.
 Basic Math:
   Practice_questions:
     - Question_1: https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
@@ -73,3 +75,10 @@ Data Structure:
           makes this problem very easy. This takes care of making key-value pair. Then, we must take care of the return type of the find
           function. Then, we must also be careful while using the iterator and remember to compare it with the end of the map and not the size
           of the input vector.
+Graphs:
+  Practice_questions:
+    - Question_1: https://leetcode.com/discuss/interview-question/372581
+      Company_tags: Amazon
+      Level: Medium-Hard
+      Solution: https://www.geeksforgeeks.org/bridge-in-a-graph/
+      Common_Mistakes:
