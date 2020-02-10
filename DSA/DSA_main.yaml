@@ -53,6 +53,11 @@ Dynamic Programming:
       Level: Medium
       Solution: https://www.geeksforgeeks.org/longest-arithmetic-progression-dp-35/
       Common_Mistakes:
+    - Question_2: https://www.geeksforgeeks.org/number-of-ways-to-get-a-given-sum-with-n-number-of-m-faced-dices/
+      Company_tags: Amazon
+      Level: Easy
+      Solution: 
+      Common_Mistakes:
 Data Structure:
   Resources:
   Array:
@@ -75,6 +80,13 @@ Data Structure:
           makes this problem very easy. This takes care of making key-value pair. Then, we must take care of the return type of the find
           function. Then, we must also be careful while using the iterator and remember to compare it with the end of the map and not the size
           of the input vector.
+Binar Search:
+  Practice_questions:
+    - Question_1: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
+      Company_tags: Amazon
+      Level: Medium
+      Solution:
+      Common_Mistakes:
 Graphs:
   Practice_questions:
     - Question_1: https://leetcode.com/discuss/interview-question/372581
