@@ -1149,6 +1149,81 @@ Synchronization:
             of x will be “-1”.
             Keping this in mind, we can say that the minimum value of "x" will occur when this type of context switch occurs and each of these
             times, this value is one less. So, after 50 interations, the minimum value will be -50.
+    - Question_4: |
+        Based on the Producer-Consumer Problem, answer the following question.
+        Assume that the algorithm for the Producer is:
+        while (1) {
+          // Produce item;
+          Buffer[in] = item;
+          in = in + 1;
+        }
+        Ans the algorithm for Consumer is:
+        while (1) {
+          while(in==out);
+          item = Buffer[out];
+          out = out + 1;
+        }
+        Note : The "Produce item" is the critical section.
+        What is the problem with this simple algorithm?
+      Options:
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer:
+      Answer:
+        - Hint: Context Switch.
+        - Solution: |
+            We need to keep in mind the Consumer and the Producer are two different processes. So, if the Producer just keeps on producing,
+            and the Consumer does not get time to consume ,which will happen only when there will be a context switch (in case of a
+            uni-processor system). Whereas in a multi-processor system, the two processes can run simultaneously and there will be no
+            monitoring if consumer has confumed more than what the Producer is producing. This is the fundamental problem of this simple
+            algorithm.
+    - Question_5: Which of the following will not result in data inconsistency?
+      Options:
+        - 1: A file being opened by two processes simultaneously and one process is reading it and the other is writing in it.
+        - 2: A file being opened by two processes simultaneously for reading.
+        - 3: A file being opened by two processes simultaneously and both the processes modifying it.
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 2
+      Answer:
+        - Hint:
+        - Solution: |
+            Reading from a file not a critical section job. More than one process can simultaneously read from a file but if one file is
+            reading and the others are writing, this can lead to wrong data being read.
+    - Question_6: |
+        Assume there are two processes executing with the following code:
+        Process 1:
+          int main()
+          do{
+            while (turn !=0); // do nothing
+            //critical section
+            turn = 1;
+            //reminder section
+          }while(1);
+          Process 2:
+          int main()
+          do{
+            while (turn !=1); // do nothing
+            //critical section
+            turn = 0;
+            //reminder section
+          }while(1);
+          Is this process ideal for dealing with two processes trying the same critical section? Explain your answer.
+      Options:
+        - 1: "Yes"
+        - 2: "No"
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 2
+      Answer:
+        - Hint: What happens if process 1 dies abruptly?
+        - Solution: |
+            The first problem with this algorithm is that these two processes must strictly alnernate between each other to continue execution.
+            The other problem is that if one process ends abruptly, the other will wait eternally for the variable turn to change and hence
+            will be stuck. There need to be a mechanism to make sure that if one process dies, the execution does not stop.
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
