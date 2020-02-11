@@ -56,8 +56,9 @@ Dynamic Programming:
     - Question_2: https://www.geeksforgeeks.org/number-of-ways-to-get-a-given-sum-with-n-number-of-m-faced-dices/
       Company_tags: Amazon
       Level: Easy
-      Solution: 
-      Common_Mistakes:
+      Solution:
+      Common_Mistakes: |
+        We can forget to take care of the base conditions where the required sum is zero or is less than zero.
 Data Structure:
   Resources:
   Array:
@@ -84,9 +85,11 @@ Binar Search:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
       Company_tags: Amazon
-      Level: Medium
+      Level: Easy-Medium
       Solution:
-      Common_Mistakes:
+      Common_Mistakes: |
+        Though the array is rotated around a pivot element, we must remember that the two parts are individually sorted. We can keep this in
+        mind and think of searching the required element in one go, instead of using two binary searches.
 Graphs:
   Practice_questions:
     - Question_1: https://leetcode.com/discuss/interview-question/372581
