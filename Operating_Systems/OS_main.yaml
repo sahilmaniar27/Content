@@ -1224,6 +1224,52 @@ Synchronization:
             The first problem with this algorithm is that these two processes must strictly alnernate between each other to continue execution.
             The other problem is that if one process ends abruptly, the other will wait eternally for the variable turn to change and hence
             will be stuck. There need to be a mechanism to make sure that if one process dies, the execution does not stop.
+    - Question_7: |
+        Consider two processes P1 and P2. The initial value of flag[0] and flag[1] is "False" and it is a shared boolean variable.
+        Process P1:
+          while(1){
+            flag[0]=true;
+            while (flag[1]);
+            //critical section
+            flag[0]=false;
+            //reminder section
+          }
+        Process P2:
+          while(1){
+            flag[1]=true;
+            while (flag[0]);
+            //critical section
+            flag[1]=false;
+            //reminder section
+          }
+          Is there a flaw in this algorithm? Justify your answer.
+      Options:
+        - 1: "Yes"
+        - 2: "No"
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 1
+      Answer:
+        - Hint: Possibility of an infinite loop?
+        - Solution: |
+            If at any point in the running of this algorithm, both flag[0] and flag[0] become "True", the algorithm will go in an infinite
+            loop. This algorithm satifies "Mutual Exclusion" property of an algorithm that avoids Race Condition. But, this may lead to a
+            Dead Lock.
+    - Question_9: Which of the following will guarantee a deadlock in a single instance resource?
+      Company_tags: abc
+      Level: xyz
+      Options:
+        -1: Mutual Exclusion
+        -2: Circular Wait for graph
+        -3: Hold and Wait
+        -4: Preemption of one of the process.
+      Correct_answer: 2
+      Answer:
+        - Hint: Single instance resource and circular wait are related.
+        - Solution: |
+            The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
+            process is requesting for the resource, the first is holding there is a definite deadlock. The others do not guarantee that.
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
@@ -1246,7 +1292,6 @@ Miscellaneous:
               If the frame entry is not found in a page table, we so to swap space and bring back the entry. But any entry that is beyond the
               Page Table Limit Register is invalid. This type of loading is done because it is dynamic in nature. The frame size depends on
               the implementation of the architecture. It is generally 4KB or 4MB. But, you can modify it to what you want.
-
       - Question_2: |
           What is the effective access time of memory when there is an 80% hit in TLB and the access time for TLB is 20ns and that of the
           memory is 100ns?
@@ -1288,21 +1333,7 @@ Miscellaneous:
                 The statement S1 is true and is a fact. The second statement is not always true. The swapped out process must return to the same
                 address if they had binding that was done compile time or load time. This is the reason why we share a driver file and not
                 the compiled file.
-      - Question_4: Which of the following will guarantee a deadlock in a single instance resource?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          -1: Mutual Exclusion
-          -2: Circular Wait for graph
-          -3: Hold and Wait
-          -4: Preemption of one of the process.
-        Correct_answer: 2
-        Answer:
-          - Hint: Single instance resource and circular wait are related.
-          - Solution: |
-              The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
-              process is requesting for the resource, the first is holding there is a definite deadlock. The others do not guarantee that.
-      - Question_5: Trap Bit question.
+      - Question_4: Trap Bit question.
         Company_tags: abc
         Level: xyz
         Reference:
