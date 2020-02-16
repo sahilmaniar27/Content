@@ -59,6 +59,16 @@ Dynamic Programming:
       Solution:
       Common_Mistakes: |
         We can forget to take care of the base conditions where the required sum is zero or is less than zero.
+    - Question_3: https://www.interviewbit.com/problems/palindrome-partitioning-ii/
+      Company_tags: Amazon, Google
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/
+      Common_Mistakes:
+    - Question_4: https://www.interviewbit.com/problems/min-jumps-array/
+      Company_tags: Amazon, Google, Ebay
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/
+      Common_Mistakes:
 Data Structure:
   Resources:
   Array:
