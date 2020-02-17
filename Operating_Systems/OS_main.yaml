@@ -1270,6 +1270,59 @@ Synchronization:
         - Solution: |
             The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
             process is requesting for the resource, the first is holding there is a definite deadlock. The others do not guarantee that.
+DSTN:
+  Reference:
+    - Textbook_1: Storage Networks The complete Reference. Robert Spalding, McGraw-Hill/Osborne, 2003.
+    - Textbook_2: Information Storage and Managements Storing, Managing and Protecting Digital Information. EMC Education Services, Wiley
+                  Publishing Inc., 2008.
+    - Textbook_3: Storage Networking-Real World Skills for the CompTIA Storage + Certification and Beyond by Nigel Poulton, Publishers,
+                  SYBEX a Wiley brand, 2014
+    - Videos and Blogs:
+  Memory Management:
+    Practice_questions:
+      - Question_1: The user program deals with which type of address?
+        Options:
+          - 1: Physical Address
+          - 2: Virtual Address
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              The user program interacts with the CPU only with the virtual address. It is the Memory Management Unit that takes care of the
+              address translation into Physical Address.
+      - Question_2: If a program is written such that it only requires Compile Time Binding, which of the following statements is true?
+        Options:
+          - 1: The Virtual Address generated is different from the Physical address at that will be accessed at the time of execution.
+          - 2: Virtual Address generated is same as the Physical address at that will be accessed at the time of execution.
+          - 3: There is no relation between the two types of addresses in any type of binding.
+          - 4: None of these
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 2
+        Answer:
+          - Hint: Programs compiled with compile time binding can only run at in the systems that they are compiled in.
+          - Solution: |
+              At Compile time the address generated is equal to the virtual address in the case of compile time binding.
+  Memory Hierarchy:
+  Storage Requirement and Usage:
+    - Including File systems:
+    - Mass storage:
+  Storage Interfaces & Disk Performance:
+  System Level Design:
+    - Locality:
+    - Virtual Memory:
+    - OS support:
+    - File Systems & I/O:
+  High Performance Requirements:
+  RAID, BUS:
+  Network Attached Storage (NAS), Network File Systems – access over NAS:
+  Storage Area Networks (SAN), SAN File Systems:
+  SAN & NAS solutions:
+  Virtualization:
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
