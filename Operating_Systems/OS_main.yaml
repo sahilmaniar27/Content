@@ -1307,6 +1307,36 @@ DSTN:
           - Hint: Programs compiled with compile time binding can only run at in the systems that they are compiled in.
           - Solution: |
               At Compile time the address generated is equal to the virtual address in the case of compile time binding.
+      - Question_3: Which of the following scheduler is responsible for swapping?
+        Options:
+          - 1: Short Term Scheduler
+          - 2: Long Term Scheduler
+          - 3: Mid Term Scheduler
+          - 4: None of these because it is done by some independent hardware.
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 3
+        Answer:
+          - Hint:
+          - Solution: |
+              The Mid Term Scheduler is responsible for swapping out processes into the swapping space when the system is running short on
+              memory. The Mid Term Scheduler then comes into action and swaps out the process from the memory. But remember, the PCB of the
+              process is not saved. Only the code section, data section, etc. is swapped out.
+      - Question_4: |
+          If a process had compile time binding, and if the process is swapped, does the mid term scheduler save the PCB of the PCB?
+        Options:
+          - 1: Yes, it does.
+          - 2: No, it doesn't.
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 1
+        Answer:
+          - Hint: Programs compiled with compile time binding can only run at in the systems that they are compiled in.
+          - Solution: |
+              Because the data section, code section have fixed addresses in compile time and load time binding, the complete context of the
+              process needs to be saved if the process had compile time or load time binding.
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
