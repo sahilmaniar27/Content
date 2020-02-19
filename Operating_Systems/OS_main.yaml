@@ -1351,7 +1351,33 @@ DSTN:
           - Hint: Fragmentation
           - Solution: |
               The Best Fit algorithm finds a contiguous block of memory that is equal to slightly greater than the memory that we need to get
-              allocated. This leaves small fragments of memory as holes and these fragments cannot be used.
+              allocated. This leaves small fragments of memory as holes and these fragments cannot be used. The best performing algorithm
+              is the Next Fit algorithm.
+      - Question_6: What does the term "inclusiveness" mean with respect to Cache Memory?
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint: How are different levels of cache related?
+          - Solution: |
+              Inclusiveness with respect to Cache Memory means that L1 cache will be a subset of L2 cache, L2 cache will be a subset of L3
+              cache, and so on. Each level of cache does not any data that is not available in the higher level of cache.
+      - Question_7: |
+          In what case will accessing L1 cache and getting a cache miss will result in accessing the Page Table directly?
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint: Is there a TLB? Is there a Cache Miss?
+          - Solution: |
+              The TLB stores the page number and corresponding frame number for a page table entry. And, an entry in cache consists of data
+              and tag bits. So, cache miss will imply that the tag bits don't match and hence it will mean that the CPU will reference the
+              TLB. But, since we want a direct access to the Page Table, a miising TLB will mean that cache miss will result in a direct
+              Page Table access.
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
