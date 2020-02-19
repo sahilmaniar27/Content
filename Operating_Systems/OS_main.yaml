@@ -1337,6 +1337,21 @@ DSTN:
           - Solution: |
               Because the data section, code section have fixed addresses in compile time and load time binding, the complete context of the
               process needs to be saved if the process had compile time or load time binding.
+      - Question_5: For dynamic partitioning of memory which of the following memory allocation method is the worst?
+        Options:
+          - 1: Best Fit
+          - 2: Next Fit
+          - 3: Worst Fit
+          - 4: First Fit
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 1
+        Answer:
+          - Hint: Fragmentation
+          - Solution: |
+              The Best Fit algorithm finds a contiguous block of memory that is equal to slightly greater than the memory that we need to get
+              allocated. This leaves small fragments of memory as holes and these fragments cannot be used.
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
