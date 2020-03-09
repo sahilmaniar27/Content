@@ -1378,6 +1378,50 @@ DSTN:
               and tag bits. So, cache miss will imply that the tag bits don't match and hence it will mean that the CPU will reference the
               TLB. But, since we want a direct access to the Page Table, a miising TLB will mean that cache miss will result in a direct
               Page Table access.
+      - Question_8: |
+          In what case of pure paging, what is the significance of "modified bit"?
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint: Dirty page
+          - Solution: |
+              When the Modified bit or dirty bit is set, it means that the page data has been modified. It's data is not the same as it was
+              when it was brought in memory. So, it must be written back and the page table should be updated, when the dirty page is accessed.
+      - Question_9: |
+          State ture or false.
+          Statement: The "modified bit" is not required if the cache iplements write through mechanism of Memory Management.
+          Explain your choice.
+        Options:
+          - 1: "True"
+          - 2: "False"
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/27087912/write-back-vs-write-through-caching
+        Correct_answer: 1
+        Answer:
+          - Hint: Why use a dirty bit when nothing is dirty?
+          - Solution: |
+              The answer lies in the mechanism of Write Through mechanism. This method ensures that the main memory has the up-to-date copy of
+              the desired data in the main memory. This means that cache and memory are coherent and have consistent data. So, there is no
+              need to keep a dirty bit as a part of the entry in Page Table or in Cache.
+      - Question_10: What are the main advantages of paging?
+        Options:
+        Company_tags:
+        Level:
+        Reference: http://www.cs.iit.edu/~cs561/cs351/VM/paging%20advantages%20and%20disadvantages.html
+        Correct_answer: 1
+        Answer:
+          - Hint:
+          - Solution: |
+              Some of the advantages of Paging are:
+                - Separation of user view of memory & actual physical memory
+                - Allows demand paging and prepaging
+                - More efficient swapping
+                - No need for considerations about fragmentation
+                - Just swap out page least likely to be use
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
