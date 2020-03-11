@@ -1422,6 +1422,24 @@ DSTN:
                 - More efficient swapping
                 - No need for considerations about fragmentation
                 - Just swap out page least likely to be use
+      - Question_10: Assume that a system implements Pure Paging with TLB as the Memory model. How is a TLB miss handeled in this system?
+        Options:
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/37825859/cache-miss-a-tlb-miss-and-page-fault
+        Correct_answer:
+        Answer:
+          - Hint: Page miss, invalid page, etc.
+          - Solution: |
+              TLB can be called a address-translation cache. So, a TLB hit implies that the requested page is mapped to a physical memory
+              frame and that entry is a part of TLB and that entry is found, whose address is a part of the TLB entry. Similary, TLB miss
+              the page-frame translation is not there in the TLB and hence, the MMU goes and fetches it from the page table. If the page is
+              available in the page table, then the entry in TLB is updated and the instruction that caused the TLB miss is exected again.
+              If the page is not available in the page table, then it is a page fault. Then the control is transferred to the OS. Page fault
+              means that either the page is invalid or it is not present in the page table. If the page is invalid, the OS decides if the page
+              is just invalid hence swap the invalid page for the valid page or if the requested page address is beyond the virtual address
+              space of the process. If it the later case, the process is terminated. In the former case, the page table and the TLB is updated
+              and the execution of the exception causing instruction begins again.
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
