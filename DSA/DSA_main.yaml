@@ -66,8 +66,19 @@ Dynamic Programming:
       Common_Mistakes:
     - Question_4: https://www.interviewbit.com/problems/min-jumps-array/
       Company_tags: Amazon, Google, Ebay
-      Level: Medium
+      Level: Easy - Medium
       Solution: https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/
+      Common_Mistakes:
+    - Question_5: https://practice.geeksforgeeks.org/problems/total-decoding-messages/0
+      Company_tags: Facebook
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/count-possible-decodings-given-digit-sequence/
+      Common_Mistakes: |
+        The complexity of the brute force algorithm is exponential. Take a approach similar to that of Fibonnaci to reduce the time complexity.
+    - Question_6: https://practice.geeksforgeeks.org/problems/word-boggle/0
+      Company_tags: Facebook
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/boggle-find-possible-words-board-characters/
       Common_Mistakes:
 Data Structure:
   Resources:
