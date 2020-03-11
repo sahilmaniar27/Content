@@ -1422,7 +1422,7 @@ DSTN:
                 - More efficient swapping
                 - No need for considerations about fragmentation
                 - Just swap out page least likely to be use
-      - Question_10: Assume that a system implements Pure Paging with TLB as the Memory model. How is a TLB miss handeled in this system?
+      - Question_11: Assume that a system implements Pure Paging with TLB as the Memory model. How is a TLB miss handeled in this system?
         Options:
         Company_tags:
         Level:
@@ -1440,6 +1440,22 @@ DSTN:
               is just invalid hence swap the invalid page for the valid page or if the requested page address is beyond the virtual address
               space of the process. If it the later case, the process is terminated. In the former case, the page table and the TLB is updated
               and the execution of the exception causing instruction begins again.
+      - Question_12: Which of teh following is true?
+        Options:
+          - 1: Paging causes external fragmentation.
+          - 2: All invalid page references lead to process termination.
+          - 3: Paging cause internal fragmentation.
+          - 4: Demand paging causes performance degradation
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 3
+        Answer:
+          - Hint:
+          - Solution: |
+              Paging causes internal fragmentation because the data is stored in frames of equal size and it is possible the the frames are
+              not filled completely. Not all invalid page references lead to process termination. Demand paging is implemented to increase the
+              efficiency of paging mechanism.
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
