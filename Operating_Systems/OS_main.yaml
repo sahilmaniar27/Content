@@ -1456,6 +1456,39 @@ DSTN:
               Paging causes internal fragmentation because the data is stored in frames of equal size and it is possible the the frames are
               not filled completely. Not all invalid page references lead to process termination. Demand paging is implemented to increase the
               efficiency of paging mechanism.
+      - Question_13: If a system has exclusive cache, do the L1 cache and L2 cache have different cache block sizes?
+        Options:
+          - 1: Yes, because in exclusive cache, the L1 cache is a subset of L2 cache.
+          - 2: No, because if there is L1 cache data is not a subset of L2 cache, data from L2 is brought into L1.
+          - 3: No, because L1 cache is not a subset of L2 cache.
+          - 4: Yes, because cache block sizes are never equal.
+        Company_tags:
+        Level:
+        Reference:
+          - 1: https://en.wikipedia.org/wiki/Cache_inclusion_policy#Exclusive_Policy
+          - 2: https://cs.stackexchange.com/questions/47009/what-if-block-sizes-are-not-equal-among-caches
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              In exclusive caches the block sizes among different levels is same and this is being followed in real life commercial PCs.
+              Intel architecture systems use Inclusive caches.
+      - Question_13: |
+          In TLB with ASIDs (Address Space Identifiers), do the entries related to a process get invalidated during a context switch? Explain.
+        Options:
+          - 1: "Yes"
+          - 2: "No"
+        Company_tags:
+        Level:
+        Reference:
+          - 1: https://stackoverflow.com/questions/52713940/purpose-of-address-spaced-identifiersasids
+          - 2: https://community.arm.com/developer/ip-products/processors/f/cortex-a-forum/5229/address-space-identifier---asid
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              No. In conventional TLB, the entries related to a process get invalidated when there is a context switch. But with ASIDs, the
+              entries get invalidated when the process is terminated.
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
