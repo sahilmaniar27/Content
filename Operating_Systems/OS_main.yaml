@@ -1473,7 +1473,7 @@ DSTN:
           - Solution: |
               In exclusive caches the block sizes among different levels is same and this is being followed in real life commercial PCs.
               Intel architecture systems use Inclusive caches.
-      - Question_13: |
+      - Question_14: |
           In TLB with ASIDs (Address Space Identifiers), do the entries related to a process get invalidated during a context switch? Explain.
         Options:
           - 1: "Yes"
@@ -1489,6 +1489,45 @@ DSTN:
           - Solution: |
               No. In conventional TLB, the entries related to a process get invalidated when there is a context switch. But with ASIDs, the
               entries get invalidated when the process is terminated.
+      - Question_14: Which of the following is true regarding Look Aside Cache?
+        Options:
+          - 1: If the processor does not find the required data in L1 cache, it will fetch it from L2 cache.
+          - 2: It is slower than Look Through cache.
+          - 3: Both L1 cache and L2 cache and main memory get the request for the data simultaneously and the cache which has a hit, returns the data and the
+               request for the other is cancelled.
+          - 4: Processor cannot look for data in more than one levels of cache at the same time.
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/34001002/look-through-vs-look-aside
+        Correct_answer: 3
+        Answer:
+          - Hint:
+          - Solution: |
+              Look Aside cache is a cache in which the processor looks for the data in all levels of cache and main memory simultaneously.
+              When there is a memory hit, it has to send a request cancellation signal to the other levels and main memory (if data is data is
+              found in cache). Now, the main point of care is that "option 2" looks correct because this sending signals is a bit time
+              consuming and hence, it must be slower than Look Through cache. But, since cache has a hit rate of approximately 95%, this
+              mechanism takes lesser time indeed. This is why "option 2" is wrong.
+      - Question_14: What is the difference between Linear Address and Logical Address?
+        Options:
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/15851225/difference-between-physical-logical-virtual-memory-address
+        Correct_answer:
+        Answer:
+          - Hint:
+          - Solution: |
+              Today, all the machines work on stored program concept. This means that all the programs that are running must reside in the
+              Main Memory, which is also called the Physical Memory. Now, since all of today's systems are multicore-multiprocessor sytems,
+              many processes run simultaneously in the processor (as whole). it is obvious that 8GB-32GB cannot hold all the processes
+              completely. This is why when a process is started, it has it's own virtual address space. This Virtual Address is mapped to
+              Physical Memory and since there is dynamic loading, not all of the process needs to reside in the Main Memory. So, the memory
+              that user is able to see is the virtual address, which has a mapping to the main memory because a program cannot run unless it
+              resides in the main memory (PCB does this trick).
+              Linear Address is an intermediate address of sorts that is generated from the Virtual(Logical) Address. When we use segmentation
+              the Virtual Address consists of the segment number and offset. This segment number tells the entry in the segment table. This
+              entry gives the base address of the segment and this is then added to the offset in the Virtual Address.
+              This is the difference between the two.
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
