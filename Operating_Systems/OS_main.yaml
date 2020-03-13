@@ -1493,8 +1493,8 @@ DSTN:
         Options:
           - 1: If the processor does not find the required data in L1 cache, it will fetch it from L2 cache.
           - 2: It is slower than Look Through cache.
-          - 3: Both L1 cache and L2 cache and main memory get the request for the data simultaneously and the cache which has a hit, returns the data and the
-               request for the other is cancelled.
+          - 3: Both L1 cache and L2 cache and main memory get the request for the data simultaneously and the cache which has a hit, returns
+               the data and the request for the other is cancelled.
           - 4: Processor cannot look for data in more than one levels of cache at the same time.
         Company_tags:
         Level:
