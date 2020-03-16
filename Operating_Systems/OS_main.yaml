@@ -1527,15 +1527,22 @@ DSTN:
               the Virtual Address consists of the segment number and offset. This segment number tells the entry in the segment table. This
               entry gives the base address of the segment and this is then added to the offset in the Virtual Address.
               This is the difference between the two.
-      - Question_15:
+      - Question_15: Which of the following is not true regarding segmentation?
         Options:
+          - 1: Since segments are not equal, segmentation is similar to dynamic partitioning.
+          - 2: Segmentation is very difficult to implement in systems with growing data structures.
+          - 3: Programs can be altered and recompiled easily.
+          - 4: Data sharing is easy and protection can also be implemented easily.
         Company_tags:
         Level:
         Reference:
-        Correct_answer:
+        Correct_answer: 2
         Answer:
           - Hint:
-          - Solution:
+          - Solution: |
+              The main advantage of segmentation is the dynamic size of segments. They need not be of equal size. This means that there is no
+              external fragmentation in segmentation. This is why it is ideal for growing/changing data structures (i.e, the ones which
+              change in size).
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
