@@ -1493,21 +1493,20 @@ DSTN:
         Options:
           - 1: If the processor does not find the required data in L1 cache, it will fetch it from L2 cache.
           - 2: It is slower than Look Through cache.
-          - 3: Both L1 cache and L2 cache and main memory get the request for the data simultaneously and the cache which has a hit, returns
-               the data and the request for the other is cancelled.
-          - 4: Processor cannot look for data in more than one levels of cache at the same time.
+          - 3: Processor cannot look for data in more than one levels of cache at the same time.
+          - 4: None of these
         Company_tags:
         Level:
         Reference: https://stackoverflow.com/questions/34001002/look-through-vs-look-aside
-        Correct_answer: 3
+        Correct_answer: 2
         Answer:
           - Hint:
           - Solution: |
               Look Aside cache is a cache in which the processor looks for the data in all levels of cache and main memory simultaneously.
               When there is a memory hit, it has to send a request cancellation signal to the other levels and main memory (if data is data is
-              found in cache). Now, the main point of care is that "option 2" looks correct because this sending signals is a bit time
-              consuming and hence, it must be slower than Look Through cache. But, since cache has a hit rate of approximately 95%, this
-              mechanism takes lesser time indeed. This is why "option 2" is wrong.
+              found in cache). Now-a-days cache has a hit rate of approximately 95%, this means that 95% of the time, the requests need to be
+              cancelled and this contributes to a significant overload. Hence, it is slower than look through cache and many of today's
+              systems use it.
       - Question_14: What is the difference between Linear Address and Logical Address?
         Options:
         Company_tags:
@@ -1528,6 +1527,15 @@ DSTN:
               the Virtual Address consists of the segment number and offset. This segment number tells the entry in the segment table. This
               entry gives the base address of the segment and this is then added to the offset in the Virtual Address.
               This is the difference between the two.
+      - Question_15:
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint:
+          - Solution:
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
