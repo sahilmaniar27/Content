@@ -1582,6 +1582,33 @@ DSTN:
               Notice the this is a degradation of over 40% in performance. To have a 10% increase in performance, we will need to have a
               page fault rate of 0.0000025, meaning that we need to implement the algorithm such that it results in minimum page faults.
               0.0000025 rate of page faults means 1 page fault in 400,000 accesses.
+      - Question_17: |
+          State true or false.
+          Statement: If a system uses LRU as the replacement policy for page faults, every time a page is brought in memory that time is used
+                     to make the decision of whether to keep the page while replacement or not.
+        Options:
+          - 1: "True" 
+          - 2: "False"
+        Company_tags:
+        Level:
+        Reference:
+          - 1: https://www.geeksforgeeks.org/page-fault-handling-in-operating-system/
+          - 2: https://www.geeksforgeeks.org/program-for-least-recently-used-lru-page-replacement-algorithm/
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              The statement is false. This is because the LRU algorithm uses the time when the page is referenced (or the memory is referenced)
+              as the decision point. FIFO uses the time of bringing in the page as the decision point.
+      - Question_18:
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint:
+          - Solution:
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
