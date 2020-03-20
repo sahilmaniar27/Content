@@ -1600,15 +1600,18 @@ DSTN:
           - Solution: |
               The statement is false. This is because the LRU algorithm uses the time when the page is referenced (or the memory is referenced)
               as the decision point. FIFO uses the time of bringing in the page as the decision point.
-      - Question_18:
+      - Question_18: Which of the following gives better throughput, Global replacement of frames or Local replacement of pages? Justify.
         Options:
         Company_tags:
         Level:
-        Reference:
+        Reference: https://www.geeksforgeeks.org/operating-system-allocation-frames/
         Correct_answer:
         Answer:
           - Hint:
-          - Solution:
+          - Solution: |
+              Global replacement will give better throughput because it can take frames allocated to other processes as well. This means that
+              that process will complete its task as soon as possible. This has a downside that the number of page faults may increase. Despite
+              this, the Global replacement policy tends to perform better (i.e., give a better throughput).
   Memory Hierarchy:
   Storage Requirement and Usage:
     - Including File systems:
