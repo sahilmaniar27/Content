@@ -1,4 +1,7 @@
 ---
+#first month: 11 questions
+#second month: 8 questions
+#total questions: 19
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -90,6 +93,11 @@ Data Structure:
         Solution: https://www.geeksforgeeks.org/maximum-product-subarray/
         Common_Mistakes: |
           We have to keep in mind that the product can become maximum by multiplying negative numbers too (even number of them, obviously).
+      - Question_2: https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/
+        Company_tags: Amazon, Samsung
+        Level: Medium
+        Solution:
+        Common_Mistakes:
   Linked-List:
   Map:
     Practice_questions:
@@ -102,6 +110,17 @@ Data Structure:
           makes this problem very easy. This takes care of making key-value pair. Then, we must take care of the return type of the find
           function. Then, we must also be careful while using the iterator and remember to compare it with the end of the map and not the size
           of the input vector.
+      - Question_2: https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
+        Company_tags: Microsoft, Amazon, Morgan Stanley
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/clone-linked-list-next-random-pointer-o1-space/ #optimal solution (using constant space)
+        Common_Mistakes: |
+          The interviewer can put a contraint of using a constant space, the solution is provided in the solution link.
+      - Question_3: https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
+        Company_tags: Microsoft, Amazon, Samsung, VMWare, Morgan Stanley, Walmart, Oracle
+        Level: Medium
+        Solution: https://youtu.be/_BG9rjkAXj8 #solution video
+        Common_Mistakes:
 Binar Search:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
@@ -117,4 +136,24 @@ Graphs:
       Company_tags: Amazon
       Level: Medium-Hard
       Solution: https://www.geeksforgeeks.org/bridge-in-a-graph/
+      Common_Mistakes:
+Binary Tree:
+  Practice_questions:
+    - Question_1: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
+      Company_tags: Microsoft, Flipkart, Adobe, Amazon, Google, Oracle
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/connect-nodes-level-level-order-traversal/
+      Common_Mistakes: |
+        We need to take care of while writing the solution. We should ask the interviewer if the binary tree is a complete binary tree or not
+        and proceed accordingly. The solution provided in the link above works for all types of binary trees (complete or not complete).
+        But, the algorithm (an extension of pre-order traversal) initial solution uses, DOES NOT work binary trees that are not complete.
+    - Question_2: https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
+      Company_tags: Microsoft, PayU, Amazon, American Express, Twitter
+      Level: Easy-Medium
+      Solution: #provided in question
+      Common_Mistakes:
+    - Question_3: https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
+      Company_tags: Microsoft, Paytm, Amazon, Goldman Sacs, Walmart, Intel, InMobi
+      Level: Easy-Medium
+      Solution: #provided in question
       Common_Mistakes:
