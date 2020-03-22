@@ -1,7 +1,7 @@
 ---
 #first month: 11 questions
-#second month: 8 questions
-#total questions: 19
+#second month: 13 questions
+#total questions: 24
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -154,6 +154,35 @@ Binary Tree:
       Common_Mistakes:
     - Question_3: https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
       Company_tags: Microsoft, Paytm, Amazon, Goldman Sacs, Walmart, Intel, InMobi
+      Level: Easy-Medium
+      Solution: #provided in question
+      Common_Mistakes:
+Stack:
+  Practice_questions:
+    - Question_1: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+      Company_tags: Microsoft, Paytm, Amazon, Facebook
+      Level: Easy-Medium
+      Solution: #provided in question
+      Common_Mistakes:
+Strings:
+  Practice_questions:
+    - Question_1: https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/
+      Company_tags: Microsoft, Flipkart, Adobe, Facebook, Samsung
+      Level: Easy-Medium
+      Solution: #provided in question
+      Common_Mistakes:
+    - Question_2: https://www.geeksforgeeks.org/look-and-say-sequence/
+      Company_tags: Facebook, Amazon
+      Level: Easy-Medium
+      Solution: #provided in question
+      Common_Mistakes:
+    - Question_3: https://www.geeksforgeeks.org/rearrange-a-string-in-sorted-order-followed-by-the-integer-sum/
+      Company_tags: Facebook
+      Level: Easy-Medium
+      Solution: #provided in question
+      Common_Mistakes:
+    - Question_4: https://www.geeksforgeeks.org/program-to-add-two-binary-strings/
+      Company_tags: Facebook
       Level: Easy-Medium
       Solution: #provided in question
       Common_Mistakes:
