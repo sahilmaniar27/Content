@@ -1612,9 +1612,28 @@ DSTN:
               Global replacement will give better throughput because it can take frames allocated to other processes as well. This means that
               that process will complete its task as soon as possible. This has a downside that the number of page faults may increase. Despite
               this, the Global replacement policy tends to perform better (i.e., give a better throughput).
+      - Question_19: |
+          Suppose there are two replacement policies for Cache: LRU and FIFO. There will be a data structure for both of these policies.
+          If there is a hit, which of the following data structures will(may) change, as in which of the data structures will be updated?
+        Options:
+          - LRU
+          - FIFO
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 1
+        Answer:
+          - Hint:
+          - Solution: |
+              The LRU replacement algorithm works on the principle of "least recently accessed" entry. If there is cache hit, it will mean
+              some entry in the cache was accessed. This means that the LRU counter will change and the LRU entry may or may not change. LRU
+              entry will change if the most recently accessed cache entry was the LRU before the access. But the LRU counter will definitely
+              change. As for the data structure used for FIFO, it will not change as the replacement only depends on when the entry was made
+              and not on when it was accessed.
   Memory Hierarchy:
   Storage Requirement and Usage:
-    - Including File systems:
+    - File systems:
+
     - Mass storage:
   Storage Interfaces & Disk Performance:
   System Level Design:
