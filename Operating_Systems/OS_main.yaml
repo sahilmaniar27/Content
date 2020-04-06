@@ -1633,7 +1633,24 @@ DSTN:
   Memory Hierarchy:
   Storage Requirement and Usage:
     - File systems:
-
+        Practice_questions:
+        - Question_1: A directory in LINUX is techinically a file. Is this statement correct? Justify.
+          Options:
+            - "True"
+            - "False"
+          Company_tags:
+          Level:
+          Reference:
+          Correct_answer: 1
+          Answer:
+            - Hint:
+            - Solution: |
+                This statement is true. Everything in LINUX can be classified as either a process or a file. A directory is a file whose
+                content is links to the files in it. These files can be "files" (as in the ones that are not directories) or directories
+                (which, as we have come to know, are files). The structure of the file system in LINUX can be thought of as a graph. There
+                are links among various nodes. The top is the root directory and the leaves are the files. They don't have anthing in them
+                other than data.
+        - Question_2:
     - Mass storage:
   Storage Interfaces & Disk Performance:
   System Level Design:
