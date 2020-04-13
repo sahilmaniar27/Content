@@ -39,7 +39,7 @@ Basic Math:
     - Question_2: https://www.interviewbit.com/problems/greatest-common-divisor/
       Company_tags: Google, NetApp
       Level: Easy
-      Solution:
+      Solution: https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/
       Common_Mistakes: |
         This can be the most commonly used function while solving some questions of future topics. The main take away is that it can be solved
         in O(log(n)) time and does not need brute force or factorization.
@@ -170,9 +170,10 @@ Strings:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/
       Company_tags: Microsoft, Flipkart, Adobe, Facebook, Samsung
-      Level: Medium
+      Level: Easy
       Solution: #provided in question
-      Common_Mistakes:
+      Common_Mistakes: |
+        Remember to take care of base cases and negative numbers.
     - Question_2: https://www.geeksforgeeks.org/look-and-say-sequence/
       Company_tags: Facebook, Amazon
       Level: Easy
