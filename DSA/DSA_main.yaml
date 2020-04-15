@@ -1,7 +1,8 @@
 ---
 #first month: 11 questions
 #second month: 13 questions
-#total questions: 24
+#April: 5 questions
+#total questions: 29
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -83,6 +84,23 @@ Dynamic Programming:
       Level: Medium
       Solution: https://www.geeksforgeeks.org/boggle-find-possible-words-board-characters/
       Common_Mistakes:
+    - Question_7: https://leetcode.com/problems/palindromic-substrings/
+      Company_tags: Samsung, Qualcomm, Visa, Microsoft
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
+      Common_Mistakes:
+    - Question_8: https://leetcode.com/problems/counting-bits/
+      Company_tags: Amazon 
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/count-total-set-bits-in-all-numbers-from-1-to-n/
+      Common_Mistakes: |
+        This question has many solutions. It can be done using Dynamic Programming also. Time complexity varies with methods and the
+        interviewer will possibly ask for the complexity to be less than or equal to O(nlogn).
+    - Question_8: https://leetcode.com/problems/longest-increasing-subsequence/
+      Company_tags: Amazon, Samsung
+      Level: Medium-Hard
+      Solution: https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
+      Common_Mistakes:
 Data Structure:
   Resources:
   Array:
@@ -137,6 +155,11 @@ Graphs:
       Level: Medium-Hard
       Solution: https://www.geeksforgeeks.org/bridge-in-a-graph/
       Common_Mistakes:
+    - Question_2: https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
+      Company_tags:
+      Level: Medium
+      Solution: #provided in question link.
+      Common_Mistakes:
 Binary Tree:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
@@ -157,6 +180,10 @@ Binary Tree:
       Level: Medium
       Solution: #provided in question
       Common_Mistakes:
+    - Question_4: https://leetcode.com/problems/subtree-of-another-tree/
+      Company_tags: Morgan Stanley, Amazon, Adobe
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/check-if-a-binary-tree-is-subtree-of-another-binary-tree/
 Stack:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
@@ -188,4 +215,11 @@ Strings:
       Company_tags: Facebook
       Level: Easy
       Solution: #provided in question
+      Common_Mistakes:
+Heap:
+  Practice_questions:
+    - Question_1: https://leetcode.com/problems/top-k-frequent-elements/
+      Company_tags: Amazon 
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
       Common_Mistakes:
