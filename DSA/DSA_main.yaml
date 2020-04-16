@@ -1,8 +1,8 @@
 ---
 #first month: 11 questions
 #second month: 13 questions
-#April: 5 questions
-#total questions: 29
+#April: 15 questions
+#total questions: 39
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -101,6 +101,16 @@ Dynamic Programming:
       Level: Medium-Hard
       Solution: https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
       Common_Mistakes:
+    - Question_9: https://leetcode.com/problems/coin-change/
+      Company_tags: Microsoft, Morgan Stanley, Paytm, Samsung
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/coin-change-dp-7/
+      Common_Mistakes:
+    - Question_10: https://leetcode.com/problems/house-robber/
+      Company_tags: Amazon, Walmart, Paytm, Yahoo, 
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/find-maximum-possible-stolen-value-houses/
+      Common_Mistakes:
 Data Structure:
   Resources:
   Array:
@@ -117,6 +127,12 @@ Data Structure:
         Solution:
         Common_Mistakes:
   Linked-List:
+    Practice_questions:
+      - Question_1: https://leetcode.com/problems/reverse-linked-list/
+        Company_tags:
+        Level: Easy
+        Solution: https://www.geeksforgeeks.org/reverse-a-linked-list/
+        Common_Mistakes: Remember to handle the pointers carefully and swap head and last node carefully. 
   Map:
     Practice_questions:
       - Question_1: https://www.interviewbit.com/problems/majority-element/
@@ -160,6 +176,11 @@ Graphs:
       Level: Medium
       Solution: #provided in question link.
       Common_Mistakes:
+    - Question_3: https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+      Level: Medium
+      Company_tags: Amazon, Walmart, Google
+      Solution: #provided in question link
+      Common_Mistakes:
 Binary Tree:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
@@ -184,6 +205,27 @@ Binary Tree:
       Company_tags: Morgan Stanley, Amazon, Adobe
       Level: Easy
       Solution: https://www.geeksforgeeks.org/check-if-a-binary-tree-is-subtree-of-another-binary-tree/
+      Common_Mistakes:
+    - Question_5: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+      Company_tags: Flipkart, Adobe, Amazon, InMobi, LinkedIn, Microsoft
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
+      Common_Mistakes:
+    - Question_6: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+      Company_tags: Amazon, Microsoft, Samsung  
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/
+      Common_Mistakes:
+    - Question_7: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+      Company_tags: Amazon, Google
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/kth-smallest-element-in-bst-using-o1-extra-space/
+      Common_Mistakes:
+    - Question_8: https://leetcode.com/problems/invert-binary-tree/
+      Company_tags: Amazon, Google
+      Level: Easy-Medium
+      Solution: https://www.techiedelight.com/invert-binary-tree-recursive-iterative/
+      Common_Mistakes:
 Stack:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
@@ -216,10 +258,22 @@ Strings:
       Level: Easy
       Solution: #provided in question
       Common_Mistakes:
+    - Question_5: https://leetcode.com/problems/valid-anagram/
+      Company_tags: Goldman Sacs, Amazon
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
+      Common_Mistakes:
 Heap:
   Practice_questions:
     - Question_1: https://leetcode.com/problems/top-k-frequent-elements/
       Company_tags: Amazon 
       Level: Medium
       Solution: https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
+      Common_Mistakes:
+Advanced Algorithms:
+  Practice_questions:
+    - Question_1: https://leetcode.com/problems/implement-trie-prefix-tree/
+      Company_tags:
+      Level: Hard
+      Solution: https://www.geeksforgeeks.org/trie-insert-and-search/
       Common_Mistakes:
