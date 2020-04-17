@@ -1,8 +1,8 @@
 ---
 #first month: 11 questions
 #second month: 13 questions
-#April: 15 questions
-#total questions: 39
+#April: 26 questions
+#total questions: 49
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -44,6 +44,11 @@ Basic Math:
       Common_Mistakes: |
         This can be the most commonly used function while solving some questions of future topics. The main take away is that it can be solved
         in O(log(n)) time and does not need brute force or factorization.
+    - Question_3: https://leetcode.com/problems/merge-intervals/  
+      Level: Medium
+      Company_tags: Google, Amazon
+      Solution: https://www.geeksforgeeks.org/merging-intervals/
+      Common_Mistakes:
 Dynamic Programming:
   Resources:
     - https://www.geeksforgeeks.org/dynamic-programming/
@@ -111,6 +116,21 @@ Dynamic Programming:
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/find-maximum-possible-stolen-value-houses/
       Common_Mistakes:
+    - Question_11: https://leetcode.com/problems/unique-paths/
+      Company_tags: Amazon, LinkedIn, Microsoft, Paytm, Walmart
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/count-possible-paths-top-left-bottom-right-nxm-matrix/
+      Common_Mistakes:
+    - Question_12: https://leetcode.com/problems/climbing-stairs/
+      Company_tags: Amazon, LinkedIn, Intel, Morgan Stanley, Samsung
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/count-ways-reach-nth-stair/
+      Common_Mistakes:
+    - Question_13: https://leetcode.com/problems/decode-ways/
+      Company_tags: Goldman Sacs, LinkedIn, Morgan Stanley, Facebook, Amazon
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/count-possible-decodings-given-digit-sequence/
+      Common_Mistakes:
 Data Structure:
   Resources:
   Array:
@@ -126,13 +146,34 @@ Data Structure:
         Level: Medium
         Solution:
         Common_Mistakes:
+      - Question_3: https://leetcode.com/problems/search-in-rotated-sorted-array/
+        Company_tags: D.E. Shaw, Amazon, Flipkart, Adobe, Microsoft, Paytm, Samsung
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
+        Common_Mistakes:
+      - Question_4: https://leetcode.com/problems/spiral-matrix/
+        Company_tags: D.E. Shaw, Amazon, Morgan Stanley, Microsoft, Paytm, Oracle
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/
+        Common_Mistakes:
+      - Question_5: https://leetcode.com/problems/insert-interval/
+        Company_tags: Google
+        Level: Hard
+        Solution: https://www.geeksforgeeks.org/insert-in-sorted-and-non-overlapping-interval-array/
+        Common_Mistakes:
   Linked-List:
     Practice_questions:
       - Question_1: https://leetcode.com/problems/reverse-linked-list/
         Company_tags:
         Level: Easy
         Solution: https://www.geeksforgeeks.org/reverse-a-linked-list/
-        Common_Mistakes: Remember to handle the pointers carefully and swap head and last node carefully. 
+        Common_Mistakes: Remember to handle the pointers carefully and swap head and last node carefully.
+      - Question_2: https://leetcode.com/problems/merge-k-sorted-lists/
+        Company_tags: Amazon, VMWare
+        Level: Medium-Hard
+        Solution: https://www.geeksforgeeks.org/merge-k-sorted-linked-lists/
+        Common_Mistakes:
+
   Map:
     Practice_questions:
       - Question_1: https://www.interviewbit.com/problems/majority-element/
@@ -226,6 +267,21 @@ Binary Tree:
       Level: Easy-Medium
       Solution: https://www.techiedelight.com/invert-binary-tree-recursive-iterative/
       Common_Mistakes:
+    - Question_9: https://leetcode.com/problems/validate-binary-search-tree/
+      Company_tags: Microsoft, Adobe, Amazon, VMWare, Walmart
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+      Common_Mistakes:
+    - Question_10: https://leetcode.com/problems/same-tree/
+      Company_tags: Microsoft, Amazon
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/
+      Common_Mistakes:
+    - Question_11: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+      Company_tags: Teradata, Amazon, FreeCharge, VMWare
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
+      Common_Mistakes:
 Stack:
   Practice_questions:
     - Question_1: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
@@ -262,6 +318,11 @@ Strings:
       Company_tags: Goldman Sacs, Amazon
       Level: Easy
       Solution: https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
+      Common_Mistakes:
+    - Question_6: https://leetcode.com/problems/minimum-window-substring/
+      Company_tags: Directi, Google, Codenation, Amazon
+      Level: Hard
+      Solution: https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
       Common_Mistakes:
 Heap:
   Practice_questions:
