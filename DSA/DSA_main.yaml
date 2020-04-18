@@ -1,8 +1,8 @@
 ---
 #first month: 11 questions
 #second month: 13 questions
-#April: 26 questions
-#total questions: 49
+#April: 31 questions
+#total questions: 55
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -161,6 +161,28 @@ Data Structure:
         Level: Hard
         Solution: https://www.geeksforgeeks.org/insert-in-sorted-and-non-overlapping-interval-array/
         Common_Mistakes:
+      - Question_6:
+        Company_tags: Google, Facebook
+        Level: Easy-Medium
+        Solution: https://www.geeksforgeeks.org/find-triplets-array-whose-sum-equal-zero/
+        Common_Mistakes:
+      - Question_7: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+        Company_tags: Amazon, Flipkart, Samsung
+        Level: Medium
+        Solution:
+          -1:  https://www.geeksforgeeks.org/find-possible-words-phone-digits/
+          -2: https://www.geeksforgeeks.org/iterative-letter-combinations-of-a-phone-number/
+        Common_Mistakes:
+      - Question_8: https://leetcode.com/problems/valid-sudoku/
+        Company_tags: Google, Amazon
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/check-if-given-sudoku-board-configuration-is-valid-or-not/
+        Common_Mistakes:
+      - Question_9: https://leetcode.com/problems/word-search/
+        Company_tags: Amazon, Microsoft, Morgan Stanley, Samsung
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/
+        Common_Mistakes:
   Linked-List:
     Practice_questions:
       - Question_1: https://leetcode.com/problems/reverse-linked-list/
@@ -173,7 +195,6 @@ Data Structure:
         Level: Medium-Hard
         Solution: https://www.geeksforgeeks.org/merge-k-sorted-linked-lists/
         Common_Mistakes:
-
   Map:
     Practice_questions:
       - Question_1: https://www.interviewbit.com/problems/majority-element/
