@@ -2,7 +2,8 @@
 #first month: 11 questions
 #second month: 13 questions
 #April: 31 questions
-#total questions: 55
+#May: 6 questions
+#total questions: 61
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -49,6 +50,12 @@ Basic Math:
       Company_tags: Google, Amazon
       Solution: https://www.geeksforgeeks.org/merging-intervals/
       Common_Mistakes:
+    - Question_4: https://www.interviewbit.com/problems/container-with-most-water/
+      Company_tags: Adobe, Amazon, Facebook, Google
+      Level: Medium-Hard
+      Solution: https://leetcode.com/problems/container-with-most-water/solution/
+      Common_Mistakes:
+
 Dynamic Programming:
   Resources:
     - https://www.geeksforgeeks.org/dynamic-programming/
@@ -133,6 +140,29 @@ Dynamic Programming:
       Common_Mistakes:
 Data Structure:
   Resources:
+  Stack:
+    Practice_questions:
+      - Question_1: https://www.interviewbit.com/search/?q%5B%5D=Amazon#toggle-problem-link-274
+        Company_tags: Amazon
+        Level: Easy
+        Solution: https://www.geeksforgeeks.org/expression-contains-redundant-bracket-not/
+        Common_Mistakes:
+      - Question_2: https://www.interviewbit.com/problems/rain-water-trapped/
+        Company_tags: Amazon, Qualcomm, Microsoft
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/trapping-rain-water/
+        Common_Mistakes:
+      - Question_3: https://www.interviewbit.com/problems/min-stack/
+        Company_tags: Yahoo, Adobe, Microsoft, Amazon
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+        Common_Mistakes:
+      - Question_4: https://www.interviewbit.com/problems/nearest-smaller-element/
+        Company_tags: Amazon, Microsoft
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/find-the-nearest-smaller-numbers-on-left-side-in-an-array/
+        Common_Mistakes:
+      - Question_5: 
   Array:
     Practice_questions:
       - Question_1: https://www.interviewbit.com/problems/max-product-subarray/
@@ -182,6 +212,11 @@ Data Structure:
         Company_tags: Amazon, Microsoft, Morgan Stanley, Samsung
         Level: Medium
         Solution: https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/
+        Common_Mistakes:
+      - Question_10: https://www.interviewbit.com/problems/remove-element-from-array/
+        Company_tags: Amazon
+        Level: Easy-Medium
+        Solution: https://github.com/Ritesh25696/interviewBit/blob/master/Remove%20Element%20from%20Array
         Common_Mistakes:
   Linked-List:
     Practice_questions:
