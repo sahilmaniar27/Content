@@ -1650,7 +1650,54 @@ DSTN:
                 (which, as we have come to know, are files). The structure of the file system in LINUX can be thought of as a graph. There
                 are links among various nodes. The top is the root directory and the leaves are the files. They don't have anthing in them
                 other than data.
-        - Question_2:
+        - Question_2: Can a system have the number of inodes as dynamic?. Give reasons.
+          Options:
+            - "Yes"
+            - "No"
+          Company_tags:
+          Level:
+          Reference:
+          Correct_answer: 1
+          Answer:
+            - Hint: inode list.
+            - Solution: |
+                Every filesystem has a system wide inode list that stores the information about all the inodes that exist in the filesystem.
+                Like, how many are free, how many are allocated. Now, this "inode list" has got a specific size. We we configure our
+                filesystem, we specify the size and that size cannot be changed later. So, there will exist a predefined number of inodes in
+                the filesystem at any point in time and hence their number is not variable.
+        - Question_3: How many data blocks are read when the command "fopen("/DSTN/PrePlaced/student.txt","r")" is executed?
+          Options:
+            - 1: 3
+            - 2: 4
+            - 3: 8
+            - 4: Can't say
+          Level:
+          Reference:
+          Correct_answer: 2
+          Answer:
+            - Hint: Reading a data block different from reading inode.
+            - Solution: |
+                Let us understand the process in a bit of detail. First, the system will "fetch the inode of the root" since the address is
+                absolute type. Then it will read the data block of root and search for the inode for the directory "DSTN". Then it will read
+                the data block of DSTN and then search for the inode for "PrePlaced", subsequently reading it data block and searching for
+                the inode of "student.txt". It will then read the first block of data as this is in "read mode". Had it been in append mode,
+                it would have to have read the data block equal to the size of the file. Therefore, the total number of data block reads are
+                "4".
+        - Question_4: How many inodes are accumulated in memory when we execute the command "fopen("/DSTN/PrePlaced/student.txt","r")"?
+          Options:
+            - 1: 0
+            - 2: 1
+            - 3: 3
+            - 4: As many inodes are read
+          Correct_answer: 1
+          Answer:
+            - Hint: Releasing of inode also takes place.
+            - Solution: |
+                When we get the next inodes so that we can read their corresponding data blocks, we release other inodes that we have accessed
+                before so that other processes can use them and hence do not have to wait for one process to finish its adress translation.
+                Therefore, only one inode is there in memory at a time.
+                Note that this does not mean that it will be completely discarded, it will still reside in the cache until the entry in which
+                it resides is updated (that is, the data of the entry is replaced).
     - Mass storage:
   Storage Interfaces & Disk Performance:
   System Level Design:
