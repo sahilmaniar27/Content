@@ -2,8 +2,8 @@
 #first month: 11 questions
 #second month: 13 questions
 #April: 31 questions
-#May: 13 questions
-#total questions: 67
+#May: 20 questions
+#total questions: 75
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -182,7 +182,6 @@ Data Structure:
         Level: Medium
         Solution: https://www.geeksforgeeks.org/find-the-nearest-smaller-numbers-on-left-side-in-an-array/
         Common_Mistakes:
-      - Question_5: 
   Array:
     Practice_questions:
       - Question_1: https://www.interviewbit.com/problems/max-product-subarray/
@@ -308,6 +307,26 @@ Binar Search:
       Common_Mistakes: |
         Though the array is rotated around a pivot element, we must remember that the two parts are individually sorted. We can keep this in
         mind and think of searching the required element in one go, instead of using two binary searches.
+    - Question_2: https://www.interviewbit.com/problems/square-root-of-integer/
+      Company_tags: Facebook, Amazon, Microsoft
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/square-root-of-an-integer/
+      Common_Mistakes: While doing binary searching, remember to check the boundary conditions for updating the low and high variables.
+    - Question_3: https://www.interviewbit.com/problems/allocate-books/
+      Company_tags: Google
+      Level: Medium-Hard
+      Solution: https://www.geeksforgeeks.org/allocate-minimum-number-pages/
+      Common_Mistakes:
+    - Question_4: https://www.geeksforgeeks.org/allocate-minimum-number-pages/
+      Company_tags: Amazon, Google, Goldman Sacs, VMWare
+      Level: Hard
+      Solution: https://www.geeksforgeeks.org/median-of-two-sorted-arrays-of-different-sizes/
+      Common_Mistakes:
+    - Question_5: https://www.interviewbit.com/problems/search-for-a-range/
+      Company_tags: Google, Microsoft
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/
+      Solution: https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/
 Graphs:
   Practice_questions:
     - Question_1: https://leetcode.com/discuss/interview-question/372581
@@ -426,6 +445,18 @@ Strings:
       Company_tags: Directi, Google, Codenation, Amazon
       Level: Hard
       Solution: https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
+      Common_Mistakes:
+    - Question_7: https://www.interviewbit.com/problems/reverse-the-string/
+      Company_tags: Qualcomm, Amazon, Cisco, Facebook, Microsoft
+      Level: Easy
+      Solution: |
+        -1: https://www.geeksforgeeks.org/reverse-a-string-in-c-cpp-different-methods/
+        Note: The solution link contains various ways to reverse a string. But, one must be able to reverse a string using a custom function.
+      Common_Mistakes:
+    - Question_8: https://www.interviewbit.com/problems/minimum-characters-required-to-make-a-string-palindromic/
+      Company_tags: Amazon
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
       Common_Mistakes:
 Heap:
   Practice_questions:
