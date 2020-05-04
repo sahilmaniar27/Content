@@ -1149,6 +1149,568 @@ Synchronization:
             of x will be “-1”.
             Keping this in mind, we can say that the minimum value of "x" will occur when this type of context switch occurs and each of these
             times, this value is one less. So, after 50 interations, the minimum value will be -50.
+    - Question_4: |
+        Based on the Producer-Consumer Problem, answer the following question.
+        Assume that the algorithm for the Producer is:
+        while (1) {
+          // Produce item;
+          Buffer[in] = item;
+          in = in + 1;
+        }
+        Ans the algorithm for Consumer is:
+        while (1) {
+          while(in==out);
+          item = Buffer[out];
+          out = out + 1;
+        }
+        Note : The "Produce item" is the critical section.
+        What is the problem with this simple algorithm?
+      Options:
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer:
+      Answer:
+        - Hint: Context Switch.
+        - Solution: |
+            We need to keep in mind the Consumer and the Producer are two different processes. So, if the Producer just keeps on producing,
+            and the Consumer does not get time to consume ,which will happen only when there will be a context switch (in case of a
+            uni-processor system). Whereas in a multi-processor system, the two processes can run simultaneously and there will be no
+            monitoring if consumer has confumed more than what the Producer is producing. This is the fundamental problem of this simple
+            algorithm.
+    - Question_5: Which of the following will not result in data inconsistency?
+      Options:
+        - 1: A file being opened by two processes simultaneously and one process is reading it and the other is writing in it.
+        - 2: A file being opened by two processes simultaneously for reading.
+        - 3: A file being opened by two processes simultaneously and both the processes modifying it.
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 2
+      Answer:
+        - Hint:
+        - Solution: |
+            Reading from a file not a critical section job. More than one process can simultaneously read from a file but if one file is
+            reading and the others are writing, this can lead to wrong data being read.
+    - Question_6: |
+        Assume there are two processes executing with the following code:
+        Process 1:
+          int main()
+          do{
+            while (turn !=0); // do nothing
+            //critical section
+            turn = 1;
+            //reminder section
+          }while(1);
+          Process 2:
+          int main()
+          do{
+            while (turn !=1); // do nothing
+            //critical section
+            turn = 0;
+            //reminder section
+          }while(1);
+          Is this process ideal for dealing with two processes trying the same critical section? Explain your answer.
+      Options:
+        - 1: "Yes"
+        - 2: "No"
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 2
+      Answer:
+        - Hint: What happens if process 1 dies abruptly?
+        - Solution: |
+            The first problem with this algorithm is that these two processes must strictly alnernate between each other to continue execution.
+            The other problem is that if one process ends abruptly, the other will wait eternally for the variable turn to change and hence
+            will be stuck. There need to be a mechanism to make sure that if one process dies, the execution does not stop.
+    - Question_7: |
+        Consider two processes P1 and P2. The initial value of flag[0] and flag[1] is "False" and it is a shared boolean variable.
+        Process P1:
+          while(1){
+            flag[0]=true;
+            while (flag[1]);
+            //critical section
+            flag[0]=false;
+            //reminder section
+          }
+        Process P2:
+          while(1){
+            flag[1]=true;
+            while (flag[0]);
+            //critical section
+            flag[1]=false;
+            //reminder section
+          }
+          Is there a flaw in this algorithm? Justify your answer.
+      Options:
+        - 1: "Yes"
+        - 2: "No"
+      Company_tags:
+      Level:
+      Reference:
+      Correct_answer: 1
+      Answer:
+        - Hint: Possibility of an infinite loop?
+        - Solution: |
+            If at any point in the running of this algorithm, both flag[0] and flag[0] become "True", the algorithm will go in an infinite
+            loop. This algorithm satifies "Mutual Exclusion" property of an algorithm that avoids Race Condition. But, this may lead to a
+            Dead Lock.
+    - Question_9: Which of the following will guarantee a deadlock in a single instance resource?
+      Company_tags: abc
+      Level: xyz
+      Options:
+        -1: Mutual Exclusion
+        -2: Circular Wait for graph
+        -3: Hold and Wait
+        -4: Preemption of one of the process.
+      Correct_answer: 2
+      Answer:
+        - Hint: Single instance resource and circular wait are related.
+        - Solution: |
+            The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
+            process is requesting for the resource, the first is holding there is a definite deadlock. The others do not guarantee that.
+DSTN:
+  Reference:
+    - Textbook_1: Storage Networks The complete Reference. Robert Spalding, McGraw-Hill/Osborne, 2003.
+    - Textbook_2: Information Storage and Managements Storing, Managing and Protecting Digital Information. EMC Education Services, Wiley
+                  Publishing Inc., 2008.
+    - Textbook_3: Storage Networking-Real World Skills for the CompTIA Storage + Certification and Beyond by Nigel Poulton, Publishers,
+                  SYBEX a Wiley brand, 2014
+    - Videos and Blogs:
+  Memory Management:
+    Practice_questions:
+      - Question_1: The user program deals with which type of address?
+        Options:
+          - 1: Physical Address
+          - 2: Virtual Address
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              The user program interacts with the CPU only with the virtual address. It is the Memory Management Unit that takes care of the
+              address translation into Physical Address.
+      - Question_2: If a program is written such that it only requires Compile Time Binding, which of the following statements is true?
+        Options:
+          - 1: The Virtual Address generated is different from the Physical address at that will be accessed at the time of execution.
+          - 2: Virtual Address generated is same as the Physical address at that will be accessed at the time of execution.
+          - 3: There is no relation between the two types of addresses in any type of binding.
+          - 4: None of these
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 2
+        Answer:
+          - Hint: Programs compiled with compile time binding can only run at in the systems that they are compiled in.
+          - Solution: |
+              At Compile time the address generated is equal to the virtual address in the case of compile time binding.
+      - Question_3: Which of the following scheduler is responsible for swapping?
+        Options:
+          - 1: Short Term Scheduler
+          - 2: Long Term Scheduler
+          - 3: Mid Term Scheduler
+          - 4: None of these because it is done by some independent hardware.
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 3
+        Answer:
+          - Hint:
+          - Solution: |
+              The Mid Term Scheduler is responsible for swapping out processes into the swapping space when the system is running short on
+              memory. The Mid Term Scheduler then comes into action and swaps out the process from the memory. But remember, the PCB of the
+              process is not saved. Only the code section, data section, etc. is swapped out.
+      - Question_4: |
+          If a process had compile time binding, and if the process is swapped, does the mid term scheduler save the PCB of the PCB?
+        Options:
+          - 1: Yes, it does.
+          - 2: No, it doesn't.
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 1
+        Answer:
+          - Hint: Programs compiled with compile time binding can only run at in the systems that they are compiled in.
+          - Solution: |
+              Because the data section, code section have fixed addresses in compile time and load time binding, the complete context of the
+              process needs to be saved if the process had compile time or load time binding.
+      - Question_5: For dynamic partitioning of memory which of the following memory allocation method is the worst?
+        Options:
+          - 1: Best Fit
+          - 2: Next Fit
+          - 3: Worst Fit
+          - 4: First Fit
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 1
+        Answer:
+          - Hint: Fragmentation
+          - Solution: |
+              The Best Fit algorithm finds a contiguous block of memory that is equal to slightly greater than the memory that we need to get
+              allocated. This leaves small fragments of memory as holes and these fragments cannot be used. The best performing algorithm
+              is the Next Fit algorithm.
+      - Question_6: What does the term "inclusiveness" mean with respect to Cache Memory?
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint: How are different levels of cache related?
+          - Solution: |
+              Inclusiveness with respect to Cache Memory means that L1 cache will be a subset of L2 cache, L2 cache will be a subset of L3
+              cache, and so on. Each level of cache does not any data that is not available in the higher level of cache.
+      - Question_7: |
+          In what case will accessing L1 cache and getting a cache miss will result in accessing the Page Table directly?
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint: Is there a TLB? Is there a Cache Miss?
+          - Solution: |
+              The TLB stores the page number and corresponding frame number for a page table entry. And, an entry in cache consists of data
+              and tag bits. So, cache miss will imply that the tag bits don't match and hence it will mean that the CPU will reference the
+              TLB. But, since we want a direct access to the Page Table, a miising TLB will mean that cache miss will result in a direct
+              Page Table access.
+      - Question_8: |
+          In what case of pure paging, what is the significance of "modified bit"?
+        Options:
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer:
+        Answer:
+          - Hint: Dirty page
+          - Solution: |
+              When the Modified bit or dirty bit is set, it means that the page data has been modified. It's data is not the same as it was
+              when it was brought in memory. So, it must be written back and the page table should be updated, when the dirty page is accessed.
+      - Question_9: |
+          State ture or false.
+          Statement: The "modified bit" is not required if the cache iplements write through mechanism of Memory Management.
+          Explain your choice.
+        Options:
+          - 1: "True"
+          - 2: "False"
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/27087912/write-back-vs-write-through-caching
+        Correct_answer: 1
+        Answer:
+          - Hint: Why use a dirty bit when nothing is dirty?
+          - Solution: |
+              The answer lies in the mechanism of Write Through mechanism. This method ensures that the main memory has the up-to-date copy of
+              the desired data in the main memory. This means that cache and memory are coherent and have consistent data. So, there is no
+              need to keep a dirty bit as a part of the entry in Page Table or in Cache.
+      - Question_10: What are the main advantages of paging?
+        Options:
+        Company_tags:
+        Level:
+        Reference: http://www.cs.iit.edu/~cs561/cs351/VM/paging%20advantages%20and%20disadvantages.html
+        Correct_answer: 1
+        Answer:
+          - Hint:
+          - Solution: |
+              Some of the advantages of Paging are:
+                - Separation of user view of memory & actual physical memory
+                - Allows demand paging and prepaging
+                - More efficient swapping
+                - No need for considerations about fragmentation
+                - Just swap out page least likely to be use
+      - Question_11: Assume that a system implements Pure Paging with TLB as the Memory model. How is a TLB miss handeled in this system?
+        Options:
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/37825859/cache-miss-a-tlb-miss-and-page-fault
+        Correct_answer:
+        Answer:
+          - Hint: Page miss, invalid page, etc.
+          - Solution: |
+              TLB can be called a address-translation cache. So, a TLB hit implies that the requested page is mapped to a physical memory
+              frame and that entry is a part of TLB and that entry is found, whose address is a part of the TLB entry. Similary, TLB miss
+              the page-frame translation is not there in the TLB and hence, the MMU goes and fetches it from the page table. If the page is
+              available in the page table, then the entry in TLB is updated and the instruction that caused the TLB miss is exected again.
+              If the page is not available in the page table, then it is a page fault. Then the control is transferred to the OS. Page fault
+              means that either the page is invalid or it is not present in the page table. If the page is invalid, the OS decides if the page
+              is just invalid hence swap the invalid page for the valid page or if the requested page address is beyond the virtual address
+              space of the process. If it the later case, the process is terminated. In the former case, the page table and the TLB is updated
+              and the execution of the exception causing instruction begins again.
+      - Question_12: Which of teh following is true?
+        Options:
+          - 1: Paging causes external fragmentation.
+          - 2: All invalid page references lead to process termination.
+          - 3: Paging cause internal fragmentation.
+          - 4: Demand paging causes performance degradation
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 3
+        Answer:
+          - Hint:
+          - Solution: |
+              Paging causes internal fragmentation because the data is stored in frames of equal size and it is possible the the frames are
+              not filled completely. Not all invalid page references lead to process termination. Demand paging is implemented to increase the
+              efficiency of paging mechanism.
+      - Question_13: If a system has exclusive cache, do the L1 cache and L2 cache have different cache block sizes?
+        Options:
+          - 1: Yes, because in exclusive cache, the L1 cache is a subset of L2 cache.
+          - 2: No, because if there is L1 cache data is not a subset of L2 cache, data from L2 is brought into L1.
+          - 3: No, because L1 cache is not a subset of L2 cache.
+          - 4: Yes, because cache block sizes are never equal.
+        Company_tags:
+        Level:
+        Reference:
+          - 1: https://en.wikipedia.org/wiki/Cache_inclusion_policy#Exclusive_Policy
+          - 2: https://cs.stackexchange.com/questions/47009/what-if-block-sizes-are-not-equal-among-caches
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              In exclusive caches the block sizes among different levels is same and this is being followed in real life commercial PCs.
+              Intel architecture systems use Inclusive caches.
+      - Question_14: |
+          In TLB with ASIDs (Address Space Identifiers), do the entries related to a process get invalidated during a context switch? Explain.
+        Options:
+          - 1: "Yes"
+          - 2: "No"
+        Company_tags:
+        Level:
+        Reference:
+          - 1: https://stackoverflow.com/questions/52713940/purpose-of-address-spaced-identifiersasids
+          - 2: https://community.arm.com/developer/ip-products/processors/f/cortex-a-forum/5229/address-space-identifier---asid
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              No. In conventional TLB, the entries related to a process get invalidated when there is a context switch. But with ASIDs, the
+              entries get invalidated when the process is terminated.
+      - Question_14: Which of the following is true regarding Look Aside Cache?
+        Options:
+          - 1: If the processor does not find the required data in L1 cache, it will fetch it from L2 cache.
+          - 2: It is slower than Look Through cache.
+          - 3: Processor cannot look for data in more than one levels of cache at the same time.
+          - 4: None of these
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/34001002/look-through-vs-look-aside
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              Look Aside cache is a cache in which the processor looks for the data in all levels of cache and main memory simultaneously.
+              When there is a memory hit, it has to send a request cancellation signal to the other levels and main memory (if data is data is
+              found in cache). Now-a-days cache has a hit rate of approximately 95%, this means that 95% of the time, the requests need to be
+              cancelled and this contributes to a significant overload. Hence, it is slower than look through cache and many of today's
+              systems use it.
+      - Question_14: What is the difference between Linear Address and Logical Address?
+        Options:
+        Company_tags:
+        Level:
+        Reference: https://stackoverflow.com/questions/15851225/difference-between-physical-logical-virtual-memory-address
+        Correct_answer:
+        Answer:
+          - Hint:
+          - Solution: |
+              Today, all the machines work on stored program concept. This means that all the programs that are running must reside in the
+              Main Memory, which is also called the Physical Memory. Now, since all of today's systems are multicore-multiprocessor sytems,
+              many processes run simultaneously in the processor (as whole). it is obvious that 8GB-32GB cannot hold all the processes
+              completely. This is why when a process is started, it has it's own virtual address space. This Virtual Address is mapped to
+              Physical Memory and since there is dynamic loading, not all of the process needs to reside in the Main Memory. So, the memory
+              that user is able to see is the virtual address, which has a mapping to the main memory because a program cannot run unless it
+              resides in the main memory (PCB does this trick).
+              Linear Address is an intermediate address of sorts that is generated from the Virtual(Logical) Address. When we use segmentation
+              the Virtual Address consists of the segment number and offset. This segment number tells the entry in the segment table. This
+              entry gives the base address of the segment and this is then added to the offset in the Virtual Address.
+              This is the difference between the two.
+      - Question_15: Which of the following is not true regarding segmentation?
+        Options:
+          - 1: Since segments are not equal, segmentation is similar to dynamic partitioning.
+          - 2: Segmentation is very difficult to implement in systems with growing data structures.
+          - 3: Programs can be altered and recompiled easily.
+          - 4: Data sharing is easy and protection can also be implemented easily.
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              The main advantage of segmentation is the dynamic size of segments. They need not be of equal size. This means that there is no
+              external fragmentation in segmentation. This is why it is ideal for growing/changing data structures (i.e, the ones which
+              change in size).
+      - Question_16: In Segmentation with Paging, the Segment Table entry contains segment number. Is this statement correct?
+        Options:
+          - 1: "NO"
+          - 2: "YES"
+        Company_tags:
+        Level:
+        Reference: https://www.javatpoint.com/os-segmented-paging
+        Correct_answer: 1
+        Answer:
+          - Hint:
+          - Solution: |
+                When Segmentation is combined with Paging, we get a powerful Memory Management technique. In this technique, the memory is
+                divided in various segments which are in turn divided in many pages. Note that the segments need not be of fixed sizes but the
+                pages are of fixed size. Since a segment is made up of many pages, every segment has a page table. This table has the further
+                translation of the address requierd.
+                To explain Segmentation+Paging in short, the CPU generates the logical address which is converted into Linear Address by the
+                Segmentation Unit and this is an input to the Paging Unit and it gives the physical address corresponding to the Logical
+                address generated by the process (CPU).
+      - Question_16: |
+          Assume that the page fault rate is 0.001, Memory access time is 200 ns (including TLB access time), average page-fault handling time
+          is 8 ms (including TLB miss and the resulting overhead). What is the Effective Access Time (EAT) of the memory?
+        Options:
+          - 1: 80 microseconds
+          - 2: 8.2 microseconds
+          - 3: 6 microseconds
+          - 4: 10 microseconds
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              Page Fault rate 0.001 means that 1 out of every 1000 page access referencing is a page fault. So, EAT = (0.999*200ns)+(0.001*8ms).
+              This comes out 8.2 microseconds approximately. Remember that the "8 microseconds" include page fault handling overhead, page swap
+              in and out and the instruction restart overhead.
+              Notice the this is a degradation of over 40% in performance. To have a 10% increase in performance, we will need to have a
+              page fault rate of 0.0000025, meaning that we need to implement the algorithm such that it results in minimum page faults.
+              0.0000025 rate of page faults means 1 page fault in 400,000 accesses.
+      - Question_17: |
+          State true or false.
+          Statement: If a system uses LRU as the replacement policy for page faults, every time a page is brought in memory that time is used
+                     to make the decision of whether to keep the page while replacement or not.
+        Options:
+          - 1: "True" 
+          - 2: "False"
+        Company_tags:
+        Level:
+        Reference:
+          - 1: https://www.geeksforgeeks.org/page-fault-handling-in-operating-system/
+          - 2: https://www.geeksforgeeks.org/program-for-least-recently-used-lru-page-replacement-algorithm/
+        Correct_answer: 2
+        Answer:
+          - Hint:
+          - Solution: |
+              The statement is false. This is because the LRU algorithm uses the time when the page is referenced (or the memory is referenced)
+              as the decision point. FIFO uses the time of bringing in the page as the decision point.
+      - Question_18: Which of the following gives better throughput, Global replacement of frames or Local replacement of pages? Justify.
+        Options:
+        Company_tags:
+        Level:
+        Reference: https://www.geeksforgeeks.org/operating-system-allocation-frames/
+        Correct_answer:
+        Answer:
+          - Hint:
+          - Solution: |
+              Global replacement will give better throughput because it can take frames allocated to other processes as well. This means that
+              that process will complete its task as soon as possible. This has a downside that the number of page faults may increase. Despite
+              this, the Global replacement policy tends to perform better (i.e., give a better throughput).
+      - Question_19: |
+          Suppose there are two replacement policies for Cache: LRU and FIFO. There will be a data structure for both of these policies.
+          If there is a hit, which of the following data structures will(may) change, as in which of the data structures will be updated?
+        Options:
+          - LRU
+          - FIFO
+        Company_tags:
+        Level:
+        Reference:
+        Correct_answer: 1
+        Answer:
+          - Hint:
+          - Solution: |
+              The LRU replacement algorithm works on the principle of "least recently accessed" entry. If there is cache hit, it will mean
+              some entry in the cache was accessed. This means that the LRU counter will change and the LRU entry may or may not change. LRU
+              entry will change if the most recently accessed cache entry was the LRU before the access. But the LRU counter will definitely
+              change. As for the data structure used for FIFO, it will not change as the replacement only depends on when the entry was made
+              and not on when it was accessed.
+  Memory Hierarchy:
+  Storage Requirement and Usage:
+    - File systems:
+        Practice_questions:
+        - Question_1: A directory in LINUX is techinically a file. Is this statement correct? Justify.
+          Options:
+            - "True"
+            - "False"
+          Company_tags:
+          Level:
+          Reference:
+          Correct_answer: 1
+          Answer:
+            - Hint:
+            - Solution: |
+                This statement is true. Everything in LINUX can be classified as either a process or a file. A directory is a file whose
+                content is links to the files in it. These files can be "files" (as in the ones that are not directories) or directories
+                (which, as we have come to know, are files). The structure of the file system in LINUX can be thought of as a graph. There
+                are links among various nodes. The top is the root directory and the leaves are the files. They don't have anthing in them
+                other than data.
+        - Question_2: Can a system have the number of inodes as dynamic?. Give reasons.
+          Options:
+            - "Yes"
+            - "No"
+          Company_tags:
+          Level:
+          Reference:
+          Correct_answer: 1
+          Answer:
+            - Hint: inode list.
+            - Solution: |
+                Every filesystem has a system wide inode list that stores the information about all the inodes that exist in the filesystem.
+                Like, how many are free, how many are allocated. Now, this "inode list" has got a specific size. We we configure our
+                filesystem, we specify the size and that size cannot be changed later. So, there will exist a predefined number of inodes in
+                the filesystem at any point in time and hence their number is not variable.
+        - Question_3: How many data blocks are read when the command "fopen("/DSTN/PrePlaced/student.txt","r")" is executed?
+          Options:
+            - 1: 3
+            - 2: 4
+            - 3: 8
+            - 4: Can't say
+          Level:
+          Reference:
+          Correct_answer: 2
+          Answer:
+            - Hint: Reading a data block different from reading inode.
+            - Solution: |
+                Let us understand the process in a bit of detail. First, the system will "fetch the inode of the root" since the address is
+                absolute type. Then it will read the data block of root and search for the inode for the directory "DSTN". Then it will read
+                the data block of DSTN and then search for the inode for "PrePlaced", subsequently reading it data block and searching for
+                the inode of "student.txt". It will then read the first block of data as this is in "read mode". Had it been in append mode,
+                it would have to have read the data block equal to the size of the file. Therefore, the total number of data block reads are
+                "4".
+        - Question_4: How many inodes are accumulated in memory when we execute the command "fopen("/DSTN/PrePlaced/student.txt","r")"?
+          Options:
+            - 1: 0
+            - 2: 1
+            - 3: 3
+            - 4: As many inodes are read
+          Correct_answer: 1
+          Answer:
+            - Hint: Releasing of inode also takes place.
+            - Solution: |
+                When we get the next inodes so that we can read their corresponding data blocks, we release other inodes that we have accessed
+                before so that other processes can use them and hence do not have to wait for one process to finish its adress translation.
+                Therefore, only one inode is there in memory at a time.
+                Note that this does not mean that it will be completely discarded, it will still reside in the cache until the entry in which
+                it resides is updated (that is, the data of the entry is replaced).
+    - Mass storage:
+  Storage Interfaces & Disk Performance:
+  System Level Design:
+    - Locality:
+    - Virtual Memory:
+    - OS support:
+    - File Systems & I/O:
+  High Performance Requirements:
+  RAID, BUS:
+  Network Attached Storage (NAS), Network File Systems – access over NAS:
+  Storage Area Networks (SAN), SAN File Systems:
+  SAN & NAS solutions:
+  Virtualization:
 Miscellaneous:
   - Practice_questions:
       - Question_1: |
@@ -1171,7 +1733,6 @@ Miscellaneous:
               If the frame entry is not found in a page table, we so to swap space and bring back the entry. But any entry that is beyond the
               Page Table Limit Register is invalid. This type of loading is done because it is dynamic in nature. The frame size depends on
               the implementation of the architecture. It is generally 4KB or 4MB. But, you can modify it to what you want.
-
       - Question_2: |
           What is the effective access time of memory when there is an 80% hit in TLB and the access time for TLB is 20ns and that of the
           memory is 100ns?
@@ -1213,21 +1774,7 @@ Miscellaneous:
                 The statement S1 is true and is a fact. The second statement is not always true. The swapped out process must return to the same
                 address if they had binding that was done compile time or load time. This is the reason why we share a driver file and not
                 the compiled file.
-      - Question_4: Which of the following will guarantee a deadlock in a single instance resource?
-        Company_tags: abc
-        Level: xyz
-        Options:
-          -1: Mutual Exclusion
-          -2: Circular Wait for graph
-          -3: Hold and Wait
-          -4: Preemption of one of the process.
-        Correct_answer: 2
-        Answer:
-          - Hint: Single instance resource and circular wait are related.
-          - Solution: |
-              The correct option is b. This is because if every process in the graph is holding a resource and requesting for other and another
-              process is requesting for the resource, the first is holding there is a definite deadlock. The others do not guarantee that.
-      - Question_5: Trap Bit question.
+      - Question_4: Trap Bit question.
         Company_tags: abc
         Level: xyz
         Reference:
