@@ -264,6 +264,18 @@ Data Structure:
         Level: Medium
         Solution: https://www.geeksforgeeks.org/n3-repeated-number-array-o1-space/
         Common_Mistakes:
+      - Question_16: https://www.interviewbit.com/problems/add-one-to-number/
+        Company_tags: Google, Microsoft
+        Level: Easy-Medium
+        Solution: https://www.geeksforgeeks.org/adding-one-to-number-represented-as-array-of-digits/
+        Common_Mistakes: |
+          -1: Remember to take modulus with 10 and not the number. Can seem like a silly thing, but can happen.
+          -2: Take care of overflow.
+      - Question_17: https://www.interviewbit.com/problems/max-sum-contiguous-subarray/
+        Company_tags: Facebook, PayPal, Yahoo, Microsoft, LinkedIn, Amazon, Goldman Sacs
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+        Common_Mistakes:
   Linked-List:
     Practice_questions:
       - Question_1: https://leetcode.com/problems/reverse-linked-list/
@@ -275,6 +287,16 @@ Data Structure:
         Company_tags: Amazon, VMWare
         Level: Medium-Hard
         Solution: https://www.geeksforgeeks.org/merge-k-sorted-linked-lists/
+        Common_Mistakes:
+      - Question_3: https://www.geeksforgeeks.org/flattening-a-linked-list/
+        Company_tags: Amazon, Flipkart, Goldman Sacs, Paytm, Visa, Microsoft
+        Level: Medium-Hard
+        Solution: #same as question link
+        Common_Mistakes:
+      - Question_4: https://www.geeksforgeeks.org/add-1-number-represented-linked-list/
+        Company_tags: Amazon
+        Level: Medium
+        Solution: #same as question link
         Common_Mistakes:
   Map:
     Practice_questions:
