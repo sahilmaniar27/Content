@@ -60,7 +60,21 @@ Basic Math:
       Level: Medium-Hard
       Solution: https://leetcode.com/problems/container-with-most-water/solution/
       Common_Mistakes:
-
+    - Question_5: https://www.interviewbit.com/problems/power-of-two-integers/
+      Company_tags: Housing, Amazon
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/check-if-a-number-can-be-expressed-as-xy-x-raised-to-power-y/
+      Common_Mistakes:
+    - Question_6: https://www.interviewbit.com/problems/palindrome-integer/
+      Company_tags: HCL
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/check-if-a-number-is-palindrome/
+      Common_Mistakes:
+    - Question_7: https://www.interviewbit.com/problems/trailing-zeros-in-factorial/
+      Company_tags: Microsoft, Jabong, Zilow
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/count-trailing-zeroes-factorial-number/
+      Common_Mistakes:
 Dynamic Programming:
   Resources:
     - https://www.geeksforgeeks.org/dynamic-programming/
@@ -348,7 +362,12 @@ Binar Search:
       Company_tags: Google, Microsoft
       Level: Medium
       Solution: https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/
-      Solution: https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/
+      Common_Mistakes:
+    - Question_6: https://www.interviewbit.com/problems/implement-power-function/
+      Company_tags: Google, LinkedIn
+      Level: Easy
+      Solution: https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
+      Common_Mistakes:
 Graphs:
   Practice_questions:
     - Question_1: https://leetcode.com/discuss/interview-question/372581
