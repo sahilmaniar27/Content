@@ -290,6 +290,26 @@ Data Structure:
         Level: Medium
         Solution: https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
         Common_Mistakes:
+      - Question_18: https://www.interviewbit.com/problems/remove-duplicates-from-sorted-array/
+        Company_tags: Amazon, Google, Microsoft, Expedia
+        Level: Easy-Medium
+        Solution: https://www.geeksforgeeks.org/remove-duplicates-sorted-array/
+        Common_Mistakes:
+      - Question_19: https://www.interviewbit.com/problems/sort-by-color/
+        Company_tags: Facebook, Microsoft
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
+        Common_Mistakes:
+      - Question_20: https://www.interviewbit.com/problems/minimize-the-absolute-difference/
+        Company_tags: Microsoft
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/minimize-maxai-bj-ck-minai-bj-ck-three-different-sorted-arrays/
+        Common_Mistakes:
+      - Question_21: https://www.interviewbit.com/problems/max-continuous-series-of-1s/
+        Company_tags: Amazon, VMWare
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/find-zeroes-to-be-flipped-so-that-number-of-consecutive-1s-is-maximized/
+        Common_Mistakes:
   Linked-List:
     Practice_questions:
       - Question_1: https://leetcode.com/problems/reverse-linked-list/
