@@ -1802,15 +1802,15 @@ DSTN:
                 Therefore, only one inode is there in memory at a time.
                 Note that this does not mean that it will be completely discarded, it will still reside in the cache until the entry in which
                 it resides is updated (that is, the data of the entry is replaced).
-Miscellaneous:
-  - Practice_questions:
-      - Question:
-        Company_tags:
-        Level:
-        Reference:
-          - 1: https://stackoverflow.com/questions/13185300/where-is-the-mode-bit
-          - 2: https://stackoverflow.com/questions/28815848/does-each-core-has-its-own-private-set-of-registers
-          - 3: http://www.cs.cornell.edu/courses/cs3410/2012sp/lecture/22-traps-i-g.pdf
-        Answer:
-          - Hint:
-          - Solution: #Will write soon
+# Miscellaneous:
+#   - Practice_questions:
+#       - Question:
+#         Company_tags:
+#         Level:
+#         Reference:
+#           - 1: https://stackoverflow.com/questions/13185300/where-is-the-mode-bit
+#           - 2: https://stackoverflow.com/questions/28815848/does-each-core-has-its-own-private-set-of-registers
+#           - 3: http://www.cs.cornell.edu/courses/cs3410/2012sp/lecture/22-traps-i-g.pdf
+#         Answer:
+#           - Hint:
+#           - Solution: #Will write soon
