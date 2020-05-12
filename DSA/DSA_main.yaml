@@ -2,8 +2,8 @@
 #first month: 11 questions
 #second month: 13 questions
 #April: 31 questions
-#May: 33 questions
-#total questions: 88
+#May: 45 questions
+#total questions: 100
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -12,7 +12,9 @@ Subject:
     - Greedy Algorithms
     - Divide & Conquer
     - Dynamic Programming
+    - Backtracking
     - Data Sturcutes
+        - Stack
         - Arrays
         - Linked List
         - Map
@@ -171,13 +173,50 @@ Dynamic Programming:
         Note: The second solution can be modified to account for negative numbers. This solution gives the general approach to be taken to
               solve the problem.
       Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/shortest-common-superstring/
+      Company_tags: Google
+      Level: Hard
+      Solution: https://www.geeksforgeeks.org/shortest-superstring-problem/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/evaluate-expression-to-true/
+      Company_tags: Amazon
+      Level: Hard
+      Solution: https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/n-digit-numbers-with-digit-sum-s-/
+      Company_tags: Amazon
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/count-of-n-digit-numbers-whose-sum-of-digits-equals-to-given-sum/
+      Common_Mistakes:
+Backtracking:
+  Practice_questions:
+    - Question: https://www.interviewbit.com/problems/subset/
+      Company_tags: Amazon, Microsoft
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/combination-sum/
+      Company_tags: Amazon, Adobe, Facebook
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/combinational-sum/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/generate-all-parentheses-ii/
+      Company_tags: Facebook, Microsoft
+      Level: Medium-Hard
+      Solution: https://www.geeksforgeeks.org/print-all-combinations-of-balanced-parentheses/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/nqueens/
+      Company_tags: Amazon, Google, Qualcomm
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
+      Common_Mistakes:
 Data Structure:
   Resources:
   Stack:
     Practice_questions:
       - Question: https://www.interviewbit.com/search/?q%5B%5D=Amazon#toggle-problem-link-274
         Company_tags: Amazon
-        Level: Easy
+        Level: Easy-Medium
         Solution: https://www.geeksforgeeks.org/expression-contains-redundant-bracket-not/
         Common_Mistakes:
       - Question: https://www.interviewbit.com/problems/rain-water-trapped/
@@ -194,6 +233,21 @@ Data Structure:
         Company_tags: Amazon, Microsoft
         Level: Medium
         Solution: https://www.geeksforgeeks.org/find-the-nearest-smaller-numbers-on-left-side-in-an-array/
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/letter-phone/
+        Company_tags: Facebook
+        Level: Medium-Hard
+        Solution: https://www.geeksforgeeks.org/iterative-letter-combinations-of-a-phone-number/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/sudoku-solver/
+        Company_tags: Adobe, Google, Microsoft
+        Level: Hard
+        Solution: https://www.geeksforgeeks.org/sudoku-backtracking-7/
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/construct-a-doubly-linked-linked-list-from-2d-matrix/
+        Company_tags:
+        Level: Medium-Hard
+        Solution: #same as questions
         Common_Mistakes:
   Array:
     Practice_questions:
@@ -353,7 +407,19 @@ Data Structure:
         Level: Medium
         Solution: https://youtu.be/_BG9rjkAXj8 #solution video
         Common_Mistakes:
-Binar Search:
+  Heap:
+    Practice_questions:
+      - Question: https://www.interviewbit.com/problems/merge-k-sorted-lists/
+        Company_tags: Amazon, Flipkart, Google
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/merge-k-sorted-linked-lists-set-2-using-min-heap/ #using heaps
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/magician-and-chocolates/
+        Company_tags:
+        Level: Medium
+        Solution: https://siddarthkanted.wordpress.com/2019/05/12/magician-and-chocolates-interviewbit-solution/ #could not find solution of a prestigious site or an official solution
+        Common_Mistakes:
+Binary Search:
   Practice_questions:
     - Question: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
       Company_tags: Amazon
