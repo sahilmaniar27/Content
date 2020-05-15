@@ -214,7 +214,7 @@ Data Structure:
   Resources:
   Stack:
     Practice_questions:
-      - Question: https://www.interviewbit.com/search/?q%5B%5D=Amazon#toggle-problem-link-274
+      - Question: https://www.interviewbit.com/problems/redundant-braces/
         Company_tags: Amazon
         Level: Easy-Medium
         Solution: https://www.geeksforgeeks.org/expression-contains-redundant-bracket-not/
@@ -248,6 +248,43 @@ Data Structure:
         Company_tags:
         Level: Medium-Hard
         Solution: #same as questions
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+        Company_tags: Microsoft, Paytm, Amazon, Facebook
+        Level: Medium
+        Solution:
+          - https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
+            #O(nlogn) Solution using Divide and Conquer, O(n) solution already in the question link
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/next-greater-element/
+        Company_tags: Amazon, PayU, Samsung
+        Level: Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/evaluate-expression/
+        Company_tags: Yahoo, Google, Facebook
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/convert-infix-prefix-notation/
+        Company_tags:
+        Level: Easy-Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/iterative-tower-of-hanoi/
+        Company_tags:
+        Level: Hard
+        Solution: https://www.hackerearth.com/blog/developers/tower-hanoi-recursion-game-algorithm-explained/ #recursive solution
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/next-greater-frequency-element/
+        Company_tags:
+        Level: Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/maximum-product-of-indexes-of-next-greater-on-left-and-right/
+        Company_tags:
+        Level: Medium
+        Solution: #same as question
         Common_Mistakes:
   Array:
     Practice_questions:
@@ -454,7 +491,18 @@ Binary Search:
       Solution: https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
       Common_Mistakes:
 Graphs:
+  Resources:
+    - 1: https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
+    - 2: https://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm
+    - 3: https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm
+    - 4: https://www.tutorialspoint.com/data_structures_algorithms/breadth_first_traversal.htm
+    - 5: https://www.programiz.com/dsa/graph #and all the topics that are included in the index of Graph on this site
   Practice_questions:
+    - Question: https://www.interviewbit.com/problems/level-order/
+      Company_tags: Facebook, Goldman Sacs
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/level-order-tree-traversal/
+      Common_Mistakes:
     - Question: https://leetcode.com/discuss/interview-question/372581
       Company_tags: Amazon
       Level: Medium-Hard
@@ -469,6 +517,31 @@ Graphs:
       Level: Medium
       Company_tags: Amazon, Walmart, Google
       Solution: #provided in question link
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/valid-path/
+      Company_tags: Directi, Microsoft, Amazon, Codenation
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/path-rectangle-containing-circles/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/smallest-multiple-with-0-and-1/
+      Company_tags: Amazon
+      Level: Medium-Hard
+      Solution: https://www.geeksforgeeks.org/find-the-smallest-binary-digit-multiple-of-given-number/
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/minimum-number-of-edges-between-two-vertices-of-a-graph/
+      Company_tags:
+      Level: Easy-Medium
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/count-nodes-within-k-distance-from-all-nodes-in-a-set/
+      Company_tags:
+      Level: Hard
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/bfs-disconnected-graph/
+      Company_tags:
+      Level: Easy
+      Solution: #same as question
       Common_Mistakes:
 Binary Tree:
   Practice_questions:
@@ -530,14 +603,10 @@ Binary Tree:
       Level: Easy
       Solution: https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
       Common_Mistakes:
-Stack:
-  Practice_questions:
-    - Question: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
-      Company_tags: Microsoft, Paytm, Amazon, Facebook
-      Level: Medium
-      Solution:
-        - https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
-          #O(nlogn) Solution using Divide and Conquer, O(n) solution already in the question link
+    - Question: https://www.interviewbit.com/problems/convert-sorted-list-to-binary-search-tree/
+      Company_tags: Google
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/
       Common_Mistakes:
 Strings:
   Practice_questions:
