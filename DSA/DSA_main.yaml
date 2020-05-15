@@ -2,8 +2,8 @@
 #first month: 11 questions
 #second month: 13 questions
 #April: 31 questions
-#May: 20 questions
-#total questions: 75
+#May: 45 questions
+#total questions: 100
 Subject:
   name: Data Structures and Algorithms
   subtopics:
@@ -12,7 +12,9 @@ Subject:
     - Greedy Algorithms
     - Divide & Conquer
     - Dynamic Programming
+    - Backtracking
     - Data Sturcutes
+        - Stack
         - Arrays
         - Linked List
         - Map
@@ -21,55 +23,55 @@ Subject:
     - Advanced Algorithms
 Greedy Algorithms:
   Practice_questions:
-    - Question_1: https://www.interviewbit.com/problems/gas-station/
+    - Question: https://www.interviewbit.com/problems/gas-station/
       Company_tags: Google, D.E. Shaw, Bloomberg, Flipkart, Amazon
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/find-a-tour-that-visits-all-stations/
       Common_Mistakes: |
         This is not a mistake but a point to remember is that this question can be solved in O(1) space. This can be kept as a contraint by the
         interviewer.
-    - Question_2: https://www.interviewbit.com/problems/hotel-bookings-possible/
+    - Question: https://www.interviewbit.com/problems/hotel-bookings-possible/
       Company_tags: Goldman Sacs, Microsoft
       Level: Easy
       Solution: https://www.geeksforgeeks.org/find-k-bookings-possible-given-arrival-departure-times/
       Common_Mistakes:
 Basic Math:
   Practice_questions:
-    - Question_1: https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
+    - Question: https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
       Company_tags: Google
       Level: Easy
       Solution: https://www.geeksforgeeks.org/sum-of-bit-differences-among-all-pairs/
       Common_Mistakes: |
         We might tend to write a new function fo vonverting the given number into a binary number, but we must remember that a number is stored
         as a binary number in the system.
-    - Question_2: https://www.interviewbit.com/problems/greatest-common-divisor/
+    - Question: https://www.interviewbit.com/problems/greatest-common-divisor/
       Company_tags: Google, NetApp
       Level: Easy
       Solution: https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/
       Common_Mistakes: |
         This can be the most commonly used function while solving some questions of future topics. The main take away is that it can be solved
         in O(log(n)) time and does not need brute force or factorization.
-    - Question_3: https://leetcode.com/problems/merge-intervals/  
+    - Question: https://leetcode.com/problems/merge-intervals/  
       Level: Medium
       Company_tags: Google, Amazon
       Solution: https://www.geeksforgeeks.org/merging-intervals/
       Common_Mistakes:
-    - Question_4: https://www.interviewbit.com/problems/container-with-most-water/
+    - Question: https://www.interviewbit.com/problems/container-with-most-water/
       Company_tags: Adobe, Amazon, Facebook, Google
       Level: Medium-Hard
       Solution: https://leetcode.com/problems/container-with-most-water/solution/
       Common_Mistakes:
-    - Question_5: https://www.interviewbit.com/problems/power-of-two-integers/
+    - Question: https://www.interviewbit.com/problems/power-of-two-integers/
       Company_tags: Housing, Amazon
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/check-if-a-number-can-be-expressed-as-xy-x-raised-to-power-y/
       Common_Mistakes:
-    - Question_6: https://www.interviewbit.com/problems/palindrome-integer/
+    - Question: https://www.interviewbit.com/problems/palindrome-integer/
       Company_tags: HCL
       Level: Easy
       Solution: https://www.geeksforgeeks.org/check-if-a-number-is-palindrome/
       Common_Mistakes:
-    - Question_7: https://www.interviewbit.com/problems/trailing-zeros-in-factorial/
+    - Question: https://www.interviewbit.com/problems/trailing-zeros-in-factorial/
       Company_tags: Microsoft, Jabong, Zilow
       Level: Easy
       Solution: https://www.geeksforgeeks.org/count-trailing-zeroes-factorial-number/
@@ -82,258 +84,347 @@ Dynamic Programming:
     - https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
     - https://www.geeksforgeeks.org/solve-dynamic-programming-problem/
   Practice_questions:
-    - Question_1: https://www.interviewbit.com/problems/longest-arithmetic-progression/?ref=similar_problems
+    - Question: https://www.interviewbit.com/problems/longest-arithmetic-progression/?ref=similar_problems
       Company_tags: Microsoft
       Level: Medium
       Solution: https://www.geeksforgeeks.org/longest-arithmetic-progression-dp-35/
       Common_Mistakes:
-    - Question_2: https://www.geeksforgeeks.org/number-of-ways-to-get-a-given-sum-with-n-number-of-m-faced-dices/
+    - Question: https://www.geeksforgeeks.org/number-of-ways-to-get-a-given-sum-with-n-number-of-m-faced-dices/
       Company_tags: Amazon
       Level: Easy
       Solution:
       Common_Mistakes: |
         We can forget to take care of the base conditions where the required sum is zero or is less than zero.
-    - Question_3: https://www.interviewbit.com/problems/palindrome-partitioning-ii/
+    - Question: https://www.interviewbit.com/problems/palindrome-partitioning-ii/
       Company_tags: Amazon, Google
       Level: Medium
       Solution: https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/
       Common_Mistakes:
-    - Question_4: https://www.interviewbit.com/problems/min-jumps-array/
+    - Question: https://www.interviewbit.com/problems/min-jumps-array/
       Company_tags: Amazon, Google, Ebay
       Level: Easy - Medium
       Solution: https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/
       Common_Mistakes:
-    - Question_5: https://practice.geeksforgeeks.org/problems/total-decoding-messages/0
+    - Question: https://practice.geeksforgeeks.org/problems/total-decoding-messages/0
       Company_tags: Facebook
       Level: Medium
       Solution: https://www.geeksforgeeks.org/count-possible-decodings-given-digit-sequence/
       Common_Mistakes: |
         The complexity of the brute force algorithm is exponential. Take a approach similar to that of Fibonnaci to reduce the time complexity.
-    - Question_6: https://practice.geeksforgeeks.org/problems/word-boggle/0
+    - Question: https://practice.geeksforgeeks.org/problems/word-boggle/0
       Company_tags: Facebook
       Level: Medium
       Solution: https://www.geeksforgeeks.org/boggle-find-possible-words-board-characters/
       Common_Mistakes:
-    - Question_7: https://leetcode.com/problems/palindromic-substrings/
+    - Question: https://leetcode.com/problems/palindromic-substrings/
       Company_tags: Samsung, Qualcomm, Visa, Microsoft
       Level: Medium
       Solution: https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
       Common_Mistakes:
-    - Question_8: https://leetcode.com/problems/counting-bits/
+    - Question: https://leetcode.com/problems/counting-bits/
       Company_tags: Amazon 
       Level: Medium
       Solution: https://www.geeksforgeeks.org/count-total-set-bits-in-all-numbers-from-1-to-n/
       Common_Mistakes: |
         This question has many solutions. It can be done using Dynamic Programming also. Time complexity varies with methods and the
         interviewer will possibly ask for the complexity to be less than or equal to O(nlogn).
-    - Question_8: https://leetcode.com/problems/longest-increasing-subsequence/
+    - Question: https://leetcode.com/problems/longest-increasing-subsequence/
       Company_tags: Amazon, Samsung
       Level: Medium-Hard
       Solution: https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
       Common_Mistakes:
-    - Question_9: https://leetcode.com/problems/coin-change/
+    - Question: https://leetcode.com/problems/coin-change/
       Company_tags: Microsoft, Morgan Stanley, Paytm, Samsung
       Level: Medium
       Solution: https://www.geeksforgeeks.org/coin-change-dp-7/
       Common_Mistakes:
-    - Question_10: https://leetcode.com/problems/house-robber/
+    - Question: https://leetcode.com/problems/house-robber/
       Company_tags: Amazon, Walmart, Paytm, Yahoo, 
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/find-maximum-possible-stolen-value-houses/
       Common_Mistakes:
-    - Question_11: https://leetcode.com/problems/unique-paths/
+    - Question: https://leetcode.com/problems/unique-paths/
       Company_tags: Amazon, LinkedIn, Microsoft, Paytm, Walmart
       Level: Medium
       Solution: https://www.geeksforgeeks.org/count-possible-paths-top-left-bottom-right-nxm-matrix/
       Common_Mistakes:
-    - Question_12: https://leetcode.com/problems/climbing-stairs/
+    - Question: https://leetcode.com/problems/climbing-stairs/
       Company_tags: Amazon, LinkedIn, Intel, Morgan Stanley, Samsung
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/count-ways-reach-nth-stair/
       Common_Mistakes:
-    - Question_13: https://leetcode.com/problems/decode-ways/
+    - Question: https://leetcode.com/problems/decode-ways/
       Company_tags: Goldman Sacs, LinkedIn, Morgan Stanley, Facebook, Amazon
       Level: Medium
       Solution: https://www.geeksforgeeks.org/count-possible-decodings-given-digit-sequence/
       Common_Mistakes:
-    - Question_14: https://www.interviewbit.com/problems/min-steps-in-infinite-grid/
+    - Question: https://www.interviewbit.com/problems/min-steps-in-infinite-grid/
       Company_tags: Directi
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/minimum-steps-needed-to-cover-a-sequence-of-points-on-an-infinite-grid/
       Common_Mistakes:
-    - Question_15: https://codeforces.com/problemset/problem/1343/C
+    - Question: https://codeforces.com/problemset/problem/1343/C
       Company_tags:
       Level: Medium
       Solution: |
-        -1: https://codeforces.com/blog/entry/76352
+        - 1: https://codeforces.com/blog/entry/76352
         Note: The first link has solution under the heading "Alternating Subsequence".
-        -2: https://www.geeksforgeeks.org/longest-alternating-subsequence/
+        - 2: https://www.geeksforgeeks.org/longest-alternating-subsequence/
         Note: The second solution can be modified to account for negative numbers. This solution gives the general approach to be taken to
               solve the problem.
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/shortest-common-superstring/
+      Company_tags: Google
+      Level: Hard
+      Solution: https://www.geeksforgeeks.org/shortest-superstring-problem/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/evaluate-expression-to-true/
+      Company_tags: Amazon
+      Level: Hard
+      Solution: https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/n-digit-numbers-with-digit-sum-s-/
+      Company_tags: Amazon
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/count-of-n-digit-numbers-whose-sum-of-digits-equals-to-given-sum/
+      Common_Mistakes:
+Backtracking:
+  Practice_questions:
+    - Question: https://www.interviewbit.com/problems/subset/
+      Company_tags: Amazon, Microsoft
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/combination-sum/
+      Company_tags: Amazon, Adobe, Facebook
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/combinational-sum/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/generate-all-parentheses-ii/
+      Company_tags: Facebook, Microsoft
+      Level: Medium-Hard
+      Solution: https://www.geeksforgeeks.org/print-all-combinations-of-balanced-parentheses/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/nqueens/
+      Company_tags: Amazon, Google, Qualcomm
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
       Common_Mistakes:
 Data Structure:
   Resources:
   Stack:
     Practice_questions:
-      - Question_1: https://www.interviewbit.com/search/?q%5B%5D=Amazon#toggle-problem-link-274
+      - Question: https://www.interviewbit.com/problems/redundant-braces/
         Company_tags: Amazon
-        Level: Easy
+        Level: Easy-Medium
         Solution: https://www.geeksforgeeks.org/expression-contains-redundant-bracket-not/
         Common_Mistakes:
-      - Question_2: https://www.interviewbit.com/problems/rain-water-trapped/
+      - Question: https://www.interviewbit.com/problems/rain-water-trapped/
         Company_tags: Amazon, Qualcomm, Microsoft
         Level: Medium
         Solution: https://www.geeksforgeeks.org/trapping-rain-water/
         Common_Mistakes:
-      - Question_3: https://www.interviewbit.com/problems/min-stack/
+      - Question: https://www.interviewbit.com/problems/min-stack/
         Company_tags: Yahoo, Adobe, Microsoft, Amazon
         Level: Medium
         Solution: https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
         Common_Mistakes:
-      - Question_4: https://www.interviewbit.com/problems/nearest-smaller-element/
+      - Question: https://www.interviewbit.com/problems/nearest-smaller-element/
         Company_tags: Amazon, Microsoft
         Level: Medium
         Solution: https://www.geeksforgeeks.org/find-the-nearest-smaller-numbers-on-left-side-in-an-array/
         Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/letter-phone/
+        Company_tags: Facebook
+        Level: Medium-Hard
+        Solution: https://www.geeksforgeeks.org/iterative-letter-combinations-of-a-phone-number/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/sudoku-solver/
+        Company_tags: Adobe, Google, Microsoft
+        Level: Hard
+        Solution: https://www.geeksforgeeks.org/sudoku-backtracking-7/
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/construct-a-doubly-linked-linked-list-from-2d-matrix/
+        Company_tags:
+        Level: Medium-Hard
+        Solution: #same as questions
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+        Company_tags: Microsoft, Paytm, Amazon, Facebook
+        Level: Medium
+        Solution:
+          - https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
+            #O(nlogn) Solution using Divide and Conquer, O(n) solution already in the question link
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/next-greater-element/
+        Company_tags: Amazon, PayU, Samsung
+        Level: Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/evaluate-expression/
+        Company_tags: Yahoo, Google, Facebook
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/convert-infix-prefix-notation/
+        Company_tags:
+        Level: Easy-Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/iterative-tower-of-hanoi/
+        Company_tags:
+        Level: Hard
+        Solution: https://www.hackerearth.com/blog/developers/tower-hanoi-recursion-game-algorithm-explained/ #recursive solution
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/next-greater-frequency-element/
+        Company_tags:
+        Level: Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/maximum-product-of-indexes-of-next-greater-on-left-and-right/
+        Company_tags:
+        Level: Medium
+        Solution: #same as question
+        Common_Mistakes:
   Array:
     Practice_questions:
-      - Question_1: https://www.interviewbit.com/problems/max-product-subarray/
+      - Question: https://www.interviewbit.com/problems/max-product-subarray/
         Company_tags: Amazon, LinkedIn, Microsoft
         Level: Medium
         Solution: https://www.geeksforgeeks.org/maximum-product-subarray/
         Common_Mistakes: |
           We have to keep in mind that the product can become maximum by multiplying negative numbers too (even number of them, obviously).
-      - Question_2: https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/
+      - Question: https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/
         Company_tags: Amazon, Samsung
         Level: Medium
         Solution:
         Common_Mistakes:
-      - Question_3: https://leetcode.com/problems/search-in-rotated-sorted-array/
+      - Question: https://leetcode.com/problems/search-in-rotated-sorted-array/
         Company_tags: D.E. Shaw, Amazon, Flipkart, Adobe, Microsoft, Paytm, Samsung
         Level: Medium
         Solution: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
         Common_Mistakes:
-      - Question_4: https://leetcode.com/problems/spiral-matrix/
+      - Question: https://leetcode.com/problems/spiral-matrix/
         Company_tags: D.E. Shaw, Amazon, Morgan Stanley, Microsoft, Paytm, Oracle
         Level: Medium
         Solution: https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/
         Common_Mistakes:
-      - Question_5: https://leetcode.com/problems/insert-interval/
+      - Question: https://leetcode.com/problems/insert-interval/
         Company_tags: Google
         Level: Hard
         Solution: https://www.geeksforgeeks.org/insert-in-sorted-and-non-overlapping-interval-array/
         Common_Mistakes:
-      - Question_6:
+      - Question:
         Company_tags: Google, Facebook
         Level: Easy-Medium
         Solution: https://www.geeksforgeeks.org/find-triplets-array-whose-sum-equal-zero/
         Common_Mistakes:
-      - Question_7: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+      - Question: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
         Company_tags: Amazon, Flipkart, Samsung
         Level: Medium
-        Solution:
-          -1:  https://www.geeksforgeeks.org/find-possible-words-phone-digits/
-          -2: https://www.geeksforgeeks.org/iterative-letter-combinations-of-a-phone-number/
+        Solution: |
+          - 1:  https://www.geeksforgeeks.org/find-possible-words-phone-digits/
+          - 2: https://www.geeksforgeeks.org/iterative-letter-combinations-of-a-phone-number/
         Common_Mistakes:
-      - Question_8: https://leetcode.com/problems/valid-sudoku/
+      - Question: https://leetcode.com/problems/valid-sudoku/
         Company_tags: Google, Amazon
         Level: Medium
         Solution: https://www.geeksforgeeks.org/check-if-given-sudoku-board-configuration-is-valid-or-not/
         Common_Mistakes:
-      - Question_9: https://leetcode.com/problems/word-search/
+      - Question: https://leetcode.com/problems/word-search/
         Company_tags: Amazon, Microsoft, Morgan Stanley, Samsung
         Level: Medium
         Solution: https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/
         Common_Mistakes:
-      - Question_10: https://www.interviewbit.com/problems/remove-element-from-array/
+      - Question: https://www.interviewbit.com/problems/remove-element-from-array/
         Company_tags: Amazon
         Level: Easy-Medium
         Solution: https://github.com/Ritesh25696/interviewBit/blob/master/Remove%20Element%20from%20Array
         Common_Mistakes:
-      - Question_11: https://www.interviewbit.com/problems/largest-number/
+      - Question: https://www.interviewbit.com/problems/largest-number/
         Company_tags: Amazon, Goldman Sacs, Microsoft
         Level: Medium
         Solution: https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
         Common_Mistakes:
-      - Question_12: https://www.interviewbit.com/problems/max-non-negative-subarray/
+      - Question: https://www.interviewbit.com/problems/max-non-negative-subarray/
         Company_tags: Google
         Level: Easy
         Solution: https://www.geeksforgeeks.org/longest-subarray-non-negative-integers/
         Common_Mistakes:
-      - Question_13: https://www.interviewbit.com/problems/kth-row-of-pascals-triangle/
+      - Question: https://www.interviewbit.com/problems/kth-row-of-pascals-triangle/
         Company_tags: Google
         Level: Medium
         Solution: |
-          -1: https://www.geeksforgeeks.org/pascal-triangle/
+          - 1: https://www.geeksforgeeks.org/pascal-triangle/
               Note: This link provides solution to print the whole of pascal's triangle upto kth row.
         Common_Mistakes:
-      - Question_14: https://www.interviewbit.com/problems/wave-array/
+      - Question: https://www.interviewbit.com/problems/wave-array/
         Company_tags: Adobe, Amazon, Google
         Level: Easy-Medium
         Solution: https://www.geeksforgeeks.org/sort-array-wave-form-2/
         Common_Mistakes:
-      - Question_15: https://www.interviewbit.com/problems/n3-repeat-number/
+      - Question: https://www.interviewbit.com/problems/n3-repeat-number/
         Company_tags: Google
         Level: Medium
         Solution: https://www.geeksforgeeks.org/n3-repeated-number-array-o1-space/
         Common_Mistakes:
-      - Question_16: https://www.interviewbit.com/problems/add-one-to-number/
+      - Question: https://www.interviewbit.com/problems/add-one-to-number/
         Company_tags: Google, Microsoft
         Level: Easy-Medium
         Solution: https://www.geeksforgeeks.org/adding-one-to-number-represented-as-array-of-digits/
         Common_Mistakes: |
-          -1: Remember to take modulus with 10 and not the number. Can seem like a silly thing, but can happen.
-          -2: Take care of overflow.
-      - Question_17: https://www.interviewbit.com/problems/max-sum-contiguous-subarray/
+          - 1: Remember to take modulus with 10 and not the number. Can seem like a silly thing, but can happen.
+          - 2: Take care of overflow.
+      - Question: https://www.interviewbit.com/problems/max-sum-contiguous-subarray/
         Company_tags: Facebook, PayPal, Yahoo, Microsoft, LinkedIn, Amazon, Goldman Sacs
         Level: Medium
         Solution: https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
         Common_Mistakes:
-      - Question_18: https://www.interviewbit.com/problems/remove-duplicates-from-sorted-array/
+      - Question: https://www.interviewbit.com/problems/remove-duplicates-from-sorted-array/
         Company_tags: Amazon, Google, Microsoft, Expedia
         Level: Easy-Medium
         Solution: https://www.geeksforgeeks.org/remove-duplicates-sorted-array/
         Common_Mistakes:
-      - Question_19: https://www.interviewbit.com/problems/sort-by-color/
+      - Question: https://www.interviewbit.com/problems/sort-by-color/
         Company_tags: Facebook, Microsoft
         Level: Medium
         Solution: https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
         Common_Mistakes:
-      - Question_20: https://www.interviewbit.com/problems/minimize-the-absolute-difference/
+      - Question: https://www.interviewbit.com/problems/minimize-the-absolute-difference/
         Company_tags: Microsoft
         Level: Medium
         Solution: https://www.geeksforgeeks.org/minimize-maxai-bj-ck-minai-bj-ck-three-different-sorted-arrays/
         Common_Mistakes:
-      - Question_21: https://www.interviewbit.com/problems/max-continuous-series-of-1s/
+      - Question: https://www.interviewbit.com/problems/max-continuous-series-of-1s/
         Company_tags: Amazon, VMWare
         Level: Medium
         Solution: https://www.geeksforgeeks.org/find-zeroes-to-be-flipped-so-that-number-of-consecutive-1s-is-maximized/
         Common_Mistakes:
   Linked-List:
     Practice_questions:
-      - Question_1: https://leetcode.com/problems/reverse-linked-list/
+      - Question: https://leetcode.com/problems/reverse-linked-list/
         Company_tags:
         Level: Easy
         Solution: https://www.geeksforgeeks.org/reverse-a-linked-list/
         Common_Mistakes: Remember to handle the pointers carefully and swap head and last node carefully.
-      - Question_2: https://leetcode.com/problems/merge-k-sorted-lists/
+      - Question: https://leetcode.com/problems/merge-k-sorted-lists/
         Company_tags: Amazon, VMWare
         Level: Medium-Hard
         Solution: https://www.geeksforgeeks.org/merge-k-sorted-linked-lists/
         Common_Mistakes:
-      - Question_3: https://www.geeksforgeeks.org/flattening-a-linked-list/
+      - Question: https://www.geeksforgeeks.org/flattening-a-linked-list/
         Company_tags: Amazon, Flipkart, Goldman Sacs, Paytm, Visa, Microsoft
         Level: Medium-Hard
         Solution: #same as question link
         Common_Mistakes:
-      - Question_4: https://www.geeksforgeeks.org/add-1-number-represented-linked-list/
+      - Question: https://www.geeksforgeeks.org/add-1-number-represented-linked-list/
         Company_tags: Amazon
         Level: Medium
         Solution: #same as question link
         Common_Mistakes:
   Map:
     Practice_questions:
-      - Question_1: https://www.interviewbit.com/problems/majority-element/
+      - Question: https://www.interviewbit.com/problems/majority-element/
         Company_tags: Google, Microsoft, Amazon, Yahoo
         Level: Easy
         Solution:
@@ -342,71 +433,119 @@ Data Structure:
           makes this problem very easy. This takes care of making key-value pair. Then, we must take care of the return type of the find
           function. Then, we must also be careful while using the iterator and remember to compare it with the end of the map and not the size
           of the input vector.
-      - Question_2: https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
+      - Question: https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
         Company_tags: Microsoft, Amazon, Morgan Stanley
         Level: Medium
         Solution: https://www.geeksforgeeks.org/clone-linked-list-next-random-pointer-o1-space/ #optimal solution (using constant space)
         Common_Mistakes: |
           The interviewer can put a contraint of using a constant space, the solution is provided in the solution link.
-      - Question_3: https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
+      - Question: https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
         Company_tags: Microsoft, Amazon, Samsung, VMWare, Morgan Stanley, Walmart, Oracle
         Level: Medium
         Solution: https://youtu.be/_BG9rjkAXj8 #solution video
         Common_Mistakes:
-Binar Search:
+  Heap:
+    Practice_questions:
+      - Question: https://www.interviewbit.com/problems/merge-k-sorted-lists/
+        Company_tags: Amazon, Flipkart, Google
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/merge-k-sorted-linked-lists-set-2-using-min-heap/ #using heaps
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/magician-and-chocolates/
+        Company_tags:
+        Level: Medium
+        Solution: https://siddarthkanted.wordpress.com/2019/05/12/magician-and-chocolates-interviewbit-solution/ #could not find solution of a prestigious site or an official solution
+        Common_Mistakes:
+Binary Search:
   Practice_questions:
-    - Question_1: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
+    - Question: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
       Company_tags: Amazon
       Level: Medium
       Solution:
       Common_Mistakes: |
         Though the array is rotated around a pivot element, we must remember that the two parts are individually sorted. We can keep this in
         mind and think of searching the required element in one go, instead of using two binary searches.
-    - Question_2: https://www.interviewbit.com/problems/square-root-of-integer/
+    - Question: https://www.interviewbit.com/problems/square-root-of-integer/
       Company_tags: Facebook, Amazon, Microsoft
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/square-root-of-an-integer/
       Common_Mistakes: While doing binary searching, remember to check the boundary conditions for updating the low and high variables.
-    - Question_3: https://www.interviewbit.com/problems/allocate-books/
+    - Question: https://www.interviewbit.com/problems/allocate-books/
       Company_tags: Google
       Level: Medium-Hard
       Solution: https://www.geeksforgeeks.org/allocate-minimum-number-pages/
       Common_Mistakes:
-    - Question_4: https://www.geeksforgeeks.org/allocate-minimum-number-pages/
+    - Question: https://www.geeksforgeeks.org/allocate-minimum-number-pages/
       Company_tags: Amazon, Google, Goldman Sacs, VMWare
       Level: Hard
       Solution: https://www.geeksforgeeks.org/median-of-two-sorted-arrays-of-different-sizes/
       Common_Mistakes:
-    - Question_5: https://www.interviewbit.com/problems/search-for-a-range/
+    - Question: https://www.interviewbit.com/problems/search-for-a-range/
       Company_tags: Google, Microsoft
       Level: Medium
       Solution: https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/
       Common_Mistakes:
-    - Question_6: https://www.interviewbit.com/problems/implement-power-function/
+    - Question: https://www.interviewbit.com/problems/implement-power-function/
       Company_tags: Google, LinkedIn
       Level: Easy
       Solution: https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
       Common_Mistakes:
 Graphs:
+  Resources:
+    - 1: https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
+    - 2: https://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm
+    - 3: https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm
+    - 4: https://www.tutorialspoint.com/data_structures_algorithms/breadth_first_traversal.htm
+    - 5: https://www.programiz.com/dsa/graph #and all the topics that are included in the index of Graph on this site
   Practice_questions:
-    - Question_1: https://leetcode.com/discuss/interview-question/372581
+    - Question: https://www.interviewbit.com/problems/level-order/
+      Company_tags: Facebook, Goldman Sacs
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/level-order-tree-traversal/
+      Common_Mistakes:
+    - Question: https://leetcode.com/discuss/interview-question/372581
       Company_tags: Amazon
       Level: Medium-Hard
       Solution: https://www.geeksforgeeks.org/bridge-in-a-graph/
       Common_Mistakes:
-    - Question_2: https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
+    - Question: https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
       Company_tags:
       Level: Medium
       Solution: #provided in question link.
       Common_Mistakes:
-    - Question_3: https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+    - Question: https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
       Level: Medium
       Company_tags: Amazon, Walmart, Google
       Solution: #provided in question link
       Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/valid-path/
+      Company_tags: Directi, Microsoft, Amazon, Codenation
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/path-rectangle-containing-circles/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/smallest-multiple-with-0-and-1/
+      Company_tags: Amazon
+      Level: Medium-Hard
+      Solution: https://www.geeksforgeeks.org/find-the-smallest-binary-digit-multiple-of-given-number/
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/minimum-number-of-edges-between-two-vertices-of-a-graph/
+      Company_tags:
+      Level: Easy-Medium
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/count-nodes-within-k-distance-from-all-nodes-in-a-set/
+      Company_tags:
+      Level: Hard
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/bfs-disconnected-graph/
+      Company_tags:
+      Level: Easy
+      Solution: #same as question
+      Common_Mistakes:
 Binary Tree:
   Practice_questions:
-    - Question_1: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
+    - Question: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
       Company_tags: Microsoft, Flipkart, Adobe, Amazon, Google, Oracle
       Level: Medium
       Solution: https://www.geeksforgeeks.org/connect-nodes-level-level-order-traversal/
@@ -414,120 +553,116 @@ Binary Tree:
         We need to take care of while writing the solution. We should ask the interviewer if the binary tree is a complete binary tree or not
         and proceed accordingly. The solution provided in the link above works for all types of binary trees (complete or not complete).
         But, the algorithm (an extension of pre-order traversal) initial solution uses, DOES NOT work binary trees that are not complete.
-    - Question_2: https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
+    - Question: https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
       Company_tags: Microsoft, PayU, Amazon, American Express, Twitter
       Level: Easy-Medium
       Solution: #provided in question
       Common_Mistakes:
-    - Question_3: https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
+    - Question: https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
       Company_tags: Microsoft, Paytm, Amazon, Goldman Sacs, Walmart, Intel, InMobi
       Level: Medium
       Solution: #provided in question
       Common_Mistakes:
-    - Question_4: https://leetcode.com/problems/subtree-of-another-tree/
+    - Question: https://leetcode.com/problems/subtree-of-another-tree/
       Company_tags: Morgan Stanley, Amazon, Adobe
       Level: Easy
       Solution: https://www.geeksforgeeks.org/check-if-a-binary-tree-is-subtree-of-another-binary-tree/
       Common_Mistakes:
-    - Question_5: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+    - Question: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
       Company_tags: Flipkart, Adobe, Amazon, InMobi, LinkedIn, Microsoft
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
       Common_Mistakes:
-    - Question_6: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+    - Question: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
       Company_tags: Amazon, Microsoft, Samsung  
       Level: Easy
       Solution: https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/
       Common_Mistakes:
-    - Question_7: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+    - Question: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
       Company_tags: Amazon, Google
       Level: Medium
       Solution: https://www.geeksforgeeks.org/kth-smallest-element-in-bst-using-o1-extra-space/
       Common_Mistakes:
-    - Question_8: https://leetcode.com/problems/invert-binary-tree/
+    - Question: https://leetcode.com/problems/invert-binary-tree/
       Company_tags: Amazon, Google
       Level: Easy-Medium
       Solution: https://www.techiedelight.com/invert-binary-tree-recursive-iterative/
       Common_Mistakes:
-    - Question_9: https://leetcode.com/problems/validate-binary-search-tree/
+    - Question: https://leetcode.com/problems/validate-binary-search-tree/
       Company_tags: Microsoft, Adobe, Amazon, VMWare, Walmart
       Level: Easy-Medium
       Solution: https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
       Common_Mistakes:
-    - Question_10: https://leetcode.com/problems/same-tree/
+    - Question: https://leetcode.com/problems/same-tree/
       Company_tags: Microsoft, Amazon
       Level: Easy
       Solution: https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/
       Common_Mistakes:
-    - Question_11: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+    - Question: https://leetcode.com/problems/maximum-depth-of-binary-tree/
       Company_tags: Teradata, Amazon, FreeCharge, VMWare
       Level: Easy
       Solution: https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
       Common_Mistakes:
-Stack:
-  Practice_questions:
-    - Question_1: https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
-      Company_tags: Microsoft, Paytm, Amazon, Facebook
-      Level: Medium
-      Solution:
-        - https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
-          #O(nlogn) Solution using Divide and Conquer, O(n) solution already in the question link
+    - Question: https://www.interviewbit.com/problems/convert-sorted-list-to-binary-search-tree/
+      Company_tags: Google
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/
       Common_Mistakes:
 Strings:
   Practice_questions:
-    - Question_1: https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/
+    - Question: https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/
       Company_tags: Microsoft, Flipkart, Adobe, Facebook, Samsung
       Level: Easy
       Solution: #provided in question
       Common_Mistakes: |
         Remember to take care of base cases and negative numbers.
-    - Question_2: https://www.geeksforgeeks.org/look-and-say-sequence/
+    - Question: https://www.geeksforgeeks.org/look-and-say-sequence/
       Company_tags: Facebook, Amazon
       Level: Easy
       Solution: #provided in question
       Common_Mistakes:
-    - Question_3: https://www.geeksforgeeks.org/rearrange-a-string-in-sorted-order-followed-by-the-integer-sum/
+    - Question: https://www.geeksforgeeks.org/rearrange-a-string-in-sorted-order-followed-by-the-integer-sum/
       Company_tags: Facebook
       Level: Easy
       Solution: #provided in question
       Common_Mistakes:
-    - Question_4: https://www.geeksforgeeks.org/program-to-add-two-binary-strings/
+    - Question: https://www.geeksforgeeks.org/program-to-add-two-binary-strings/
       Company_tags: Facebook
       Level: Easy
       Solution: #provided in question
       Common_Mistakes:
-    - Question_5: https://leetcode.com/problems/valid-anagram/
+    - Question: https://leetcode.com/problems/valid-anagram/
       Company_tags: Goldman Sacs, Amazon
       Level: Easy
       Solution: https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
       Common_Mistakes:
-    - Question_6: https://leetcode.com/problems/minimum-window-substring/
+    - Question: https://leetcode.com/problems/minimum-window-substring/
       Company_tags: Directi, Google, Codenation, Amazon
       Level: Hard
       Solution: https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
       Common_Mistakes:
-    - Question_7: https://www.interviewbit.com/problems/reverse-the-string/
+    - Question: https://www.interviewbit.com/problems/reverse-the-string/
       Company_tags: Qualcomm, Amazon, Cisco, Facebook, Microsoft
       Level: Easy
       Solution: |
-        -1: https://www.geeksforgeeks.org/reverse-a-string-in-c-cpp-different-methods/
+        - 1: https://www.geeksforgeeks.org/reverse-a-string-in-c-cpp-different-methods/
         Note: The solution link contains various ways to reverse a string. But, one must be able to reverse a string using a custom function.
       Common_Mistakes:
-    - Question_8: https://www.interviewbit.com/problems/minimum-characters-required-to-make-a-string-palindromic/
+    - Question: https://www.interviewbit.com/problems/minimum-characters-required-to-make-a-string-palindromic/
       Company_tags: Amazon
       Level: Medium
       Solution: https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
       Common_Mistakes:
 Heap:
   Practice_questions:
-    - Question_1: https://leetcode.com/problems/top-k-frequent-elements/
+    - Question: https://leetcode.com/problems/top-k-frequent-elements/
       Company_tags: Amazon 
       Level: Medium
       Solution: https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
       Common_Mistakes:
 Advanced Algorithms:
   Practice_questions:
-    - Question_1: https://leetcode.com/problems/implement-trie-prefix-tree/
+    - Question: https://leetcode.com/problems/implement-trie-prefix-tree/
       Company_tags:
       Level: Hard
       Solution: https://www.geeksforgeeks.org/trie-insert-and-search/
