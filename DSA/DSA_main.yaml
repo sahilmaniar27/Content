@@ -7,10 +7,8 @@
 Subject:
   name: Data Structures and Algorithms
   subtopics:
-    - Introduction
     - Basic Math
     - Greedy Algorithms
-    - Divide & Conquer
     - Dynamic Programming
     - Backtracking
     - Data Sturcutes
@@ -18,10 +16,17 @@ Subject:
         - Arrays
         - Linked List
         - Map
-    - Strings
-    - Graphs
+        - Heap
+        - Binary Tree
+        - Graphs
+        - Strings
+    - Binary Search
     - Advanced Algorithms
 Greedy Algorithms:
+  Resources:
+    - 1: https://www.youtube.com/playlist?list=PLqM7alHXFySESatj68JKWHRVhoJ1BxtLW
+    - 2: https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/
+    - 3: https://www.tutorialspoint.com/data_structures_algorithms/greedy_algorithms.htm
   Practice_questions:
     - Question: https://www.interviewbit.com/problems/gas-station/
       Company_tags: Google, D.E. Shaw, Bloomberg, Flipkart, Amazon
@@ -34,6 +39,36 @@ Greedy Algorithms:
       Company_tags: Goldman Sacs, Microsoft
       Level: Easy
       Solution: https://www.geeksforgeeks.org/find-k-bookings-possible-given-arrival-departure-times/
+      Common_Mistakes:
+    - Question: https://www.interviewbit.com/problems/assign-mice-to-holes/
+      Company_tags: Amazon
+      Level: Easy-Medium
+      Solution: https://www.geeksforgeeks.org/assign-mice-holes/
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/huffman-decoding/
+      Company_tags:
+      Level: Medium
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/water-connection-problem/
+      Company_tags:
+      Level: Medium-Hard
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/policemen-catch-thieves/
+      Company_tags: National Instruments
+      Level: Medium
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://www.geeksforgeeks.org/minimum-swaps-bracket-balancing/
+      Company_tags:
+      Level: Medium-Hard
+      Solution: #same as question
+      Common_Mistakes:
+    - Question: https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+      Company_tags:
+      Level: Medium
+      Solution: https://www.geeksforgeeks.org/minimum-number-of-parentheses-to-be-added-to-make-it-valid/
       Common_Mistakes:
 Basic Math:
   Practice_questions:
@@ -78,11 +113,11 @@ Basic Math:
       Common_Mistakes:
 Dynamic Programming:
   Resources:
-    - https://www.geeksforgeeks.org/dynamic-programming/
-    - https://www.geeksforgeeks.org/tabulation-vs-memoization/
-    - https://www.geeksforgeeks.org/optimal-substructure-property-in-dynamic-programming-dp-2/
-    - https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
-    - https://www.geeksforgeeks.org/solve-dynamic-programming-problem/
+    - 1: https://www.geeksforgeeks.org/dynamic-programming/
+    - 2: https://www.geeksforgeeks.org/tabulation-vs-memoization/
+    - 3: https://www.geeksforgeeks.org/optimal-substructure-property-in-dynamic-programming-dp-2/
+    - 4: https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
+    - 5: https://www.geeksforgeeks.org/solve-dynamic-programming-problem/
   Practice_questions:
     - Question: https://www.interviewbit.com/problems/longest-arithmetic-progression/?ref=similar_problems
       Company_tags: Microsoft
@@ -189,6 +224,9 @@ Dynamic Programming:
       Solution: https://www.geeksforgeeks.org/count-of-n-digit-numbers-whose-sum-of-digits-equals-to-given-sum/
       Common_Mistakes:
 Backtracking:
+  Resources:
+    - 1: https://www.geeksforgeeks.org/backtracking-introduction/
+    - 2: https://www.hackerearth.com/practice/basic-programming/recursion/recursion-and-backtracking/tutorial/
   Practice_questions:
     - Question: https://www.interviewbit.com/problems/subset/
       Company_tags: Amazon, Microsoft
@@ -212,6 +250,10 @@ Backtracking:
       Common_Mistakes:
 Data Structure:
   Resources:
+    - 1: https://www.geeksforgeeks.org/data-structures/
+    - 2: https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+    - 3: https://www.youtube.com/playlist?list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
+    - 4: https://www.youtube.com/playlist?list=PLqM7alHXFySHCXD7r1J0ky9Zg_GBB1dbk
   Stack:
     Practice_questions:
       - Question: https://www.interviewbit.com/problems/redundant-braces/
@@ -456,7 +498,202 @@ Data Structure:
         Level: Medium
         Solution: https://siddarthkanted.wordpress.com/2019/05/12/magician-and-chocolates-interviewbit-solution/ #could not find solution of a prestigious site or an official solution
         Common_Mistakes:
+      - Question: https://leetcode.com/problems/top-k-frequent-elements/
+        Company_tags: Amazon 
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
+        Common_Mistakes:
+  Binary Tree:
+    Practice_questions:
+      - Question: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
+        Company_tags: Microsoft, Flipkart, Adobe, Amazon, Google, Oracle
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/connect-nodes-level-level-order-traversal/
+        Common_Mistakes: |
+          We need to take care of while writing the solution. We should ask the interviewer if the binary tree is a complete binary tree or not
+          and proceed accordingly. The solution provided in the link above works for all types of binary trees (complete or not complete).
+          But, the algorithm (an extension of pre-order traversal) initial solution uses, DOES NOT work binary trees that are not complete.
+      - Question: https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
+        Company_tags: Microsoft, PayU, Amazon, American Express, Twitter
+        Level: Easy-Medium
+        Solution: #provided in question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
+        Company_tags: Microsoft, Paytm, Amazon, Goldman Sacs, Walmart, Intel, InMobi
+        Level: Medium
+        Solution: #provided in question
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/subtree-of-another-tree/
+        Company_tags: Morgan Stanley, Amazon, Adobe
+        Level: Easy
+        Solution: https://www.geeksforgeeks.org/check-if-a-binary-tree-is-subtree-of-another-binary-tree/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+        Company_tags: Flipkart, Adobe, Amazon, InMobi, LinkedIn, Microsoft
+        Level: Easy-Medium
+        Solution: https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+        Company_tags: Amazon, Microsoft, Samsung  
+        Level: Easy
+        Solution: https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+        Company_tags: Amazon, Google
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/kth-smallest-element-in-bst-using-o1-extra-space/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/invert-binary-tree/
+        Company_tags: Amazon, Google
+        Level: Easy-Medium
+        Solution: https://www.techiedelight.com/invert-binary-tree-recursive-iterative/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/validate-binary-search-tree/
+        Company_tags: Microsoft, Adobe, Amazon, VMWare, Walmart
+        Level: Easy-Medium
+        Solution: https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/same-tree/
+        Company_tags: Microsoft, Amazon
+        Level: Easy
+        Solution: https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+        Company_tags: Teradata, Amazon, FreeCharge, VMWare
+        Level: Easy
+        Solution: https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/convert-sorted-list-to-binary-search-tree/
+        Company_tags: Google
+        Level: Easy-Medium
+        Solution: https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/
+        Common_Mistakes:
+  Graphs:
+    Practice_questions:
+      - Question: https://www.interviewbit.com/problems/level-order/
+        Company_tags: Facebook, Goldman Sacs
+        Level: Easy-Medium
+        Solution: https://www.geeksforgeeks.org/level-order-tree-traversal/
+        Common_Mistakes:
+      - Question: https://leetcode.com/discuss/interview-question/372581
+        Company_tags: Amazon
+        Level: Medium-Hard
+        Solution: https://www.geeksforgeeks.org/bridge-in-a-graph/
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
+        Company_tags:
+        Level: Medium
+        Solution: #provided in question link.
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+        Level: Medium
+        Company_tags: Amazon, Walmart, Google
+        Solution: #provided in question link
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/valid-path/
+        Company_tags: Directi, Microsoft, Amazon, Codenation
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/path-rectangle-containing-circles/
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/smallest-multiple-with-0-and-1/
+        Company_tags: Amazon
+        Level: Medium-Hard
+        Solution: https://www.geeksforgeeks.org/find-the-smallest-binary-digit-multiple-of-given-number/
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/minimum-number-of-edges-between-two-vertices-of-a-graph/
+        Company_tags:
+        Level: Easy-Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/count-nodes-within-k-distance-from-all-nodes-in-a-set/
+        Company_tags:
+        Level: Hard
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/bfs-disconnected-graph/
+        Company_tags:
+        Level: Easy
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/path-with-minimum-xor-sum-of-edges-in-a-directed-graph/
+        Company_tags:
+        Level: Medium-Hard
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/path-with-smallest-product-of-edges-with-weight-1/
+        Company_tags:
+        Level: Medium-Hard
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/widest-path-problem-practical-application-of-dijkstras-algorithm/
+        Company_tags:
+        Level: Hard
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/shortest-cycle-in-an-undirected-unweighted-graph/
+        Company_tags:
+        Level: Medium
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/shortest-path-from-source-to-destination-such-that-edge-weights-along-path-are-alternatively-increasing-and-decreasing/
+        Company_tags:
+        Level: Hard
+        Solution: #same as question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/topological-sorting-indegree-based-solution/?ref=rp
+        Company_tags: Amazon, Flipkart, Microsoft
+        Level: Medium-Hard
+        Solution: #same as question
+        Common_Mistakes:
+  Strings:
+    Practice_questions:
+      - Question: https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/
+        Company_tags: Microsoft, Flipkart, Adobe, Facebook, Samsung
+        Level: Easy
+        Solution: #provided in question
+        Common_Mistakes: |
+          Remember to take care of base cases and negative numbers.
+      - Question: https://www.geeksforgeeks.org/look-and-say-sequence/
+        Company_tags: Facebook, Amazon
+        Level: Easy
+        Solution: #provided in question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/rearrange-a-string-in-sorted-order-followed-by-the-integer-sum/
+        Company_tags: Facebook
+        Level: Easy
+        Solution: #provided in question
+        Common_Mistakes:
+      - Question: https://www.geeksforgeeks.org/program-to-add-two-binary-strings/
+        Company_tags: Facebook
+        Level: Easy
+        Solution: #provided in question
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/valid-anagram/
+        Company_tags: Goldman Sacs, Amazon
+        Level: Easy
+        Solution: https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
+        Common_Mistakes:
+      - Question: https://leetcode.com/problems/minimum-window-substring/
+        Company_tags: Directi, Google, Codenation, Amazon
+        Level: Hard
+        Solution: https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/reverse-the-string/
+        Company_tags: Qualcomm, Amazon, Cisco, Facebook, Microsoft
+        Level: Easy
+        Solution: |
+          - 1: https://www.geeksforgeeks.org/reverse-a-string-in-c-cpp-different-methods/
+          Note: The solution link contains various ways to reverse a string. But, one must be able to reverse a string using a custom function.
+        Common_Mistakes:
+      - Question: https://www.interviewbit.com/problems/minimum-characters-required-to-make-a-string-palindromic/
+        Company_tags: Amazon
+        Level: Medium
+        Solution: https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
+        Common_Mistakes:
 Binary Search:
+  Resources:
+    - 1: https://www.youtube.com/playlist?list=PL2_aWCzGMAwL3ldWlrii6YeLszojgH77j
+    - 2: https://www.tutorialspoint.com/data_structures_algorithms/binary_search_algorithm.htm
   Practice_questions:
     - Question: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
       Company_tags: Amazon
@@ -489,176 +726,6 @@ Binary Search:
       Company_tags: Google, LinkedIn
       Level: Easy
       Solution: https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
-      Common_Mistakes:
-Graphs:
-  Resources:
-    - 1: https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
-    - 2: https://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm
-    - 3: https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm
-    - 4: https://www.tutorialspoint.com/data_structures_algorithms/breadth_first_traversal.htm
-    - 5: https://www.programiz.com/dsa/graph #and all the topics that are included in the index of Graph on this site
-  Practice_questions:
-    - Question: https://www.interviewbit.com/problems/level-order/
-      Company_tags: Facebook, Goldman Sacs
-      Level: Easy-Medium
-      Solution: https://www.geeksforgeeks.org/level-order-tree-traversal/
-      Common_Mistakes:
-    - Question: https://leetcode.com/discuss/interview-question/372581
-      Company_tags: Amazon
-      Level: Medium-Hard
-      Solution: https://www.geeksforgeeks.org/bridge-in-a-graph/
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
-      Company_tags:
-      Level: Medium
-      Solution: #provided in question link.
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
-      Level: Medium
-      Company_tags: Amazon, Walmart, Google
-      Solution: #provided in question link
-      Common_Mistakes:
-    - Question: https://www.interviewbit.com/problems/valid-path/
-      Company_tags: Directi, Microsoft, Amazon, Codenation
-      Level: Medium
-      Solution: https://www.geeksforgeeks.org/path-rectangle-containing-circles/
-      Common_Mistakes:
-    - Question: https://www.interviewbit.com/problems/smallest-multiple-with-0-and-1/
-      Company_tags: Amazon
-      Level: Medium-Hard
-      Solution: https://www.geeksforgeeks.org/find-the-smallest-binary-digit-multiple-of-given-number/
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/minimum-number-of-edges-between-two-vertices-of-a-graph/
-      Company_tags:
-      Level: Easy-Medium
-      Solution: #same as question
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/count-nodes-within-k-distance-from-all-nodes-in-a-set/
-      Company_tags:
-      Level: Hard
-      Solution: #same as question
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/bfs-disconnected-graph/
-      Company_tags:
-      Level: Easy
-      Solution: #same as question
-      Common_Mistakes:
-Binary Tree:
-  Practice_questions:
-    - Question: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
-      Company_tags: Microsoft, Flipkart, Adobe, Amazon, Google, Oracle
-      Level: Medium
-      Solution: https://www.geeksforgeeks.org/connect-nodes-level-level-order-traversal/
-      Common_Mistakes: |
-        We need to take care of while writing the solution. We should ask the interviewer if the binary tree is a complete binary tree or not
-        and proceed accordingly. The solution provided in the link above works for all types of binary trees (complete or not complete).
-        But, the algorithm (an extension of pre-order traversal) initial solution uses, DOES NOT work binary trees that are not complete.
-    - Question: https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
-      Company_tags: Microsoft, PayU, Amazon, American Express, Twitter
-      Level: Easy-Medium
-      Solution: #provided in question
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
-      Company_tags: Microsoft, Paytm, Amazon, Goldman Sacs, Walmart, Intel, InMobi
-      Level: Medium
-      Solution: #provided in question
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/subtree-of-another-tree/
-      Company_tags: Morgan Stanley, Amazon, Adobe
-      Level: Easy
-      Solution: https://www.geeksforgeeks.org/check-if-a-binary-tree-is-subtree-of-another-binary-tree/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
-      Company_tags: Flipkart, Adobe, Amazon, InMobi, LinkedIn, Microsoft
-      Level: Easy-Medium
-      Solution: https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
-      Company_tags: Amazon, Microsoft, Samsung  
-      Level: Easy
-      Solution: https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
-      Company_tags: Amazon, Google
-      Level: Medium
-      Solution: https://www.geeksforgeeks.org/kth-smallest-element-in-bst-using-o1-extra-space/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/invert-binary-tree/
-      Company_tags: Amazon, Google
-      Level: Easy-Medium
-      Solution: https://www.techiedelight.com/invert-binary-tree-recursive-iterative/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/validate-binary-search-tree/
-      Company_tags: Microsoft, Adobe, Amazon, VMWare, Walmart
-      Level: Easy-Medium
-      Solution: https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/same-tree/
-      Company_tags: Microsoft, Amazon
-      Level: Easy
-      Solution: https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/maximum-depth-of-binary-tree/
-      Company_tags: Teradata, Amazon, FreeCharge, VMWare
-      Level: Easy
-      Solution: https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
-      Common_Mistakes:
-    - Question: https://www.interviewbit.com/problems/convert-sorted-list-to-binary-search-tree/
-      Company_tags: Google
-      Level: Easy-Medium
-      Solution: https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/
-      Common_Mistakes:
-Strings:
-  Practice_questions:
-    - Question: https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/
-      Company_tags: Microsoft, Flipkart, Adobe, Facebook, Samsung
-      Level: Easy
-      Solution: #provided in question
-      Common_Mistakes: |
-        Remember to take care of base cases and negative numbers.
-    - Question: https://www.geeksforgeeks.org/look-and-say-sequence/
-      Company_tags: Facebook, Amazon
-      Level: Easy
-      Solution: #provided in question
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/rearrange-a-string-in-sorted-order-followed-by-the-integer-sum/
-      Company_tags: Facebook
-      Level: Easy
-      Solution: #provided in question
-      Common_Mistakes:
-    - Question: https://www.geeksforgeeks.org/program-to-add-two-binary-strings/
-      Company_tags: Facebook
-      Level: Easy
-      Solution: #provided in question
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/valid-anagram/
-      Company_tags: Goldman Sacs, Amazon
-      Level: Easy
-      Solution: https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
-      Common_Mistakes:
-    - Question: https://leetcode.com/problems/minimum-window-substring/
-      Company_tags: Directi, Google, Codenation, Amazon
-      Level: Hard
-      Solution: https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
-      Common_Mistakes:
-    - Question: https://www.interviewbit.com/problems/reverse-the-string/
-      Company_tags: Qualcomm, Amazon, Cisco, Facebook, Microsoft
-      Level: Easy
-      Solution: |
-        - 1: https://www.geeksforgeeks.org/reverse-a-string-in-c-cpp-different-methods/
-        Note: The solution link contains various ways to reverse a string. But, one must be able to reverse a string using a custom function.
-      Common_Mistakes:
-    - Question: https://www.interviewbit.com/problems/minimum-characters-required-to-make-a-string-palindromic/
-      Company_tags: Amazon
-      Level: Medium
-      Solution: https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
-      Common_Mistakes:
-Heap:
-  Practice_questions:
-    - Question: https://leetcode.com/problems/top-k-frequent-elements/
-      Company_tags: Amazon 
-      Level: Medium
-      Solution: https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
       Common_Mistakes:
 Advanced Algorithms:
   Practice_questions:
